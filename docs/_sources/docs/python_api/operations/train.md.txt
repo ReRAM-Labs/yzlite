@@ -1,0 +1,12 @@
+# train_model
+
+```{eval-rst}
+.. autofunction::  yzlite.core.train_model
+```
+
+## TrainingResults
+
+```{eval-rst}
+.. autoclass:: yzlite.core.train_model.TrainingResults
+   :members:
+```

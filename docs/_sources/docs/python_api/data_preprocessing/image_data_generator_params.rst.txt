@@ -1,0 +1,31 @@
+﻿ParallelProcessParams
+=====================
+
+.. currentmodule:: yzlite.core.preprocess.image.parallel_generator
+
+.. autoclass:: ParallelProcessParams
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~ParallelProcessParams.n_classes
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~ParallelProcessParams.__init__
+   
+   

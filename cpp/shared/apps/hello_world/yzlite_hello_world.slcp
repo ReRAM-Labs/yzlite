@@ -1,0 +1,40 @@
+# Yizhu Technology Project Configuration Tools: slcp, v0, Component selection file.
+project_name: yzlite_hello_world
+label: YZLITE - Hello World
+description: "Simple application to print 'Hello World!!' to console using printf()"
+category: Example|ReRAM YZLite
+package: yzlite
+quality: development
+# filter:
+#   - name: "Device Type"
+#     value: ["SoC"]
+#   - name: "MCU"
+#     value: ["32-bit MCU"]
+#   - name: "Project Difficulty"
+#     value: ["Advanced"]
+#   - name: "Capability"
+#     value: ["Machine Learning"]
+sdk_extension:
+  - id: yzlite
+    version: "0.1.0"
+source:
+- path: main.cc
+component:
+- id: iostream_recommended_stream
+- id: printf
+- id: iostream_retarget_stdio
+- id: sl_system
+- id: device_init
+- id: device_init_hfrco
+requires:
+- name: cpp_support
+toolchain_settings:
+  - option: gcc_linker_option
+    value: "-u _printf_float"
+configuration:
+- name: SL_BOARD_ENABLE_VCOM
+  value: '1'
+- name: SL_MVP_POWER_MODE
+  value: '1'
+readme:
+  - path: README.md

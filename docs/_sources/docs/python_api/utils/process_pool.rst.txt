@@ -1,0 +1,38 @@
+﻿ProcessPool
+===========
+
+.. currentmodule:: yzlite.utils.process_pool
+
+.. autoclass:: ProcessPool
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~ProcessPool.detected_subprocess_error
+      ~ProcessPool.is_running
+      ~ProcessPool.n_jobs
+      ~ProcessPool.name
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~ProcessPool.__init__
+      ~ProcessPool.create_batch
+      ~ProcessPool.process
+      ~ProcessPool.shutdown
+      ~ProcessPool.start
+   
+   

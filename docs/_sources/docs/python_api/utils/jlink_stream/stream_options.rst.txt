@@ -1,0 +1,38 @@
+﻿JlinkStreamOptions
+==================
+
+.. currentmodule:: yzlite.utils.jlink_stream
+
+.. autoclass:: JlinkStreamOptions
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~JlinkStreamOptions.clock
+      ~JlinkStreamOptions.core
+      ~JlinkStreamOptions.interface
+      ~JlinkStreamOptions.lib_path
+      ~JlinkStreamOptions.polling_period
+      ~JlinkStreamOptions.serial_number
+      ~JlinkStreamOptions.sram_address
+      ~JlinkStreamOptions.sram_size
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~JlinkStreamOptions.__init__
+   
+   

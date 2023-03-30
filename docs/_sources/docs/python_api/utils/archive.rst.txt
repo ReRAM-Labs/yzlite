@@ -1,0 +1,23 @@
+﻿archive
+=======
+
+.. automodule:: yzlite.utils.archive
+   :members:
+   :undoc-members:
+   :special-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      extract_archive
+      gzip_directory_files
+      gzip_file
+   
+   

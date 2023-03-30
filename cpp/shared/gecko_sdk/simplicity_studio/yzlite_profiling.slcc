@@ -1,0 +1,25 @@
+id: yzlite_profiling
+package: yzlite
+label: Profiling
+description: Profiling library
+category: Utilities
+quality: development
+root_path: shared/profiling
+provides:
+  - name: yzlite_profiling
+requires:
+  - name: yzlite_cpputils
+  - name: sleeptimer
+  - name: yzlite_microsecond_timer
+include:
+  - path: .
+    file_list:
+      - path: profiling/profiler.hpp
+      - path: profiling/profiler_fullname.hpp
+      - path: profiling/profiling.hpp
+source:
+  - path: profiling/profiler.cc
+  - path: profiling/profiler_fullname.cc
+  - path: profiling/profiling.cc
+ui_hints:
+  visibility: never

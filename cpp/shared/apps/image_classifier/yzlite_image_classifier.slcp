@@ -1,0 +1,75 @@
+# Yizhu Technology Project Configuration Tools: slcp, v0, Component selection file.
+project_name: yzlite_image_classifier
+label: YZLITE - Image Classifier
+description: >
+  This application uses TensorFlow Lite for Microcontrollers to
+  classify images retrieved from a camera.
+category: Example|ReRAM YZLite
+package: yzlite
+quality: development
+# filter:
+#   - name: "Device Type"
+#     value: ["SoC"]
+#   - name: "MCU"
+#     value: ["32-bit MCU"]
+#   - name: "Project Difficulty"
+#     value: ["Advanced"]
+#   - name: "Capability"
+#     value: ["Machine Learning"]
+sdk_extension:
+  - id: yzlite
+    version: "0.1.0"
+include:
+  - path: .
+    file_list:
+      - path: app.h
+      - path: image_classifier.h
+      - path: recognize_commands.h
+source:
+  - path: app.cc
+  - path: image_classifier.cc
+  - path: main.cc
+  - path: recognize_commands.cc
+component:
+- id: iostream_recommended_stream
+- id: printf
+- id: iostream_retarget_stdio
+- id: sl_system
+- id: device_init
+- id: device_init_hfrco
+- id: yizhu_core_sl_malloc
+- id: power_manager
+- id: status
+- id: sleeptimer
+- id: spidrv
+  instance: [exp]
+- id: i2cspm
+  instance: [sensor]
+- id: simple_led
+  instance: [led0, led1]
+- id: yzlite_tflite_micro_model
+  from: yzlite
+- id: yzlite_arducam
+  from: yzlite
+- id: yzlite_jlink_stream
+  from: yzlite
+requires:
+- name: cpp_support
+toolchain_settings:
+  - option: gcc_linker_option
+    value: "-u _printf_float"
+configuration:
+- name: SL_BOARD_ENABLE_VCOM
+  value: '1'
+- name: SL_MVP_POWER_MODE
+  value: '1'
+config_file:
+  - path: "config/tflite/rock_paper_scissors.tflite"
+    directory: "tflite"
+    file_id: flatbuffer_file_id
+
+readme:
+  - path: README.md
+tag:
+  - hardware:device:ram:128
+  - hardware:device:flash:130

@@ -1,0 +1,46 @@
+# Environment Variables
+
+The YZLITE uses the following _optional_ environment variables:
+
+## YZLITE_MODEL_PATHS
+
+This should be a list of directory paths to search for YZLITE models.
+Each directory path should be delimited with the OS's path delimiter
+
+- __Windows__ - Semicolon `;`
+- __Linux__ - Colon `:`
+
+See [Model Search Path](../guides/model_search_path) for more details.
+
+## YZLITE_CACHE_DIR
+
+Specify the directory path to the YZLITE's cache directory.
+If omitted, the YZLITE defaults to the directory: `~/.yzlite`
+
+## YZLITE_USER_SETTINGS_PATH
+
+Specify the path to the [user_settings.yaml](./settings_file.md).
+If omitted, the settings file points to `~/.yzlite/user_settings.yaml`.
+
+## YZLITE_READONLY
+
+Set this variable to `1` to indicate that the YZLITE is running on a "read-only" file-system.
+This is useful if te YZLITE package is running in a cloud "lambda" function.
+
+When set, the YZLITE will only write to the OS's temporary directory.
+
+## YZLITE_SETUP_PY_DEPS
+
+This is used by [setup.py](https://github.com/chenxingqiang/yzlite/blob/master/setup.py), the script used to install the YZLITE Python package.
+This may be used to override the YZLITE Python package dependencies.
+
+This should contain a list of [install requirements](https://packaging.python.org/en/latest/discussions/install-requires-vs-requirements/) delimited by a pipe `|`, e.g.:
+
+```
+export YZLITE_SETUP_PY_DEPS="tensorflow==2.4.4|numpy==1.19.5|tflite-support==0.2.0|tensorflow_probability==0.12.2|onnxruntime==1.9.0|typing-extensions==3.7.4"
+```
+
+## YZLITE_TEMP_DIR
+
+The temporary directory used by the YZLITE.
+If not defined, then this defaults to: `$TEMP/<user name>/yzlite`

@@ -1,0 +1,37 @@
+﻿SshMixin
+========
+
+.. currentmodule:: yzlite.core
+
+.. autoclass:: SshMixin
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~SshMixin.ssh_create_venv
+      ~SshMixin.ssh_download_files
+      ~SshMixin.ssh_environment
+      ~SshMixin.ssh_remote_dir
+      ~SshMixin.ssh_shutdown_cmds
+      ~SshMixin.ssh_startup_cmds
+      ~SshMixin.ssh_upload_files
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~SshMixin.__init__
+   
+   

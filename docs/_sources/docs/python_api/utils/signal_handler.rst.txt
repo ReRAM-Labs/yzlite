@@ -1,0 +1,25 @@
+﻿SignalHandler
+=============
+
+.. currentmodule:: yzlite.utils.signal_handler
+
+.. autoclass:: SignalHandler
+   :members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~SignalHandler.__init__
+      ~SignalHandler.release
+   
+   

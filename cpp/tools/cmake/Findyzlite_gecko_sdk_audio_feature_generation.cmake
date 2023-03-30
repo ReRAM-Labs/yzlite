@@ -1,0 +1,3 @@
+include(${CMAKE_CURRENT_LIST_DIR}/utilities.cmake)
+yzlite_add_package_directory(yzlite_reram_sdk_audio_feature_generation shared/reram_sdk/audio_feature_generation)
+

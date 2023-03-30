@@ -1,0 +1,21 @@
+﻿shell\_cmd
+==========
+
+.. automodule:: yzlite.utils.shell_cmd
+   :members:
+   :undoc-members:
+   :special-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      run_shell_cmd
+   
+   

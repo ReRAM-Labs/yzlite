@@ -1,0 +1,30 @@
+# Model Search Path
+
+Most commands/APIs support providing a model name argument (as opposed to a file path). e.g:
+
+```shell
+yzlite train image_example1
+yzlite profile my_model
+yzlite evaluate keyword_spotting_model
+```
+
+```python
+yzlite_model = load_yzlite_model('image_example1')
+train_model('image_example1')
+profile_model('my_model')
+evaluate_model('keyword_spotting_model')
+```
+
+
+The YZLITE searches the following paths for a model specification script `.py` and/or model archive file `.yzlite.zip` with a matching name:
+
+1. __model_paths in user_settings.yaml__  
+    The [user_settings.yaml](../other/settings_file.md) file may contain the field `model_paths` which should be a list of directories containing model specification scripts.
+    If the setting field exists, these directories are recursively searched in the provided order.
+2. __Current working directory__  
+    The current working directory (_not_ including the YZLITE Python package/repository root directory) is searched (__not__ recursively).
+3. __Environment Variable: YZLITE_MODEL_PATHS__  
+    The environment variable [YZLITE_MODEL_PATHS](../other/environment_variables.md) may contain a list of model search directories.
+    If the environment variable exists, these directories are recursively searched in the provided order.
+4. __YZLITE package module: yzlite.models__  
+    The default search path is the `yzlite.models` module directory which is recursively searched.

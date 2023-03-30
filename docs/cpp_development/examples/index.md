@@ -1,0 +1,28 @@
+# C++ Examples
+
+The YZLITE supports [C++ development](../index.md) and comes with several example C++ applications and demos.  
+The source code for the examples may be found on Github at [__yzlite__/cpp/shared/apps](../../../cpp/shared/apps)
+
+The following examples are available:  
+
+| Name                                                                                                                         | Description                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [Hello World](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/hello_world.html)                             | Print "Hello world" to console                                                     |
+| [Model Profiler](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/model_profiler.html)                       | Profile a `.tflite` model's execution performance                                  |
+| [Audio Classifier](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/audio_classifier.html)                   | Classify real-time microphone audio                                                |
+| [BLE Audio Classifier](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/ble_audio_classifier.html)           | Classify real-time microphone audio and notify BLE client when keyword is detected |
+| [Image Classifier](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/image_classifier.html)                   | Classify images captured from an RGB camera                                        |
+| [Fingerprint Authenticator](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/fingerprint_authenticator.html) | Generate unique signatures from images of fingerprints to authenticate users       |
+
+```{eval-rst}
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   ./hello_world
+   ./model_profiler
+   ./audio_classifier
+   ./ble_audio_classifier
+   ./image_classifier
+   ./fingerprint_authenticator
+```

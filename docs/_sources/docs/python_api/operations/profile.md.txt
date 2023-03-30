@@ -1,0 +1,20 @@
+# profile_model
+
+```{eval-rst}
+.. autofunction::  yzlite.core.profile_model
+```
+
+
+## ProfilingModelResults
+
+```{eval-rst}
+.. autoclass:: yzlite.core.profiling_results.ProfilingModelResults
+   :members:
+```
+
+## ProfilingLayerResult
+
+```{eval-rst}
+.. autoclass:: yzlite.core.profiling_results.ProfilingLayerResult
+   :members:
+```

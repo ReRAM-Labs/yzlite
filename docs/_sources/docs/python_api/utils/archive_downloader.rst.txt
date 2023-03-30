@@ -1,0 +1,26 @@
+﻿archive\_downloader
+===================
+
+.. automodule:: yzlite.utils.archive_downloader
+   :members:
+   :undoc-members:
+   :special-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      download_url
+      download_verify_extract
+      verify_extract
+      verify_file_hash
+      verify_sha1
+      verify_sha256
+   
+   

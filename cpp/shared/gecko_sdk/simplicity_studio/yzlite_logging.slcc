@@ -1,0 +1,27 @@
+id: yzlite_logging
+package: yzlite
+label: Logging
+description: Logging library
+category: Utilities
+quality: development
+root_path: shared/logging
+provides:
+  - name: yzlite_logging
+requires:
+  - name: yzlite_cpputils
+include:
+  - path: .
+    file_list:
+      - path: logging/logger.hpp
+      - path: logging/logging.hpp
+source:
+  - path: logging/default_writer.cc
+  - path: logging/logger.cc
+  - path: logging/logging.cc
+
+ui_hints:
+  visibility: never
+
+toolchain_settings:
+  - option: gcc_c++_compiler_option
+    value: -std=gnu++17

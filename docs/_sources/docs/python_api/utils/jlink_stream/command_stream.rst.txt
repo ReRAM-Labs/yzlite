@@ -1,0 +1,27 @@
+﻿JlinkCommandStream
+==================
+
+.. currentmodule:: yzlite.utils.jlink_stream
+
+.. autoclass:: JlinkCommandStream
+   :members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~JlinkCommandStream.__init__
+      ~JlinkCommandStream.close
+      ~JlinkCommandStream.issue
+      ~JlinkCommandStream.open
+   
+   

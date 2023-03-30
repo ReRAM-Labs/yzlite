@@ -1,0 +1,24 @@
+﻿cmake
+=====
+
+.. automodule:: yzlite.utils.cmake
+   :members:
+   :undoc-members:
+   :special-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      build_yzlite_target
+      get_build_directory
+      invoke_yzlite_target
+      parse_variables
+   
+   

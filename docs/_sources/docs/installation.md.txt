@@ -1,0 +1,235 @@
+
+Installation
+=================
+
+The YZLITE supports three modes of installation:  
+- [Standard Python Package](#standard-python-package) - Use the YZLITE like any other package in your local Python3 environment
+- [Google Colab](#google-colab) - Run the YZLITE in the [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb) cloud servers. This allows for running the YZLITE _without_ installing it locally
+- [Local Development](#local-development) - Locally build the YZLITE C++ [Python wrappers](https://github.com/chenxingqiang/yzlite/docs/cpp_development/wrappers/index.html) and [examples](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/index.html) from source
+
+
+```{note} 
+[Python3.7, Python3.8, Python3.9, Python3.10](https://www.python.org/downloads/) is required
+```
+
+
+
+## Standard Python Package
+
+This describes how to install the YZLITE Python package into your Python3 environment.  
+
+```{note} 
+- Before installing, you must have [Python3.7, 3.8, 3.9, 3.10](https://www.python.org/downloads/) installed on your computer
+- Installing the YZLITE will also install Google [Tensorflow](https://www.tensorflow.org/install) into your Python environment,
+  if your computer has an NVidia GPU, then ensure the proper drivers are [installed](https://www.tensorflow.org/install/gpu)
+- If you're using Windows, be sure to install the [Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) which is required by [Tensorflow](https://www.tensorflow.org/install/pip)
+
+```
+
+
+
+
+1 ) __Optionally__ create and activate a Python [virtual environment](https://docs.python.org/3/tutorial/venv.html): 
+
+
+This step is __highly recommended__ as the YZLITE installs other dependencies like Tensorflow into the Python environment.
+
+
+```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         python  -m venv yzlite_pyvenv
+         .\yzlite_pyvenv\Scripts\activate.bat
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+
+         python3 -m venv yzlite_pyvenv
+         source ./yzlite_pyvenv/bin/activate
+```
+
+2 ) Install the YZLITE Python package via [pip](https://pip.pypa.io/):  
+
+  This installs the pre-built Python package. This is the easiest and fastest approach to installing the YZLITE.  
+  However, the package may not be up-to-date with the [Github repository](https://github.com/chenxingqiang/yzlite).
+
+  ```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         pip  install yizhu-yzlite[full] --upgrade
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+      
+         pip3 install yizhu-yzlite[full] --upgrade
+  ```
+
+  __OR__
+
+  This builds and installs the Python package from the [Github repository](https://github.com/chenxingqiang/yzlite). This may take longer
+  to install but will use the most up-to-date source code.
+
+  ```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         pip  install git+https://github.com/chenxingqiang/yzlite.git[full]
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+      
+         pip3 install git+https://github.com/chenxingqiang/yzlite.git[full]
+  ```
+
+  __NOTE:__ The `[full]` part of the command is _optional_. This will install additional dependencies used by some the the YZLITE commands.
+  Omitting this from the command will speedup installation but may cause some of the commands like `classify_audio`, `view`, `tensorboard` 
+  to require additional install step.
+
+
+  After the command completes, the YZLITE should be available to the current Python environment.  
+  You can verify by issuing the command:  
+
+  ```shell
+  yzlite --help
+  ```
+
+
+See the [Command-Line Guide](./command_line/index.md) for more details on how to use the command-line. 
+
+You can also import the YZLITE via Python script, e.g.:
+
+```python
+from yzlite.core import profile_model
+
+profile_model('~/my_model.tflite')
+```
+
+See the [API Examples](./examples.md) for more details on how to use the YZLITE [Python API](./python_api/index.md).
+
+
+### Update Python Package
+
+If the YZLITE Python package has already been installed, you may update to the latest YZLITE by running the command:
+
+```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         pip  install yizhu-yzlite[full] --upgrade
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+
+         pip3 install yizhu-yzlite[full] --upgrade
+```
+
+Alternatively, you can update to a specific version with:
+
+```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         pip  install yizhu-yzlite[full]==0.1.0
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+
+         pip3 install yizhu-yzlite[full]==0.1.0
+```
+
+and replace `0.1.0` with the desired version.
+
+
+
+## Google Colab
+
+Google offers it own _free_ Cloud servers for model training, [Google Colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb) (a.k.a. Colab).  
+This is very useful as you can leverage Google's cloud servers and GPUs for training your model.
+The following describes how to install the YZLITE into a Colab notebook.
+
+1 ) Create a Google Account (if necessary)  
+    Go to the [Google Signup](https://accounts.google.com/signup) page.  
+    __NOTE:__ Click the __Use my current email address instead__ button to use your existing email instead of creating a gmail email address.
+
+2 ) Refer to the [Colab Basic Features Overview](https://colab.research.google.com/notebooks/basic_features_overview.ipynb) to get a basic idea of how notebooks work  
+3 ) Create a new Colab notebook  
+4 ) Create a Python code cell and copy & paste the following into the cell
+
+```shell
+!pip install --upgrade yizhu-yzlite
+```
+
+5 ) Execute the cell  
+    Once the cell executes, the YZLITE will be installed.
+    You may import and use the YZLITE package as normal from this point on inside the notebook
+
+
+## Local Development
+
+The YZLITE can also be installed for local development. In this mode, the Python C++ wrappers are built from source.  
+Additionally, a new Python virtual environment is created specifically for the YZLITE.
+
+```{note}
+Before installing, you must have [Python3.7, 3.8, 3.9, 3.10](https://www.python.org/downloads/) installed on your computer
+```
+
+1 ) Clone the YZLITE GIT repository
+
+```shell
+git clone https://github.com/chenxingqiang/yzlite
+```
+
+2 ) Run the install script at the root of the repository
+
+
+```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         cd yzlite
+         python  .\install_yzlite.py
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+
+         cd yzlite
+         python3 ./install_yzlite.py
+```
+
+The install script will:
+1. Create a python virtual environment at `<yzlite root>/.venv`
+2. Install the YZLITE Python package for local development into Python virtual environment:
+   ```shell
+   pip install -e .
+   ```
+
+
+```{seealso}  
+- [C++ Development](./cpp_development/index.md) - Describes how to build and run YZLITE C++ applications
+```

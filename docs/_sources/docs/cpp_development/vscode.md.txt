@@ -1,0 +1,381 @@
+# Visual Studio Code Development
+
+This describes how to development C++ applications in the YZLITE using Microsoft [Visual Studio Code](https://code.visualstudio.com).
+Using this guide, you can build C++ applications for Windows/Linux or supported embedded platforms.
+
+__NOTES:__
+- All of the YZLITE C++ source code may be found at: [__yzlite repo__/cpp](https://github.com/chenxingqiang/yzlite/tree/master/cpp/)
+- Internally, VSCode uses CMake to build the applications
+- Refer to the [example applications](./examples/index.md) or [Python wrappers](./wrappers/index.md) documentation for more details about what comes with the YZLITE
+- Alternatively, applications may be built for Yizhu-Tech's embedded targets using [Simplicity Studio](./simplicity_studio.md)
+
+
+## Install Tools
+
+First, we need to install a few tools:
+
+### 0) Setup OS
+
+```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      If you're on Windows, enable `long file paths`:
+      https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry
+
+      Also install the Visual Studio C++ compiler (this is needed to build some of the 3rd party Python packages for Python 3.10):
+      https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+      Be sure to check the **Desktop Development with C++** workload in the installer GUI.
+
+   .. tab-item:: Linux
+
+      If you're on Linux, run the following command to install the necessary packages:
+
+      .. code-block:: shell
+
+         sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+         sudo add-apt-repository -y ppa:deadsnakes/ppa
+         sudo apt update
+         sudo apt-get -y install build-essential g++-9 cmake ninja-build gdb p7zip-full git-lfs python3-dev python3-venv libusb-1.0-0 libgl1
+
+```
+
+### 1) Install CMake
+
+CMake is a build system utility used to build the C++ applications.
+Install CMake and ensure it is available on the command `PATH`
+More details here: [https://cmake.org/install](https://cmake.org/install)
+
+
+### 2) Install 7-Zip
+
+7-Zip is a file archiver with a high compression ratio.
+Several of the assets downloaded by the YZLITE are compressed in this format.
+More details here: [https://www.7-zip.org/download.html](https://www.7-zip.org/download.html)
+
+
+### 3) Install Python
+
+Install Python 3.7, 3.8, 3.9 _or_ 3.10 64-bit and ensure it is available on the command `PATH`
+More details here: [https://www.python.org/downloads](https://www.python.org/downloads)
+
+
+### 4) Install Segger GDB Debug Server
+
+While not required, this is used to single-step debug an embedded development board.
+If you're only build for Window/Linux then you can skip this step.
+
+Download and install the J-Link Software Pack:
+[https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)
+
+If using Windows, select the 64-bit installer:
+[https://www.segger.com/downloads/jlink/JLink_Windows_x86_64.exe](https://www.segger.com/downloads/jlink/JLink_Windows_x86_64.exe)
+
+
+### 5) Install a Serial Terminal
+
+While not required, this is used to view the serial logs from an embedded development board.
+If you're only build for Window/Linux then you can skip this step.
+
+The [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) VSCode extension is recommended:
+- Works well
+- Directly integrates with VSCode
+- Developed by Microsoft
+
+Another option for Windows is [TeraTerm](https://osdn.net/projects/ttssh2/releases/) which is a free serial terminal.
+
+
+### 6) Install GIT
+
+If necessary, install Git:
+[https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+
+### 7) Windows: Install the C++ Redistributable Package
+
+If you're using Windows, install the [Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+which is required by [Tensorflow](https://www.tensorflow.org/install/pip)
+
+
+
+## Install YZLITE
+
+Next, we need to install the YZLITE:
+
+
+### 1) Clone the YZLITE repository
+
+
+```shell
+# Clone the YZLITE GIT repository
+git clone https://github.com/chenxingqiang/yzlite.git
+```
+
+Then navigate to the YZLITE repository directory
+
+```shell
+cd yzlite
+```
+
+### 2) Run the install script
+
+```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         python .\install_yzlite.py
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+
+         python3 ./install_yzlite.py
+```
+
+### 3) Activate the YZLITE Python virtual environment
+
+Activate the YZLITE's Python virtual environment:
+
+```{eval-rst}
+.. tab-set::
+
+   .. tab-item:: Windows
+
+      .. code-block:: shell
+
+         .\.venv\Scripts\activate.bat
+
+   .. tab-item:: Linux
+
+      .. code-block:: shell
+
+         source ./.venv/bin/activate
+```
+
+After activation, the `yzlite` command should be available on the [command-line](../command_line/index.md):
+
+```shell
+yzlite --help
+```
+
+
+## VSCode Setup
+
+With the YZLITE installed, let's get [Visual Studio Code](https://code.visualstudio.com) setup.
+
+
+### 1) Install VSCode
+
+Download and install [Visual Studio Code](https://code.visualstudio.com)
+
+
+### 2) Open the YZLITE VSCode workspace
+
+![](../img/vscode_select_workspace.gif)
+
+
+### 3) Install the recommended extensions
+
+![](../img/vscode_recommended_extensions.gif)
+
+__OR__
+
+![](../img/vscode_recommended_extensions_alt.gif)
+
+
+### 4) Select the Python Interpreter
+
+Select the YZLITE virtual environment's Python interpreter.
+
+It has the similar to:
+```shell
+<yzlite dir>\.venv\Scripts\python.exe    <-- Windows
+<yzlite dir>/.venv/bin/python3           <--- Linux
+```
+
+![](../img/vscode_select_python.gif)
+
+
+
+## Build for Windows or Linux
+
+Many of the YZLITE [applications](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/apps) support running on Windows/Linux or embedded targets.
+The following describes how to build for Windows/Linux.
+
+
+### 1) Optionally create file: user_options.cmake
+
+Optionally create the file: `<yzlite repo root>/user_options.cmake`
+
+And add any build specific settings.
+Refer to the [Build Options](./build_options.md) for more details on the available settings.
+
+
+### 2) Select the CMake Kit
+
+Based on your host OS, select one of the following CMake kits:
+- `YZLITE-Windows-GCC`
+- `YZLITE-Linux-GCC`
+
+![](../img/vscode_select_cmake_kit.gif)
+
+
+### 3) Configure the CMake Project
+
+Configure the CMake project (this may take awhile):
+
+![](../img/vscode_configure_cmake.gif)
+
+
+### 4) Select the build type and build target
+
+Select the CMake build type, the build target, then build the application.
+
+In this example, we build the __yzlite_hello_world__ application in __release__ mode:
+
+![](../img/vscode_build_windows_hello_world.gif)
+
+
+
+### 5) Build and run application
+
+This shows how to:
+- Build as __release__
+- __Run__ the `yzlite_hello_world` application:
+
+![](../img/vscode_run_windows_hello_world.gif)
+
+
+
+### 6) Or debug application
+
+Alternatively, you can build as __debug__ and single-step debug the application.
+This shows how to:
+- Set a __breakpoint__
+- Build as __debug__
+- __Debug__ the `yzlite_model_profiler` application
+
+![](../img/vscode_debug_windows_model_profiler.gif)
+
+
+
+## Build for embedded
+
+The YZLITE also supports building and running/debugging applications on supported development boards.
+
+
+### 0) Configure Serial Terminal
+
+A serial terminal is needed to view the logs generated by the development board.
+
+The [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) VScode extension is recommended.
+
+Another options for Windows is [TeraTerm](https://osdn.net/projects/ttssh2/releases/) which is a free serial terminal.
+
+First, connect your dev board via USB.
+
+Then, open the serial terminal program and select the `COM Port` that has a description
+similar to: `J-Link CDC Uart` and set the `Speed` (aka BAUD Rate) to `115200`:
+
+![](../img/teraterm_setup.gif)
+
+
+
+### 1) Create file: user_options.cmake
+
+Create the file: `<yzlite repo root>/user_options.cmake`
+
+And add the following to it:
+
+```
+yzlite_set(YZLITE_PLATFORM_NAME brd2601)
+```
+
+This creates a CMake variable and tells the build system to use the `brd2601` platform.
+Refer to [Supported Hardware](../other/supported_hardware.md) for more details.
+
+__NOTE:__ If this variable is not defined, then the host operating system (e.g. `windows` or `linux`) is automatically selected.
+
+Refer to the [Build Options](./build_options.md) for more details on the available settings.
+
+
+
+### 2) Select the YZLITE-ARM-GCC CMake Kit
+
+![](../img/vscode_select_arm_cmake_kit.gif)
+
+
+### 3) Configure the CMake Project
+
+Configure the CMake project (this may take awhile):
+
+![](../img/vscode_configure_cmake.gif)
+
+
+### 4) Select the build type and build target
+
+Select the CMake build type, the build target, then build the application.
+
+In this example, we build the __yzlite_hello_world__ application in __release__ mode:
+
+![](../img/vscode_build_arm_hello_world.gif)
+
+
+### 5) Build, download, and run application
+
+
+The `hello_world` YZLITE application has several "targets":
+- `yzlite_hello_world` - Build the application
+- `yzlite_hello_world_download` - Build the application and download it to the development board
+- `yzlite_hello_world_download_run` - Build the application, download it to the development board, view the serial output of the app
+- `yzlite_hello_world_reset` - Reset the development board
+
+Other applications have similar targets, e.g.:
+- `yzlite_model_profiler`
+- `yzlite_model_profiler_download`
+- `yzlite_model_profiler_download_run`
+- `yzlite_model_profiler_reset`
+
+__NOTES:__
+- A supported development board must be connected via USB
+- You must have [Segger J-Link](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) installed (see the [Install Tools](#install-tools) section)
+and also a serial terminal to view the logs generated by the development board.
+
+This shows how to:
+- Build as __release__
+- __Download__ to the embedded development board
+- __Run__ the `yzlite_hello_world` application
+
+
+![](../img/vscode_run_arm_hello_world.gif)
+
+
+### 6) Build, download, and debug application
+
+__NOTES:__
+- A supported development board must be connected via USB
+- You must have [Segger J-Link](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) installed (see the [Install Tools](#install-tools) section)
+and also a serial terminal to view the logs generated by the development board.
+
+This shows how to:
+- Build as __debug__
+- Set a __breakpoint__
+- __Download__ to the embedded development board
+- __Debug__ the `yzlite_model_profiler` application
+
+
+![](../img/vscode_debug_arm_model_profiler.gif)
+
+
+## Example Applications
+
+Refer to the [Examples](./examples/index.md) documentation for more details about the applications that come with the YZLITE.
+
+## Python Wrappers
+
+Refer to the [Python wrappers](./wrappers/index.md) documentation for more details about the wrappers that come with the YZLITE.

@@ -1,0 +1,23 @@
+﻿hasher
+======
+
+.. automodule:: yzlite.utils.hasher
+   :members:
+   :undoc-members:
+   :special-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      generate_hash
+      hash_file
+      hash_object
+   
+   

@@ -1,0 +1,24 @@
+﻿audio
+=====
+
+.. automodule:: yzlite.core.preprocess.utils.audio
+   :members:
+   :undoc-members:
+   :special-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      adjust_length
+      apply_frontend
+      read_audio_file
+      write_audio_file
+   
+   

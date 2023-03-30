@@ -1,0 +1,52 @@
+﻿YZLiteModelEvent
+==============
+
+.. currentmodule:: yzlite.core
+
+.. autoclass:: YZLiteModelEvent
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~YZLiteModelEvent.BEFORE_MODEL_LOAD
+      ~YZLiteModelEvent.AFTER_MODEL_LOAD
+      ~YZLiteModelEvent.BEFORE_LOAD_DATASET
+      ~YZLiteModelEvent.AFTER_LOAD_DATASET
+      ~YZLiteModelEvent.BEFORE_UNLOAD_DATASET
+      ~YZLiteModelEvent.AFTER_UNLOAD_DATASET
+      ~YZLiteModelEvent.SUMMARIZE_DATASET
+      ~YZLiteModelEvent.SUMMARIZE_MODEL
+      ~YZLiteModelEvent.TRAIN_STARTUP
+      ~YZLiteModelEvent.BEFORE_BUILD_TRAIN_MODEL
+      ~YZLiteModelEvent.AFTER_BUILD_TRAIN_MODEL
+      ~YZLiteModelEvent.POPULATE_TRAIN_CALLBACKS
+      ~YZLiteModelEvent.BEFORE_TRAIN
+      ~YZLiteModelEvent.AFTER_TRAIN
+      ~YZLiteModelEvent.BEFORE_SAVE_TRAIN_MODEL
+      ~YZLiteModelEvent.AFTER_SAVE_TRAIN_MODEL
+      ~YZLiteModelEvent.BEFORE_SAVE_TRAIN_RESULTS
+      ~YZLiteModelEvent.AFTER_SAVE_TRAIN_RESULTS
+      ~YZLiteModelEvent.BEFORE_SAVE_TRAIN_ARCHIVE
+      ~YZLiteModelEvent.AFTER_SAVE_TRAIN_ARCHIVE
+      ~YZLiteModelEvent.TRAIN_SHUTDOWN
+      ~YZLiteModelEvent.QUANTIZE_STARTUP
+      ~YZLiteModelEvent.BEFORE_QUANTIZE
+      ~YZLiteModelEvent.AFTER_QUANTIZE
+      ~YZLiteModelEvent.QUANTIZE_SHUTDOWN
+      ~YZLiteModelEvent.EVALUATE_STARTUP
+      ~YZLiteModelEvent.EVALUATE_SHUTDOWN
+      ~YZLiteModelEvent.GENERATE_EVALUATE_PLOT
+      ~YZLiteModelEvent.AFTER_PROFILE
+   
+   
+
+   
+
+   
+   

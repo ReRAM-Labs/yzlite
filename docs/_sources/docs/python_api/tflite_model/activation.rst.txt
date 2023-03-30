@@ -1,0 +1,36 @@
+﻿TfliteActivation
+================
+
+.. currentmodule:: yzlite.core
+
+.. autoclass:: TfliteActivation
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteActivation.NONE
+      ~TfliteActivation.RELU
+      ~TfliteActivation.RELU_N1_TO_1
+      ~TfliteActivation.RELU6
+      ~TfliteActivation.TANH
+      ~TfliteActivation.SIGN_BIT
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteActivation.to_string
+   
+   

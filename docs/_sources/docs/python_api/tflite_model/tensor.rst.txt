@@ -1,0 +1,41 @@
+﻿TfliteTensor
+============
+
+.. currentmodule:: yzlite.core
+
+.. autoclass:: TfliteTensor
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteTensor.data
+      ~TfliteTensor.dtype
+      ~TfliteTensor.dtype_str
+      ~TfliteTensor.index
+      ~TfliteTensor.model
+      ~TfliteTensor.quantization
+      ~TfliteTensor.shape
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteTensor.InitFromBuf
+      ~TfliteTensor.InitFromObj
+      ~TfliteTensor.Pack
+      ~TfliteTensor.__init__
+      ~TfliteTensor.shape_dtype_str
+   
+   

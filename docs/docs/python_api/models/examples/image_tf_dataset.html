@@ -1,0 +1,988 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="title" content="ReRAM YZLite">
+<meta name="description" content="A Python package with command-line utilities and scripts to aid the development of machine learning models for Yizhu-Tech's embedded platforms">
+<meta name="keywords" content="machine learning, machine-learning, machinelearning, ml, ai, iot, Internet of things, aiot, tinyml, tensorflow, tensorflow-lite, tensorflow-lite-micro, keras-tensorflow, keras, tflite, embedded, embedded-systems, mcu, Microcontrollers, hardware, python, c++, cmake, keras, numpy, yizhu, yizhu labs">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Yizhu Technology">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../../../../_static/javascripts/modernizr.js"></script>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ5MW943WF"></script>
+<script>
+    window.gTrackingId = 'G-HZ5MW943WF';
+</script>
+<meta name="google-site-verification" content="dsSsmnE2twOnfSAQk5zBBTrjMArsTJj809Bp-8mVlIw" />
+  
+  
+    <title>image_tf_dataset &#8212; YZLITE 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script src="../../../../_static/js/custom.js"></script>
+    <script src="../../../../_static/js/apitoc.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="audio_tf_dataset" href="audio_tf_dataset.html" />
+    <link rel="prev" title="basic_tf_dataset_example" href="basic_tf_dataset_example.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=red data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#docs/python_api/models/examples/image_tf_dataset" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../../index.html" title="YZLITE 0.1.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../../../../_static/logo.png"
+                   alt="YZLITE 0.1.0 documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">ReRAM YZLite</span>
+          <span class="md-header-nav__topic"> image_tf_dataset </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    YZLITE Github Repository
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+            
+            <li class="md-tabs__item"><a href="tensor_engine_modeling_sdk_api_doc" class="md-tabs__link">ReRAM Engine Documentation</a></li>
+            
+            <li class="md-tabs__item"><a href="https://github.com/tensorflow/tflite-micro" class="md-tabs__link">Tensorflow-Lite Micro Repository</a></li>
+            
+            <li class="md-tabs__item"><a href="https://www.tensorflow.org/learn" class="md-tabs__link">Tensorflow Documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Reference Models</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Example Models</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../../index.html" title="YZLITE 0.1.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../../../_static/logo.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../../../index.html"
+       title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    YZLITE Github Repository
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Basics</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../overview.html" class="md-nav__link">Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../why_yzlite.html" class="md-nav__link">Why YZLITE?</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../installation.html" class="md-nav__link">Installation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../command_line/index.html" class="md-nav__link">Command-Line</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../guides/index.html" class="md-nav__link">Modeling Guides</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Usage</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../tutorials.html" class="md-nav__link">Tutorials</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../examples.html" class="md-nav__link">API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../index.html" class="md-nav__link">API Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../index.html" class="md-nav__link">Reference Models</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">Example Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../yizhutech/index.html" class="md-nav__link">Yizhu-Tech's Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tinyml/index.html" class="md-nav__link">TinyML Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tflite_micro/index.html" class="md-nav__link">Tensorflow-Lite Micro Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../common_models.html" class="md-nav__link">Common Model Architectures</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../datasets/index.html" class="md-nav__link">Reference Datasets</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../cpp_development/index.html" class="md-nav__link">C++ Development</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../cpp_development/examples/index.html" class="md-nav__link">C++ Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Audio Related</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../audio/keyword_spotting_overview.html" class="md-nav__link">Keyword Spotting Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../audio/audio_feature_generator.html" class="md-nav__link">Audio Feature Generator</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../audio/audio_utilities.html" class="md-nav__link">Audio Utilities</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Other Information</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../faq/index.html" class="md-nav__link">Frequently Asked Questions</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../other/quick_reference.html" class="md-nav__link">Quick Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../other/supported_hardware.html" class="md-nav__link">Supported Hardware</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../guides/notebook_examples_guide.html" class="md-nav__link">Notebook Examples Guide</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../other/settings_file.html" class="md-nav__link">Settings File</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../other/environment_variables.html" class="md-nav__link">Environment Variables</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="" id="localtoc">
+        <li class="md-nav__item"><a href="#docs-python-api-models-examples-image-tf-dataset--page-root" class="md-nav__link">image_tf_dataset</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#commands" class="md-nav__link">Commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#model-specification" class="md-nav__link">Model Specification</a>
+        </li></ul>
+            </nav>
+        </li>
+      <script type="text/javascript" src=../../../../_static/js/apitoc.js></script>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+
+          
+          <div class="breadcrumbs md-typeset">
+            <ul class="breadcrumb">
+              <li></li>
+              <li><a href="../../../../index.html"><i class="md-icon">home</i></a></li>
+                <li><a href="../index.html" >Reference Models</a></li>
+                <li><a href="index.html" accesskey="U">Example Models</a></li>
+
+              <li class="activate"><a>image_tf_dataset</a></li>
+            </ul>
+          </div>
+          
+
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <span class="target" id="module-yzlite.models.examples.image_tf_dataset"></span><section id="image-tf-dataset">
+<h1 id="docs-python-api-models-examples-image-tf-dataset--page-root">image_tf_dataset<a class="headerlink" href="#docs-python-api-models-examples-image-tf-dataset--page-root" title="Permalink to this heading">¶</a></h1>
+<p>Image classification example using the Tensorflow dataset API</p>
+<ul class="simple">
+<li><p>Source code: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/image_tf_dataset.py">image_tf_dataset.py</a></p></li>
+</ul>
+<p>This provides an example of how to use the <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset">Tensorflow Dataset API</a>
+with the various Tensorflow <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/image">image augmentations</a>
+to augment images during model training.</p>
+<section id="commands">
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do a "dry run" test training of the model</span>
+yzlite<span class="w"> </span>train<span class="w"> </span>image_tf_dataset-test
+
+<span class="c1"># Train the model</span>
+yzlite<span class="w"> </span>train<span class="w"> </span>image_tf_dataset
+
+<span class="c1"># Evaluate the trained model .tflite model</span>
+yzlite<span class="w"> </span>evaluate<span class="w"> </span>image_tf_dataset<span class="w"> </span>--tflite
+
+<span class="c1"># Profile the model in the MVP hardware accelerator simulator</span>
+yzlite<span class="w"> </span>profile<span class="w"> </span>image_tf_dataset<span class="w"> </span>--accelerator<span class="w"> </span>MVP
+
+<span class="c1"># Profile the model on a physical development board</span>
+yzlite<span class="w"> </span>profile<span class="w"> </span>image_tf_dataset<span class="w"> </span>--accelerator<span class="w"> </span>MVP<span class="w"> </span>--device
+
+<span class="c1"># Directly invoke the model script</span>
+python<span class="w"> </span>image_tf_dataset.py
+</pre></div>
+</div>
+</section>
+<section id="model-specification">
+<h2 id="model-specification">Model Specification<a class="headerlink" href="#model-specification" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">yzlite.core</span> <span class="k">as</span> <span class="nn">yzlite_core</span>
+<span class="kn">from</span> <span class="nn">yzlite.utils.archive_downloader</span> <span class="kn">import</span> <span class="n">download_verify_extract</span>
+<span class="kn">from</span> <span class="nn">yzlite.core.preprocess.utils</span> <span class="kn">import</span> <span class="n">tf_dataset</span> <span class="k">as</span> <span class="n">tf_dataset_utils</span>
+<span class="kn">from</span> <span class="nn">yzlite.core.preprocess.utils</span> <span class="kn">import</span> <span class="n">image</span> <span class="k">as</span> <span class="n">image_utils</span>
+
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># Instantiate the YZLiteModel instance</span>
+<span class="c1">#</span>
+
+<span class="c1"># @yzlite_model</span>
+<span class="k">class</span> <span class="nc">MyModel</span><span class="p">(</span>
+    <span class="n">yzlite_core</span><span class="o">.</span><span class="n">YZLiteModel</span><span class="p">,</span>    <span class="c1"># We must inherit the YZLiteModel class</span>
+    <span class="n">yzlite_core</span><span class="o">.</span><span class="n">TrainMixin</span><span class="p">,</span>   <span class="c1"># We also inherit the TrainMixin since we want to train this model</span>
+    <span class="n">yzlite_core</span><span class="o">.</span><span class="n">DatasetMixin</span><span class="p">,</span> <span class="c1"># We also need the DatasetMixin mixin to provide the relevant dataset properties</span>
+    <span class="n">yzlite_core</span><span class="o">.</span><span class="n">EvaluateClassifierMixin</span><span class="p">,</span>  <span class="c1"># While not required, also inherit EvaluateClassifierMixin to help will generating evaluation stats for our classification model</span>
+<span class="p">):</span>
+    <span class="k">pass</span>
+<span class="n">my_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
+
+
+<span class="c1"># General parameters</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">'Image classifier example using the Tensorflow dataset API with augmentations'</span>
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># Training Basic Settings</span>
+<span class="c1">#</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">50</span>
+
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># Define the model architecture</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">my_model_builder</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">MyModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Build the Keras model</span>
+
+<span class="sd">    This is called by the YZLITE just before training starts.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        my_model: The YZLiteModel instance</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Compiled Keras model instance</span>
+<span class="sd">    """</span>
+    <span class="n">keras_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">MobileNetV2</span><span class="p">(</span>
+        <span class="n">input_shape</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">input_shape</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+        <span class="n">include_top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">classes</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">n_classes</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">keras_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">loss</span><span class="o">=</span><span class="s1">'categorical_crossentropy'</span><span class="p">,</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span>
+        <span class="n">metrics</span><span class="o">=</span> <span class="p">[</span><span class="s1">'accuracy'</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">keras_model</span>
+
+<span class="n">my_model</span><span class="o">.</span><span class="n">build_model_function</span> <span class="o">=</span> <span class="n">my_model_builder</span>
+
+
+
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># Training callback Settings</span>
+<span class="c1">#</span>
+
+<span class="c1"># The YZLITE enables the tf.keras.callbacks.ModelCheckpoint by default.</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">[</span><span class="s1">'monitor'</span><span class="p">]</span> <span class="o">=</span>  <span class="s1">'val_accuracy'</span>
+
+<span class="c1"># https://keras.io/api/callbacks/reduce_lr_on_plateau/</span>
+<span class="c1"># If the test loss doesn't improve after 'patience' epochs</span>
+<span class="c1"># then decrease the learning rate by 'factor'</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">reduce_lr_on_plateau</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+  <span class="n">monitor</span><span class="o">=</span><span class="s1">'val_loss'</span><span class="p">,</span>
+  <span class="n">factor</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
+  <span class="n">min_delta</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+  <span class="n">patience</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># If the  accuracy doesn't improve after 15 epochs then stop training</span>
+<span class="c1"># https://keras.io/api/callbacks/early_stopping/</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">early_stopping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+  <span class="n">monitor</span> <span class="o">=</span> <span class="s1">'val_accuracy'</span><span class="p">,</span>
+  <span class="n">patience</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span>
+  <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/TensorBoard</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">tensorboard</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">histogram_freq</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>       <span class="c1"># frequency (in epochs) at which to compute activation and weight histograms</span>
+                            <span class="c1"># for the layers of the model. If set to 0, histograms won't be computed.</span>
+                            <span class="c1"># Validation data (or split) must be specified for histogram visualizations.</span>
+    <span class="n">write_graph</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>       <span class="c1"># whether to visualize the graph in TensorBoard. The log file can become quite large when write_graph is set to True.</span>
+    <span class="n">write_images</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>     <span class="c1"># whether to write model weights to visualize as image in TensorBoard.</span>
+    <span class="n">update_freq</span><span class="o">=</span><span class="s2">"batch"</span><span class="p">,</span>    <span class="c1"># 'batch' or 'epoch' or integer. When using 'batch', writes the losses and metrics</span>
+                            <span class="c1"># to TensorBoard after each batch. The same applies for 'epoch'.</span>
+                            <span class="c1"># If using an integer, let's say 1000, the callback will write the metrics and losses</span>
+                            <span class="c1"># to TensorBoard every 1000 batches. Note that writing too frequently to</span>
+                            <span class="c1"># TensorBoard can slow down your training.</span>
+    <span class="n">profile_batch</span><span class="o">=</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span><span class="mi">51</span><span class="p">),</span>        <span class="c1"># Profile the batch(es) to sample compute characteristics.</span>
+                            <span class="c1"># profile_batch must be a non-negative integer or a tuple of integers.</span>
+                            <span class="c1"># A pair of positive integers signify a range of batches to profile.</span>
+                            <span class="c1"># By default, it will profile the second batch. Set profile_batch=0 to disable profiling.</span>
+<span class="p">)</span>
+
+<span class="c1"># NOTE: You can also add manually add other KerasCallbacks</span>
+<span class="c1"># https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/</span>
+<span class="c1"># Any callbacks specified here will override the built-in callbacks</span>
+<span class="c1"># (e.g. my_model.reduce_lr_on_plateau, my_model.early_stopping)</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">train_callbacks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">TerminateOnNaN</span><span class="p">()</span>
+<span class="p">]</span>
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># TF-Lite converter settings</span>
+<span class="c1"># https://www.tensorflow.org/lite/performance/post_training_integer_quant#convert_using_integer-only_quantization</span>
+<span class="c1">#</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">tflite_converter</span><span class="p">[</span><span class="s1">'optimizations'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">lite</span><span class="o">.</span><span class="n">Optimize</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">]</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">tflite_converter</span><span class="p">[</span><span class="s1">'supported_ops'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">lite</span><span class="o">.</span><span class="n">OpsSet</span><span class="o">.</span><span class="n">TFLITE_BUILTINS_INT8</span><span class="p">]</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">tflite_converter</span><span class="p">[</span><span class="s1">'inference_input_type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">tflite_converter</span><span class="p">[</span><span class="s1">'inference_output_type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+ <span class="c1"># generate a representative dataset from the validation data</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">tflite_converter</span><span class="p">[</span><span class="s1">'representative_dataset'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'generate'</span>
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># Image Dataset Settings</span>
+
+<span class="c1"># The input shape to the model. The dataset samples will be resized if necessary</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+
+<span class="c1"># The class labels found in your training dataset directory</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">classes</span> <span class="o">=</span>  <span class="p">(</span><span class="s1">'person'</span><span class="p">,</span> <span class="s1">'non_person'</span><span class="p">)</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">class_weights</span> <span class="o">=</span> <span class="s1">'balanced'</span> <span class="c1"># Ensure the classes samples a balanced during training</span>
+
+<span class="n">validation_split</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="c1"># Uncomment this to dump the augmented images samples to the log directory</span>
+<span class="c1">#data_dump_dir = my_model.create_log_dir('dataset_dump')</span>
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># Create the image augmentation pipeline</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">image_augmentation</span><span class="p">(</span><span class="n">batch</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Augment a batch of images</span>
+
+<span class="sd">    This does the following, for each image file path in the input batch:</span>
+<span class="sd">    1. Read image file</span>
+<span class="sd">    2. Resize the image to match the model input shape</span>
+<span class="sd">    3. Apply random augmentations to the image sample</span>
+<span class="sd">    4. Standardize the image sample with: image_std = (img - mean(img)) / std(img)</span>
+<span class="sd">    5. Dump the augmented image (if necessary)</span>
+
+<span class="sd">    NOTE: This will be execute in parallel across *separate* subprocesses.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        batch: Batch of image file paths</span>
+<span class="sd">        seed: Batch of seeds to use for random number generation</span>
+<span class="sd">            This ensures that the "random" augmentations are reproducible</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">        Generated batch of augmented images</span>
+<span class="sd">    """</span>
+    <span class="c1"># This is a work-around needed for the tf.keras.preprocessing.image augmentations below</span>
+    <span class="n">enabled_numpy_behavior</span> <span class="o">=</span> <span class="n">tf_dataset_utils</span><span class="o">.</span><span class="n">enable_numpy_behavior</span><span class="p">()</span>
+
+    <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">my_model</span><span class="o">.</span><span class="n">input_shape</span>
+    <span class="n">batch_length</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">batch_length</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
+    <span class="n">y_batch</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># For each image sample path in the current batch</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>
+        <span class="n">new_seed</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">stateless_split</span><span class="p">((</span><span class="n">seed</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">seed</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">np_seed</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">new_seed</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">np_seed</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">image_utils</span><span class="o">.</span><span class="n">read_image_file</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">smart_resize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">height</span><span class="p">,</span><span class="n">width</span><span class="p">))</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">stateless_random_brightness</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">max_delta</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">new_seed</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">stateless_random_contrast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">new_seed</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">stateless_random_hue</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">new_seed</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">stateless_random_saturation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">new_seed</span><span class="p">)</span>
+
+        <span class="c1">#x = tf.image.stateless_random_flip_up_down(x, seed=new_seed)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">stateless_random_flip_left_right</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">new_seed</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">enabled_numpy_behavior</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">random_channel_shift</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">.1</span><span class="p">,</span> <span class="n">channel_axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">random_shear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">row_axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">channel_axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">random_zoom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.90</span><span class="p">,</span> <span class="mf">1.10</span><span class="p">),</span> <span class="n">row_axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">channel_axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">random_shift</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">.1</span><span class="p">,</span> <span class="mf">.1</span><span class="p">,</span> <span class="n">row_axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">channel_axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">random_rotation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">row_axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">channel_axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">data_dump_dir</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'data_dump_dir'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data_dump_dir</span><span class="p">:</span>
+            <span class="n">image_utils</span><span class="o">.</span><span class="n">write_image_file</span><span class="p">(</span><span class="n">data_dump_dir</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">per_image_standardization</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="n">y_batch</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+
+    <span class="k">return</span> <span class="n">y_batch</span>
+
+
+<span class="c1"># At the end of the augmentation pipeline we're using: x = tf.image.per_image_standardization(x)</span>
+<span class="c1"># As such, we add a "model parameter" indicating that the image samples are normalized.</span>
+<span class="c1"># This will be embedded into the generated .tflite.</span>
+<span class="c1"># At runtime, the embedded device should retrieve this parameter and normalize the images</span>
+<span class="c1"># before sending to the Tensorflow-Lite Micro interpreter for classification.</span>
+<span class="c1"># See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">model_parameters</span><span class="p">[</span><span class="s1">'samplewise_norm.mean_and_std'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="c1">##########################################################################</span>
+<span class="c1"># Define the YZLiteDataset object</span>
+<span class="c1"># NOTE: This class is optional but is useful for organizing the code</span>
+<span class="c1">#</span>
+<span class="k">class</span> <span class="nc">MyDataset</span><span class="p">(</span><span class="n">yzlite_core</span><span class="o">.</span><span class="n">YZLiteDataset</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pools</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">subset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">test</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Load the dataset subset</span>
+
+<span class="sd">        This is called automatically by the YZLITE before training</span>
+<span class="sd">        or evaluation.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            subset: The dataset subset to return: 'training' or 'evaluation'</span>
+<span class="sd">            test: This is optional, it is used when invoking a training "dryrun", e.g.: yzlite train image_tf_dataset-test</span>
+<span class="sd">                If this is true, then only return a small portion of the dataset for testing purposes</span>
+
+<span class="sd">        Return:</span>
+<span class="sd">            if subset == training:</span>
+<span class="sd">                A tuple, (train_dataset, None, validation_dataset)</span>
+<span class="sd">            else:</span>
+<span class="sd">                validation_dataset</span>
+<span class="sd">        """</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span> <span class="o">=</span> <span class="n">download_verify_extract</span><span class="p">(</span>
+                <span class="n">url</span><span class="o">=</span><span class="s1">'https://www.yizhu.com/public/files/github/machine_learning/benchmarks/datasets/vw_coco2014_96.tar.gz'</span><span class="p">,</span>
+                <span class="n">dest_subdir</span><span class="o">=</span><span class="s1">'datasets/mscoco14/preprocessed/v1'</span><span class="p">,</span>
+                <span class="n">file_hash</span><span class="o">=</span><span class="s1">'A5A465082D3F396407F8B5ABAF824DD5B28439C4'</span><span class="p">,</span>
+                <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">remove_root_dir</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">subset</span> <span class="o">==</span> <span class="s1">'training'</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_subset</span><span class="p">(</span><span class="s1">'training'</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">)</span>
+            <span class="n">validation_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_subset</span><span class="p">(</span><span class="s1">'validation'</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">validation_data</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_subset</span><span class="p">(</span><span class="s1">'validation'</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">x</span>
+
+
+
+    <span class="k">def</span> <span class="nf">_load_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subset</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">test</span><span class="p">:</span><span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">subset</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'validation'</span><span class="p">,</span> <span class="s1">'evaluation'</span><span class="p">):</span>
+            <span class="n">split</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">validation_split</span><span class="p">)</span>
+            <span class="n">data_dump_dir</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'data_dump_dir'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">data_dump_dir</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">*** Dumping augmented samples to: </span><span class="si">{</span><span class="n">data_dump_dir</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">'</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">split</span> <span class="o">=</span> <span class="p">(</span><span class="n">validation_split</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+
+        <span class="c1"># Create a tf.data.Dataset from the extract image dataset directory</span>
+        <span class="n">max_samples_per_class</span> <span class="o">=</span> <span class="n">my_model</span><span class="o">.</span><span class="n">batch_size</span> <span class="k">if</span> <span class="n">test</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">features_ds</span><span class="p">,</span> <span class="n">labels_ds</span> <span class="o">=</span> <span class="n">tf_dataset_utils</span><span class="o">.</span><span class="n">load_image_directory</span><span class="p">(</span>
+            <span class="n">directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span><span class="p">,</span>
+            <span class="n">classes</span><span class="o">=</span><span class="n">my_model</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span>
+            <span class="n">onehot_encode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># We're using categorical cross-entropy so one-hot encode the labels</span>
+            <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+            <span class="n">max_samples_per_class</span><span class="o">=</span><span class="n">max_samples_per_class</span><span class="p">,</span>
+            <span class="n">split</span><span class="o">=</span><span class="n">split</span><span class="p">,</span>
+            <span class="n">return_image_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># We only want to return the file paths</span>
+            <span class="n">class_counts</span><span class="o">=</span><span class="n">my_model</span><span class="o">.</span><span class="n">class_counts</span><span class="p">[</span><span class="n">subset</span><span class="p">],</span>
+        <span class="p">)</span>
+
+
+        <span class="c1"># We use an incrementing counter as the seed for the random augmentations</span>
+        <span class="c1"># This helps to keep the training reproducible</span>
+        <span class="n">seed_counter</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">Counter</span><span class="p">()</span>
+        <span class="n">features_ds</span> <span class="o">=</span> <span class="n">features_ds</span><span class="o">.</span><span class="n">zip</span><span class="p">((</span><span class="n">features_ds</span><span class="p">,</span> <span class="n">seed_counter</span><span class="p">))</span>
+
+
+        <span class="c1"># Usage of tf_dataset_utils.parallel_process()</span>
+        <span class="c1"># is optional, but can speed-up training as the data augmentations</span>
+        <span class="c1"># are spread across the available CPU cores.</span>
+        <span class="c1"># Each CPU core gets its own subprocess,</span>
+        <span class="c1"># and and subprocess executes image_augmentation() on batches of the dataset.</span>
+        <span class="n">per_job_batch_size</span> <span class="o">=</span> <span class="n">my_model</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">features_ds</span> <span class="o">=</span> <span class="n">features_ds</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">per_job_batch_size</span> <span class="o">//</span> <span class="mi">100</span><span class="p">,</span> <span class="n">drop_remainder</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">features_ds</span><span class="p">,</span> <span class="n">pool</span> <span class="o">=</span> <span class="n">tf_dataset_utils</span><span class="o">.</span><span class="n">parallel_process</span><span class="p">(</span>
+            <span class="n">features_ds</span><span class="p">,</span>
+            <span class="n">image_augmentation</span><span class="p">,</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+            <span class="n">n_jobs</span><span class="o">=</span><span class="mf">.65</span> <span class="k">if</span> <span class="n">subset</span> <span class="o">==</span> <span class="s1">'training'</span> <span class="k">else</span> <span class="mf">.35</span><span class="p">,</span>
+            <span class="c1">#n_jobs=64 if subset == 'training' else 28, # Configuration for 96 CPU cloud machine</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">subset</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pools</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span>
+        <span class="n">features_ds</span> <span class="o">=</span> <span class="n">features_ds</span><span class="o">.</span><span class="n">unbatch</span><span class="p">()</span>
+
+
+        <span class="c1"># Pre-fetching batches can help with throughput</span>
+        <span class="n">features_ds</span> <span class="o">=</span> <span class="n">features_ds</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">per_job_batch_size</span><span class="p">)</span>
+
+        <span class="c1"># Combine the augmented audio samples with their corresponding labels</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">zip</span><span class="p">((</span><span class="n">features_ds</span><span class="p">,</span> <span class="n">labels_ds</span><span class="p">))</span>
+
+        <span class="c1"># Shuffle the data for each sample</span>
+        <span class="c1"># A perfect shuffle would use n_samples but this can slow down training,</span>
+        <span class="c1"># so we just shuffle batches of the data</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">per_job_batch_size</span><span class="p">,</span> <span class="n">reshuffle_each_iteration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+        <span class="c1"># At this point we have a flat dataset of x,y tuples</span>
+        <span class="c1"># Batch the data as necessary for training</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">my_model</span><span class="o">.</span><span class="n">batch_size</span><span class="p">)</span>
+
+        <span class="c1"># Pre-fetch a couple training batches to aid throughput</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ds</span>
+
+    <span class="k">def</span> <span class="nf">unload_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Unload the dataset by shutting down the processing pools"""</span>
+        <span class="k">for</span> <span class="n">pool</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pools</span><span class="p">:</span>
+            <span class="n">pool</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+
+<span class="n">my_model</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">MyDataset</span><span class="p">()</span>
+
+
+
+<span class="c1">##########################################################################################</span>
+<span class="c1"># The following allows for running this model training script directly, e.g.:</span>
+<span class="c1"># python image_tf_dataset.py</span>
+<span class="c1">#</span>
+<span class="c1"># Note that this has the same functionality as:</span>
+<span class="c1"># yzlite train image_tf_dataset</span>
+<span class="c1">#</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">yzlite</span> <span class="kn">import</span> <span class="n">cli</span>
+
+    <span class="c1"># Setup the CLI logger</span>
+    <span class="n">cli</span><span class="o">.</span><span class="n">get_logger</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># If this is true then this will do a "dry run" of the model testing</span>
+    <span class="c1"># If this is false, then the model will be fully trained</span>
+    <span class="n">test_mode_enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Train the model</span>
+    <span class="c1"># This does the same as issuing the command: yzlite train image_tf_dataset-test --clean</span>
+    <span class="n">train_results</span> <span class="o">=</span> <span class="n">yzlite_core</span><span class="o">.</span><span class="n">train_model</span><span class="p">(</span><span class="n">my_model</span><span class="p">,</span> <span class="n">clean</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test_mode_enabled</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">train_results</span><span class="p">)</span>
+
+    <span class="c1"># Evaluate the model against the quantized .h5 (i.e. float32) model</span>
+    <span class="c1"># This does the same as issuing the command: yzlite evaluate image_tf_dataset-test</span>
+    <span class="n">tflite_eval_results</span> <span class="o">=</span> <span class="n">yzlite_core</span><span class="o">.</span><span class="n">evaluate_model</span><span class="p">(</span><span class="n">my_model</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test_mode_enabled</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tflite_eval_results</span><span class="p">)</span>
+
+    <span class="c1"># Profile the model in the simulator</span>
+    <span class="c1"># This does the same as issuing the command: yzlite profile image_tf_dataset-test</span>
+    <span class="n">profiling_results</span> <span class="o">=</span> <span class="n">yzlite_core</span><span class="o">.</span><span class="n">profile_model</span><span class="p">(</span><span class="n">my_model</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test_mode_enabled</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">profiling_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+      <a href="#" class="go-top"><i class="md-icon">arrow_upward</i>Back to Top</a>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="basic_tf_dataset_example.html" title="basic_tf_dataset_example"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> basic_tf_dataset_example </span>
+              </div>
+            </a>
+          
+          
+            <a href="audio_tf_dataset.html" title="audio_tf_dataset"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> audio_tf_dataset </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Yizhu Technology.
+              
+          </div>
+            Last updated on
+              Mar 01, 2023.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+        <button id="survey-link" class="feedback-button">Feedback</button>
+      </div>
+    </div>
+  </footer>
+  <div class="privacy-banner">
+    <div class="privacy-banner-wrapper">
+      <p>
+        <b>Important:</b> We use cookies only for functional and traffic analytics. <br />
+        We DO NOT use cookies for any marketing purposes. By using our site you acknowledge you have read and understood our <a class="privacy-policy" href="https://www.yizhu.com/about-us/legal/cookie-policy" target="_blank">Cookie Policy</a>.
+      </p>
+      <a class="privacy-banner-accept" href="#">Got it</a>
+    </div>
+</div>
+  
+<div class="survey-container" id="dlg-survey"> 
+    <div class="close" id="dlg-survey-close"><i class="md-icon">close</i></div>
+    <div class="msg">Please click the <b>submit</b> button at the end even if you do not answer all of the questions</div>
+    <iframe id="iframe-survey" style="width: 100%; height: 100%;"></iframe>
+</div>
+  
+  <script src="../../../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

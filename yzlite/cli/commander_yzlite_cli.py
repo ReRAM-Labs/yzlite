@@ -1,0 +1,469 @@
+import logging
+import os
+import re
+import sys
+import time
+
+import typer
+
+from yzlite import cli
+
+
+@cli.root_cli.command("commander", cls=cli.VariableArgumentParsingCommand)
+def yizhu_commander_command(ctx: typer.Context):
+    """YZTech's Commander Utility
+
+    This utility allows for accessing a YZTech's embedded device via JLink.
+
+    For more details issue command: yzlite commander --help
+    """
+
+    # Import all required packages here instead of at top
+    # to help improve the CLI's responsiveness
+    from yzlite.utils.commander import issue_command
+
+    help_re = re.compile(r'Usage:\s.*\[command\]\s\[options\].*')
+
+    def _line_parser(l):
+        if help_re.match(l):
+            return 'Usage: yzlite commander [command] [options]\n'
+        return l
+
+    logger = cli.get_logger()
+    try:
+        issue_command(*ctx.meta['vargs'], outfile=logger,
+                      line_processor=_line_parser)
+    except Exception as e:
+        cli.handle_exception('Commander failed', e)
+
+
+@cli.root_cli.command('program_app')
+def program_app_command(
+    firmware_image_path: str = typer.Argument(
+        ..., help='Path to firmware executable'),
+    model: str = typer.Option(None, '--model', '-m',
+                              help='''\bOne of the following:
+- Name of previously trained YZLITE model
+- Path to .tflite model file
+- Path to .yzlite.zip model archive file''',
+                              metavar='<model>'
+                              ),
+    platform: str = typer.Option(
+        None, help='Platform name. If omitted then platform is automatically determined based on the connected device'),
+    verbose: bool = typer.Option(
+        False, '-v', '--verbose', help='Enable verbose logging'),
+):
+    """Program the given firmware image to the connected device"""
+    from yzlite.core import load_tflite_model
+    from yzlite.utils import firmware_apps
+    from yzlite.utils.path import fullpath
+
+    tflite_model = None
+    logger = cli.get_logger(verbose=verbose)
+
+    if model:
+        try:
+            tflite_model = load_tflite_model(
+                model,
+                print_not_found_err=True,
+                logger=logger
+            )
+        except Exception as e:
+            cli.handle_exception('Failed to load model', e)
+
+    app_name = None
+    accelerator = None
+
+    if re.match(r'.*\..*', firmware_image_path):
+        firmware_image_path = fullpath(firmware_image_path)
+    else:
+        toks = firmware_image_path.split('-')
+        firmware_image_path = None
+        if len(toks) >= 3:
+            accelerator = toks[-1]
+            platform = toks[-2]
+        if len(toks) == 3:
+            app_name = toks[0]
+        elif len(toks) == 4:
+            app_name = '-'.join(toks[:2])
+        else:
+            cli.abort(msg='Invalid firmware image path argument')
+
+    firmware_apps.program_image_with_model(
+        name=app_name,
+        platform=platform,
+        accelerator=accelerator,
+        tflite_model=tflite_model,
+        logger=logger,
+        halt=False,
+        firmware_image_path=firmware_image_path,
+    )
+
+
+@cli.build_cli.command('download_run', hidden=True)
+def download_run_command(
+    firmware_image_path: str = typer.Argument(...,
+                                              help='''\b
+Path to firmware executable to program with Commander
+NOTE: If this starts with "shell:" then this will be intrpreted as a shell command
+e.g.: shell:my_programming_script.py some/path/image.bin --port COM8
+    '''),
+    platform: str = typer.Option(None, help='Platform name'),
+    masserase: bool = typer.Option(
+        False, help='Mass erase device before programming firmware image'),
+    device: str = typer.Option(None, help='JLink device code'),
+    serial_number: str = typer.Option(
+        None, help='J-Link debugger USB serial number'),
+    ip_address: str = typer.Option(None, help='J-Link debugger IP address'),
+    setup_script: str = typer.Option(
+        None, help='Path to python script to execute before programing device'),
+    setup_script_args: str = typer.Option(
+        None, help='Arguments to pass to setup script'),
+    port: str = typer.Option(None, help='Serial COM port'),
+    baud: int = typer.Option(None, help='Serial COM port BAUD'),
+    timeout: float = typer.Option(
+        60, help='Maximum time in seconds to wait for program to complete on device'),
+    host: str = typer.Option(
+        None, help='SSH host name if this should execute remotely'),
+    verbose: bool = typer.Option(
+        False, '-v', '--verbose', help='Enable verbose logging'),
+    start_msg: str = typer.Option(
+        None, help='Regex for app to print to console for it the serial logger to start recording'),
+    completed_msg: str = typer.Option(
+        None, help='Regex for app to print to console for it to have successfully completed'),
+    retries: int = typer.Option(
+        0, help='The number of times to retry running the firmware on the device'),
+    reset_cmd: str = typer.Option(None, help='''\b
+Shell command used to reset the device before capturing the device serial output.
+e.g.: my_reset_script.py  --port COM8
+If omitted, then Commander will be used to reset the device.
+    '''),
+):
+    """Run a firmware image on a device and parse its serial output for errors"""
+    from yzlite.utils import commander
+    from yzlite.utils.path import create_tempdir, fullpath
+    from yzlite.utils.serial_reader import SerialReader
+    from yzlite.utils.shell_cmd import run_shell_cmd
+
+    logger = cli.get_logger(verbose=verbose)
+
+    prev_pid_path = create_tempdir('tmp') + '/build_download_run_prev_pid.txt'
+    logger.error(f'PID={os.getpid()}')
+
+    commander.set_adapter_info(
+        serial_number=serial_number,
+        ip_address=ip_address,
+    )
+
+    if setup_script:
+        setup_script = fullpath(setup_script)
+        if not os.path.exists(setup_script):
+            cli.abort(
+                msg=f'Invalid argument, --setup-script, file not found: {setup_script}')
+
+    if host:
+        try:
+            _download_run_on_remote(
+                host=host,
+                firmware_image_path=firmware_image_path,
+                platform=platform,
+                device=device,
+                setup_script=setup_script,
+                setup_script_args=setup_script_args,
+                port=port,
+                baud=baud,
+                serial_number=serial_number,
+                ip_address=ip_address,
+                masserase=masserase,
+                start_msg=start_msg,
+                completed_msg=completed_msg,
+                timeout=timeout,
+                verbose=verbose,
+                logger=logger,
+                prev_pid_path=prev_pid_path,
+                retries=retries
+            )
+        except Exception as e:
+            cli.handle_exception('Failed to run command on remote', e)
+        return
+
+    stop_regex = [re.compile(r'.*done.*', re.IGNORECASE)]
+    if completed_msg:
+        logger.debug(f'Completed msg regex: {completed_msg}')
+        stop_regex.append(completed_msg)
+
+    if setup_script:
+        cmd = f'{sys.executable} "{setup_script}" {setup_script_args if setup_script_args else ""}'
+        logger.info(f'Running setup script: {cmd}')
+        retcode, _ = run_shell_cmd(cmd, logger=logger, outfile=logger)
+        if retcode != 0:
+            cli.abort(retcode, 'Failed to execute setup script')
+
+    firmware_image_path_toks = firmware_image_path.split()
+    if firmware_image_path_toks[0].endswith('.py'):
+        _run_shell_cmd(firmware_image_path, logger=logger)
+    else:
+        if masserase:
+            commander.masserse_device(
+                platform=platform,
+                device=device
+            )
+
+        firmware_image_path = fullpath(firmware_image_path)
+        logger.info(f'Programming {firmware_image_path} to device ...')
+        commander.program_flash(
+            firmware_image_path,
+            platform=platform,
+            device=device,
+            show_progress=False,
+            halt=True,
+            logger=logger
+        )
+
+    # If no serial COM port is provided,
+    # then attemp to resolve it based on common YZTech's board COM port description
+    port = port or 'regex:JLink CDC UART Port'
+    baud = baud or 115200
+
+    max_retries = max(retries, 1)
+    for retry_count in range(1, max_retries+1):
+        logger.error(
+            f'Executing application on device (attempt {retry_count} of {max_retries}) ...')
+        logger.info(f'Opening serial connection, BAUD={baud}, port={port}')
+        with SerialReader(
+            port=port,
+            baud=baud,
+            outfile=logger,
+            start_regex=start_msg,
+            stop_regex=stop_regex,
+            fail_regex=[
+                re.compile(r'.*hardfault.*', re.IGNORECASE),
+                re.compile(r'.*error.*', re.IGNORECASE),
+                re.compile(r'.*failed to alloc memory.*', re.IGNORECASE),
+                re.compile(r'.*assert failed.*', re.IGNORECASE)
+            ]
+        ) as serial_reader:
+            # Reset the board to start the profiling firmware
+            if reset_cmd:
+                _run_shell_cmd(reset_cmd, logger=logger)
+            else:
+                commander.reset_device(
+                    platform=platform,
+                    device=device,
+                    logger=logger,
+                )
+
+            # Wait for up to a minute for the profiler to complete
+            # The read() will return when the stop_regex, fail_regex, or timeout condition is met
+            if not serial_reader.read(timeout=timeout):
+                logger.error('Timed-out waiting for app on device to complete')
+                if retry_count < max_retries:
+                    serial_reader.close()
+                    time.sleep(3.0)  # Wait a moment and retry
+                    continue
+
+                cli.abort()
+
+            # Check if the profiler failed
+            if serial_reader.failed:
+                logger.error(
+                    f'App failed on device, err: {serial_reader.error_message}')
+                if retry_count < max_retries:
+                    serial_reader.close()
+                    time.sleep(3.0)  # Wait a moment and retry
+                    continue
+
+                cli.abort()
+
+            break
+
+    logger.info('Application successfully executed')
+
+
+def _download_run_on_remote(
+    host: str,
+    firmware_image_path: str,
+    platform: str,
+    device: str,
+    masserase: bool,
+    setup_script: str,
+    setup_script_args: str,
+    port: str,
+    baud: int,
+    serial_number: str,
+    ip_address: str,
+    timeout: float,
+    verbose: bool,
+    start_msg: str,
+    completed_msg: str,
+    logger: logging.Logger,
+    prev_pid_path: str,
+    retries: int
+):
+
+    import paramiko
+
+    from yzlite.utils import commander, serial_reader
+    from yzlite.utils.path import fullpath
+    from yzlite.utils.ssh import SshClient
+    from yzlite.utils.system import get_username
+
+    ssh_config_path = fullpath('~/.ssh/config')
+    if not os.path.exists(ssh_config_path):
+        raise FileNotFoundError(f'SSH config not found: {ssh_config_path}')
+    ssh_config_obj = paramiko.SSHConfig.from_path(ssh_config_path)
+
+    ssh_config = ssh_config_obj.lookup(host)
+    if 'identityfile' not in ssh_config:
+        raise ValueError(
+            f'{ssh_config_path} must contain the "host" entry: {host}, with an "IdentityFile" value')
+
+    connection_settings = {}
+    connection_settings['hostname'] = ssh_config['hostname']
+    connection_settings['key_filename'] = fullpath(
+        ssh_config['identityfile'][0])
+    if 'user' in ssh_config:
+        connection_settings['username'] = ssh_config['user']
+    if 'port' in ssh_config:
+        connection_settings['port'] = ssh_config['port']
+
+    with SshClient(logger=logger, connection_settings=connection_settings) as ssh_client:
+        if os.path.exists(prev_pid_path):
+            try:
+                with open(prev_pid_path, 'r') as f:
+                    prev_pid = f.read().strip()
+                    logger.info(f'Killing previous process: {prev_pid}')
+                    ssh_client.kill_process(pid=prev_pid)
+            finally:
+                os.remove(prev_pid_path)
+
+        retcode, retmsg = ssh_client.execute_command(
+            f'{ssh_client.python_exe} -c "import tempfile;print(f\\"YZLITE_REMOTE_PATH=\\"+tempfile.gettempdir())"',
+            raise_exception_on_error=False
+        )
+        if retcode != 0:
+            raise RuntimeError(
+                f'Failed to get tmpdir on remote, err: {retmsg}')
+
+        idx = retmsg.index('YZLITE_REMOTE_PATH=')
+        remote_tmp_dir = retmsg[idx +
+                                len('YZLITE_REMOTE_PATH='):].strip().replace('\\', '/')
+        ssh_client.remote_dir = f'{remote_tmp_dir}/{get_username()}/yzlite/remote_yzlite'
+        logger.info(f'Creating YZLITE venv at: {ssh_client.remote_dir}')
+
+        ssh_client.create_remote_dir(ssh_client.remote_dir, remote_cwd='.')
+
+        retcode, retmsg = ssh_client.execute_command(
+            f'{ssh_client.python_exe} -m venv {ssh_client.remote_dir}',
+            raise_exception_on_error=False
+        )
+        if retcode != 0:
+            raise RuntimeError(f'Failed to create YZLITE venv, err: {retmsg}')
+
+        if ssh_client.is_windows:
+            python_exe = f'{ssh_client.remote_dir}/Scripts/python'.replace(
+                '/', '\\')
+            yzlite_exe = f'{ssh_client.remote_dir}/Scripts/yzlite'.replace(
+                '/', '\\')
+        else:
+            python_exe = f'{ssh_client.remote_dir}/bin/python3'.replace(
+                '/', '\\')
+            yzlite_exe = f'{ssh_client.remote_dir}/bin/yzlite'.replace(
+                '/', '\\')
+
+        retcode, retmsg = ssh_client.execute_command(
+            f'{python_exe} -m pip install yizhu-yzlite --upgrade',
+            raise_exception_on_error=False
+        )
+        if retcode != 0:
+            raise RuntimeError(
+                f'Failed to install YZLITE into remote venv, err: {retmsg}')
+
+        retcode, retmsg = ssh_client.execute_command(
+            f'{python_exe} -c "import os;import yzlite;print(f\\"YZLITE_REMOTE_PATH=\\"+os.path.dirname(yzlite.__file__))"',
+            raise_exception_on_error=False
+        )
+        if retcode != 0:
+            raise RuntimeError(
+                f'Failed to get yzlite path on remote, err: {retmsg}')
+
+        idx = retmsg.index('YZLITE_REMOTE_PATH=')
+        remote_yzlite_dir = retmsg[idx +
+                                   len('YZLITE_REMOTE_PATH='):].strip().replace('\\', '/')
+
+        firmware_image_path = fullpath(firmware_image_path)
+        remote_firmwage_image_path = f'{ssh_client.remote_dir}/{os.path.basename(firmware_image_path)}'
+        ssh_client.upload_file(firmware_image_path, remote_firmwage_image_path)
+        cmd = f'{yzlite_exe} build download_run {remote_firmwage_image_path}'
+
+        ssh_client.upload_file(
+            __file__, f'{remote_yzlite_dir}/cli/command_yzlite_cli.py')
+
+        commander_dir = os.path.dirname(commander.__file__)
+        for fn in os.listdir(commander_dir):
+            if fn.endswith('.py'):
+                ssh_client.upload_file(
+                    f'{commander_dir}/{fn}', f'{remote_yzlite_dir}/utils/commander/{fn}')
+
+        ssh_client.upload_file(serial_reader.__file__,
+                               f'{remote_yzlite_dir}/utils/serial_reader.py')
+
+        if setup_script:
+            remote_setup_script = f'{ssh_client.remote_dir}/{os.path.basename(setup_script)}'
+            ssh_client.upload_file(setup_script, remote_setup_script)
+            cmd += f' --setup-script "{remote_setup_script}"'
+            if setup_script_args:
+                cmd += f' --setup-script-args "{setup_script_args}"'
+
+        if platform:
+            cmd += f' --platform {platform}'
+        if device:
+            cmd += f' --device {device}'
+        if port:
+            cmd += f' --port "{port}"'
+        if baud:
+            cmd += f' --baud {baud}'
+        if timeout:
+            cmd += f' --timeout {timeout}'
+        if start_msg:
+            cmd += f' --start-msg "{start_msg}"'
+        if completed_msg:
+            cmd += f' --completed-msg "{completed_msg}"'
+        if verbose:
+            cmd += ' --verbose'
+        if masserase:
+            cmd += ' --masserase'
+        if retries:
+            cmd += f' --retries {retries}'
+        if serial_number:
+            cmd += f'--serial-number {serial_number}'
+        if ip_address:
+            cmd += f'--ip-address {ip_address}'
+
+        pid_re = re.compile(r'.*PID=(\d+).*')
+
+        def _log_line_parser(line: str):
+            match = pid_re.match(line)
+            if match:
+                with open(prev_pid_path, 'w') as f:
+                    f.write(match.group(1))
+
+        logger.debug(f'Executing on remote: {cmd}')
+        retcode, retmsg = ssh_client.execute_command(
+            cmd,
+            log_line_parser=_log_line_parser,
+            raise_exception_on_error=False
+        )
+        if retcode != 0:
+            raise RuntimeError(
+                f'Failed to execute YZLITE command on remote: {cmd.join(" ")}')
+
+
+def _run_shell_cmd(cmd: str, logger: logging.Logger):
+    from yzlite.utils.shell_cmd import run_shell_cmd
+    toks = cmd.split()
+    if toks[0].endswith('.py'):
+        cmd = sys.executable.replace('\\', '/') + ' ' + cmd
+    retcode, _ = run_shell_cmd(cmd, logger=logger, outfile=logger)
+    if retcode != 0:
+        cli.abort(retcode, 'Failed to execute shell cmd')

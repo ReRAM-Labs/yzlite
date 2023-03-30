@@ -1,0 +1,33 @@
+﻿TfliteShape
+===========
+
+.. currentmodule:: yzlite.core
+
+.. autoclass:: TfliteShape
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteShape.flat_size
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteShape.__init__
+      ~TfliteShape.count
+      ~TfliteShape.index
+   
+   

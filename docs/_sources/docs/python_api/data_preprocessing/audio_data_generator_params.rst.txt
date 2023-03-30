@@ -1,0 +1,24 @@
+﻿ParallelProcessParams
+=====================
+
+.. currentmodule:: yzlite.core.preprocess.audio.parallel_generator
+
+.. autoclass:: ParallelProcessParams
+   :members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~ParallelProcessParams.__init__
+   
+   

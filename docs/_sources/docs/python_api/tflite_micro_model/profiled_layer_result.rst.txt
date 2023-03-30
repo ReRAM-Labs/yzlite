@@ -1,0 +1,49 @@
+﻿TfliteMicroProfiledLayerResult
+==============================
+
+.. currentmodule:: yzlite.core.tflite_micro
+
+.. autoclass:: TfliteMicroProfiledLayerResult
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteMicroProfiledLayerResult.accelerator_cycles
+      ~TfliteMicroProfiledLayerResult.cpu_cycles
+      ~TfliteMicroProfiledLayerResult.default_factory
+      ~TfliteMicroProfiledLayerResult.energy
+      ~TfliteMicroProfiledLayerResult.macs
+      ~TfliteMicroProfiledLayerResult.name
+      ~TfliteMicroProfiledLayerResult.ops
+      ~TfliteMicroProfiledLayerResult.time
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~TfliteMicroProfiledLayerResult.__init__
+      ~TfliteMicroProfiledLayerResult.clear
+      ~TfliteMicroProfiledLayerResult.copy
+      ~TfliteMicroProfiledLayerResult.fromkeys
+      ~TfliteMicroProfiledLayerResult.get
+      ~TfliteMicroProfiledLayerResult.items
+      ~TfliteMicroProfiledLayerResult.keys
+      ~TfliteMicroProfiledLayerResult.pop
+      ~TfliteMicroProfiledLayerResult.popitem
+      ~TfliteMicroProfiledLayerResult.setdefault
+      ~TfliteMicroProfiledLayerResult.update
+      ~TfliteMicroProfiledLayerResult.values
+   
+   

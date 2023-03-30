@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="title" content="ReRAM YZLite">
+<meta name="description" content="A Python package with command-line utilities and scripts to aid the development of machine learning models for Yizhu-Tech's embedded platforms">
+<meta name="keywords" content="machine learning, machine-learning, machinelearning, ml, ai, iot, Internet of things, aiot, tinyml, tensorflow, tensorflow-lite, tensorflow-lite-micro, keras-tensorflow, keras, tflite, embedded, embedded-systems, mcu, Microcontrollers, hardware, python, c++, cmake, keras, numpy, yizhu, yizhu labs">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Yizhu Technology">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../../../_static/javascripts/modernizr.js"></script>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ5MW943WF"></script>
+<script>
+    window.gTrackingId = 'G-HZ5MW943WF';
+</script>
+<meta name="google-site-verification" content="dsSsmnE2twOnfSAQk5zBBTrjMArsTJj809Bp-8mVlIw" />
+  
+  
+    <title>Common Model Architectures &#8212; YZLITE 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/js/custom.js"></script>
+    <script src="../../../_static/js/apitoc.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Reference Datasets" href="../datasets/index.html" />
+    <link rel="prev" title="tflite_micro_speech" href="tflite_micro/tflite_micro_speech.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=red data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#docs/python_api/models/common_models" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../index.html" title="YZLITE 0.1.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../../../_static/logo.png"
+                   alt="YZLITE 0.1.0 documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">ReRAM YZLite</span>
+          <span class="md-header-nav__topic"> Common Model Architectures </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    YZLITE Github Repository
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+            
+            <li class="md-tabs__item"><a href="tensor_engine_modeling_sdk_api_doc" class="md-tabs__link">ReRAM Engine  Documentation</a></li>
+            
+            <li class="md-tabs__item"><a href="https://github.com/tensorflow/tflite-micro" class="md-tabs__link">Tensorflow-Lite Micro Repository</a></li>
+            
+            <li class="md-tabs__item"><a href="https://www.tensorflow.org/learn" class="md-tabs__link">Tensorflow Documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Reference Models</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../index.html" title="YZLITE 0.1.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../../_static/logo.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../../index.html"
+       title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    YZLITE Github Repository
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Basics</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../overview.html" class="md-nav__link">Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../why_yzlite.html" class="md-nav__link">Why YZLITE?</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../installation.html" class="md-nav__link">Installation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../command_line/index.html" class="md-nav__link">Command-Line</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../guides/index.html" class="md-nav__link">Modeling Guides</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Usage</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../tutorials.html" class="md-nav__link">Tutorials</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../examples.html" class="md-nav__link">API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../index.html" class="md-nav__link">API Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">Reference Models</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="examples/index.html" class="md-nav__link">Example Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="yizhutech/index.html" class="md-nav__link">Yizhu-Tech's Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tinyml/index.html" class="md-nav__link">TinyML Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tflite_micro/index.html" class="md-nav__link">Tensorflow-Lite Micro Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Common Model Architectures </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Common Model Architectures</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="" id="localtoc">
+        <li class="md-nav__item"><a href="#docs-python-api-models-common-models--page-root" class="md-nav__link">Common Model Architectures</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#arm-depthwiseconv2d" class="md-nav__link">ARM DepthwiseConv2D</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.dsconv_arm.DepthwiseSeparableConv2D_ARM" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DepthwiseSeparableConv2D_ARM()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#fully-connected-auto-encoder" class="md-nav__link">Fully Connected Auto-encoder</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.fully_connected_autoencoder.FullyConnectedAutoEncoder" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FullyConnectedAutoEncoder()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mobilenet-v1" class="md-nav__link">MobileNet v1</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.mobilenet_v1.MobileNetV1" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MobileNetV1()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mobilenet-v2" class="md-nav__link">MobileNet v2</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.mobilenet_v2.MobileNetV2" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MobileNetV2()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#resnetv1-10" class="md-nav__link">ResNetv1-10</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.resnet_v1.ResNet10V1" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ResNet10V1()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#tenet" class="md-nav__link">TENet</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.tenet.TENet" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TENet()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+      <script type="text/javascript" src=../../../_static/js/apitoc.js></script>
+  </ul>
+</nav>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../datasets/index.html" class="md-nav__link">Reference Datasets</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../cpp_development/index.html" class="md-nav__link">C++ Development</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../cpp_development/examples/index.html" class="md-nav__link">C++ Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Audio Related</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../audio/keyword_spotting_overview.html" class="md-nav__link">Keyword Spotting Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../audio/audio_feature_generator.html" class="md-nav__link">Audio Feature Generator</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../audio/audio_utilities.html" class="md-nav__link">Audio Utilities</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Other Information</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../faq/index.html" class="md-nav__link">Frequently Asked Questions</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../other/quick_reference.html" class="md-nav__link">Quick Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../other/supported_hardware.html" class="md-nav__link">Supported Hardware</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../guides/notebook_examples_guide.html" class="md-nav__link">Notebook Examples Guide</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../other/settings_file.html" class="md-nav__link">Settings File</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../other/environment_variables.html" class="md-nav__link">Environment Variables</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="" id="localtoc">
+        <li class="md-nav__item"><a href="#docs-python-api-models-common-models--page-root" class="md-nav__link">Common Model Architectures</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#arm-depthwiseconv2d" class="md-nav__link">ARM DepthwiseConv2D</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.dsconv_arm.DepthwiseSeparableConv2D_ARM" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DepthwiseSeparableConv2D_ARM()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#fully-connected-auto-encoder" class="md-nav__link">Fully Connected Auto-encoder</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.fully_connected_autoencoder.FullyConnectedAutoEncoder" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FullyConnectedAutoEncoder()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mobilenet-v1" class="md-nav__link">MobileNet v1</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.mobilenet_v1.MobileNetV1" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MobileNetV1()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mobilenet-v2" class="md-nav__link">MobileNet v2</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.mobilenet_v2.MobileNetV2" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MobileNetV2()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#resnetv1-10" class="md-nav__link">ResNetv1-10</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.resnet_v1.ResNet10V1" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ResNet10V1()</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#tenet" class="md-nav__link">TENet</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#yzlite.models.shared.tenet.TENet" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TENet()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+      <script type="text/javascript" src=../../../_static/js/apitoc.js></script>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+
+          
+          <div class="breadcrumbs md-typeset">
+            <ul class="breadcrumb">
+              <li></li>
+              <li><a href="../../../index.html"><i class="md-icon">home</i></a></li>
+                <li><a href="index.html" accesskey="U">Reference Models</a></li>
+
+              <li class="activate"><a>Common Model Architectures</a></li>
+            </ul>
+          </div>
+          
+
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="common-model-architectures">
+<h1 id="docs-python-api-models-common-models--page-root">Common Model Architectures<a class="headerlink" href="#docs-python-api-models-common-models--page-root" title="Permalink to this heading">¶</a></h1>
+<p>The follow are common model “architectures”. i.e. They are generic, non-application-specific
+models that may be applied to a variety of ML problems.</p>
+<p><strong>NOTE:</strong> You may find additional model architectures at <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/applications">tf.keras.applications</a></p>
+<section id="arm-depthwiseconv2d">
+<h2 id="arm-depthwiseconv2d">ARM DepthwiseConv2D<a class="headerlink" href="#arm-depthwiseconv2d" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yzlite.models.shared.dsconv_arm.DepthwiseSeparableConv2D_ARM">
+<span class="sig-name descname"><span class="pre">DepthwiseSeparableConv2D_ARM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape=(50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes=12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters=64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularizer=&lt;keras.regularizers.L2</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/yzlite/models/shared/dsconv_arm.html#DepthwiseSeparableConv2D_ARM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yzlite.models.shared.dsconv_arm.DepthwiseSeparableConv2D_ARM" title="Permalink to this definition">¶</a></dt>
+<dd><p>ARM DepthwiseConv2D for Keyword Spotting</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/pdf/1711.07128.pdf">https://arxiv.org/pdf/1711.07128.pdf</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ARM-software/ML-KWS-for-MCU">https://github.com/ARM-software/ML-KWS-for-MCU</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/KWS10_ARM_DSConv/dsconv_arm_eembc.py">https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/KWS10_ARM_DSConv/dsconv_arm_eembc.py</a></p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>input_shape</strong> (<em>tuple</em>) – </p></li>
+<li><p><strong>num_classes</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="fully-connected-auto-encoder">
+<h2 id="fully-connected-auto-encoder">Fully Connected Auto-encoder<a class="headerlink" href="#fully-connected-auto-encoder" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yzlite.models.shared.fully_connected_autoencoder.FullyConnectedAutoEncoder">
+<span class="sig-name descname"><span class="pre">FullyConnectedAutoEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">128,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/yzlite/models/shared/fully_connected_autoencoder.html#FullyConnectedAutoEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yzlite.models.shared.fully_connected_autoencoder.FullyConnectedAutoEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fully Connected Auto-encoder</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds">http://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds</a></p></li>
+<li><p><a class="reference external" href="https://github.com/y-kawagu/dcase2020_task2_baseline">https://github.com/y-kawagu/dcase2020_task2_baseline</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/ToyADMOS_FC_AE/toyadmos_autoencoder_eembc.py">https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/ToyADMOS_FC_AE/toyadmos_autoencoder_eembc.py</a></p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>input_shape</strong> (<em>tuple</em>) – </p></li>
+<li><p><strong>dense_units</strong> (<em>int</em>) – </p></li>
+<li><p><strong>latent_units</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="mobilenet-v1">
+<h2 id="mobilenet-v1">MobileNet v1<a class="headerlink" href="#mobilenet-v1" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yzlite.models.shared.mobilenet_v1.MobileNetV1">
+<span class="sig-name descname"><span class="pre">MobileNetV1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(96,</span> <span class="pre">96,</span> <span class="pre">3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/yzlite/models/shared/mobilenet_v1.html#MobileNetV1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yzlite.models.shared.mobilenet_v1.MobileNetV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>MobileNet v1</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md">https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/Person_detection/mobilenet_v1_eembc.py">https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/Person_detection/mobilenet_v1_eembc.py</a></p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>input_shape</strong> (<em>tuple</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="mobilenet-v2">
+<h2 id="mobilenet-v2">MobileNet v2<a class="headerlink" href="#mobilenet-v2" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yzlite.models.shared.mobilenet_v2.MobileNetV2">
+<span class="sig-name descname"><span class="pre">MobileNetV2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.35</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pooling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classifier_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'softmax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_block_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/yzlite/models/shared/mobilenet_v2.html#MobileNetV2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yzlite.models.shared.mobilenet_v2.MobileNetV2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates the MobileNetV2 architecture.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1801.04381">MobileNetV2: Inverted Residuals and Linear Bottlenecks</a></p></li>
+</ul>
+</div>
+<p>Optionally loads weights pre-trained on ImageNet.</p>
+<p>Note: each Keras Application expects a specific kind of input preprocessing.
+For MobileNetV2, call <code class="docutils literal notranslate"><span class="pre">tf.keras.applications.mobilenet_v2.preprocess_input</span></code>
+on your inputs before passing them to the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_shape</strong> – shape tuple, to be specified if you would
+like to use a model with an input image resolution that is not
+(224, 224, 3).
+It should have exactly 3 inputs channels (224, 224, 3).</p></li>
+<li><p><strong>alpha</strong> – <p>Float between 0 and 1. controls the width of the network.
+This is known as the width multiplier in the MobileNetV2 paper,
+but the name is kept for consistency with <code class="docutils literal notranslate"><span class="pre">applications.MobileNetV1</span></code>
+model in Keras.</p>
+<ul>
+<li><dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">alpha</span></code> &lt; 1.0, proportionally decreases the number</dt><dd><p>of filters in each layer.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">alpha</span></code> &gt; 1.0, proportionally increases the number</dt><dd><p>of filters in each layer.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">alpha</span></code> = 1, default number of filters from the paper</dt><dd><p>are used at each layer.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p></li>
+<li><p><strong>include_top</strong> – Boolean, whether to include the fully-connected
+layer at the top of the network. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>pooling</strong> – <p>String, optional pooling mode for feature extraction
+when <code class="docutils literal notranslate"><span class="pre">include_top</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<ul>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">None</span></code> means that the output of the model</dt><dd><p>will be the 4D tensor output of the
+last convolutional block.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">avg</span></code> means that global average pooling</dt><dd><p>will be applied to the output of the
+last convolutional block, and thus
+the output of the model will be a
+2D tensor.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">max</span></code> means that global max pooling will</dt><dd><p>be applied.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p></li>
+<li><p><strong>classes</strong> – Integer, optional number of classes to classify images
+into, only to be specified if <code class="docutils literal notranslate"><span class="pre">include_top</span></code> is True, and
+if no <code class="docutils literal notranslate"><span class="pre">weights</span></code> argument is specified.</p></li>
+<li><p><strong>classifier_activation</strong> – A <code class="docutils literal notranslate"><span class="pre">str</span></code> or callable. The activation function to use
+on the “top” layer. Ignored unless <code class="docutils literal notranslate"><span class="pre">include_top=True</span></code>. Set
+<code class="docutils literal notranslate"><span class="pre">classifier_activation=None</span></code> to return the logits of the “top” layer.</p></li>
+<li><p><strong>last_block_filters</strong> – The number of filters to use in the last block of the model.
+If omitted, default to 1280 which the standard model uses. Due to hardware constraints,
+this value must be decreased  (&lt; 1024) to be fully optimized by the MVP hardare.</p></li>
+<li><p><strong>**kwargs</strong> – For backwards compatibility only.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>keras.Model</cite> instance.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – in case of invalid argument for <code class="docutils literal notranslate"><span class="pre">weights</span></code>,
+    or invalid input shape or invalid alpha, rows when
+    weights=’imagenet’</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">classifier_activation</span></code> is not <code class="docutils literal notranslate"><span class="pre">softmax</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code> when
+    using a pretrained top layer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="resnetv1-10">
+<h2 id="resnetv1-10">ResNetv1-10<a class="headerlink" href="#resnetv1-10" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yzlite.models.shared.resnet_v1.ResNet10V1">
+<span class="sig-name descname"><span class="pre">ResNet10V1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(32,</span> <span class="pre">32,</span> <span class="pre">3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/yzlite/models/shared/resnet_v1.html#ResNet10V1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yzlite.models.shared.resnet_v1.ResNet10V1" title="Permalink to this definition">¶</a></dt>
+<dd><p>ResNetv1-10</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/pdf/1512.03385.pdf">https://arxiv.org/pdf/1512.03385.pdf</a></p></li>
+<li><p><a class="reference external" href="https://keras.io/api/applications/resnet/">https://keras.io/api/applications/resnet/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/CIFAR10_ResNetv1/resnet_v1_eembc.py">https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/CIFAR10_ResNetv1/resnet_v1_eembc.py</a></p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>input_shape</strong> (<em>tuple</em>) – </p></li>
+<li><p><strong>num_classes</strong> (<em>int</em>) – </p></li>
+<li><p><strong>num_filters</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="tenet">
+<h2 id="tenet">TENet<a class="headerlink" href="#tenet" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yzlite.models.shared.tenet.TENet">
+<span class="sig-name descname"><span class="pre">TENet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scales</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[9]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_increase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/yzlite/models/shared/tenet.html#TENet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yzlite.models.shared.tenet.TENet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temporal efficient neural network (TENet)</p>
+<p>A network for processing spectrogram data using temporal and depthwise convolutions.
+The network treats the [T, F] spectrogram as a timeseries shaped [T, 1, F].</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When building the model, make sure that the input shape is concrete,
+i.e. explicitly reshape the samples to [T, 1, F] in the preprocessing pipeline.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/pdf/2010.09960.pdf">https://arxiv.org/pdf/2010.09960.pdf</a></p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of classes the network is built to categorize</p></li>
+<li><p><strong>channels</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Base number of channels in the network</p></li>
+<li><p><strong>blocks</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of (StridedIBB -&gt; IBB -&gt; …) blocks in the networks</p></li>
+<li><p><strong>block_depth</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of IBBs inside each (StridedIBB -&gt; IBB -&gt; …) block, including the strided IBB</p></li>
+<li><p><strong>scales</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – The multitemporal convolution filter widths. Should be odd numbers &gt;= 3.</p></li>
+<li><p><strong>channel_increase</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – If nonzero, the network increases the channel size each time there is a strided IBB block.
+The increase (each time) is given by <cite>channels * channel_increase</cite>.</p></li>
+<li><p><strong>input_shape</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Model</em></p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>input_shape</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>classes</strong> (<em>int</em>) – </p></li>
+<li><p><strong>channels</strong> (<em>int</em>) – </p></li>
+<li><p><strong>blocks</strong> (<em>int</em>) – </p></li>
+<li><p><strong>block_depth</strong> (<em>int</em>) – </p></li>
+<li><p><strong>scales</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – </p></li>
+<li><p><strong>channel_increase</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+      <a href="#" class="go-top"><i class="md-icon">arrow_upward</i>Back to Top</a>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="tflite_micro/tflite_micro_speech.html" title="tflite_micro_speech"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> tflite_micro_speech </span>
+              </div>
+            </a>
+          
+          
+            <a href="../datasets/index.html" title="Reference Datasets"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Reference Datasets </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Yizhu Technology.
+              
+          </div>
+            Last updated on
+              Mar 01, 2023.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+        <button id="survey-link" class="feedback-button">Feedback</button>
+      </div>
+    </div>
+  </footer>
+  <div class="privacy-banner">
+    <div class="privacy-banner-wrapper">
+      <p>
+        <b>Important:</b> We use cookies only for functional and traffic analytics. <br />
+        We DO NOT use cookies for any marketing purposes. By using our site you acknowledge you have read and understood our <a class="privacy-policy" href="https://www.yizhu.com/about-us/legal/cookie-policy" target="_blank">Cookie Policy</a>.
+      </p>
+      <a class="privacy-banner-accept" href="#">Got it</a>
+    </div>
+</div>
+  
+<div class="survey-container" id="dlg-survey"> 
+    <div class="close" id="dlg-survey-close"><i class="md-icon">close</i></div>
+    <div class="msg">Please click the <b>submit</b> button at the end even if you do not answer all of the questions</div>
+    <iframe id="iframe-survey" style="width: 100%; height: 100%;"></iframe>
+</div>
+  
+  <script src="../../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

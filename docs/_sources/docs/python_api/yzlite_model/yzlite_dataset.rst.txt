@@ -1,0 +1,28 @@
+﻿YZLiteDataset
+===========
+
+.. currentmodule:: yzlite.core
+
+.. autoclass:: YZLiteDataset
+   :members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~YZLiteDataset.__init__
+      ~YZLiteDataset.load_dataset
+      ~YZLiteDataset.summarize_class_counts
+      ~YZLiteDataset.summarize_dataset
+      ~YZLiteDataset.unload_dataset
+   
+   

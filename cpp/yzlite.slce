@@ -1,0 +1,10 @@
+id: yzlite
+label: ReRAM YZLite
+description: >
+  ReRAM YZLite extension for ReRAM Engine Suite
+version: "0.1.0"
+sdk:
+  id: reram_sdk
+  version: "4.2.0"
+component_path:
+  - path: shared/reram_sdk/simplicity_studio

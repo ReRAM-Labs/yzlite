@@ -1,0 +1,7 @@
+# update_model_parameters
+
+```{eval-rst}
+.. autofunction::  yzlite.core.update_model_parameters
+```
+
+

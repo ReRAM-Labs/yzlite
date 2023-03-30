@@ -1,0 +1,24 @@
+﻿string\_formatting
+==================
+
+.. automodule:: yzlite.utils.string_formatting
+   :members:
+   :undoc-members:
+   :special-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      format_units
+      iso_time_filename_str
+      iso_time_str
+      pretty_time_str
+   
+   

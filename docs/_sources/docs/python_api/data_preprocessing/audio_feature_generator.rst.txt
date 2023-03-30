@@ -1,0 +1,26 @@
+﻿AudioFeatureGenerator
+=====================
+
+.. currentmodule:: yzlite.core.preprocess.audio.audio_feature_generator
+
+.. autoclass:: AudioFeatureGenerator
+   :members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~AudioFeatureGenerator.__init__
+      ~AudioFeatureGenerator.activity_was_detected
+      ~AudioFeatureGenerator.process_sample
+   
+   

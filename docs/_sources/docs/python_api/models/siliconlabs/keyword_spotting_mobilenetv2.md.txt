@@ -1,0 +1,3 @@
+```{eval-rst}
+.. automodule:: yzlite.models.yizhutech.keyword_spotting_mobilenetv2
+```

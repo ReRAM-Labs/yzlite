@@ -1,0 +1,34 @@
+﻿Augmentation
+============
+
+.. currentmodule:: yzlite.utils.audio_dataset_generator
+
+.. autoclass:: Augmentation
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~Augmentation.pitch
+      ~Augmentation.rate
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~Augmentation.__init__
+      ~Augmentation.count
+      ~Augmentation.index
+   
+   

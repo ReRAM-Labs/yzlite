@@ -1,0 +1,70 @@
+﻿YZLiteModel
+=========
+
+.. currentmodule:: yzlite.core
+
+.. autoclass:: YZLiteModel
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~YZLiteModel.archive_path
+      ~YZLiteModel.attributes
+      ~YZLiteModel.classes
+      ~YZLiteModel.cli
+      ~YZLiteModel.description
+      ~YZLiteModel.h5_archive_path
+      ~YZLiteModel.h5_log_dir_path
+      ~YZLiteModel.input_shape
+      ~YZLiteModel.keras_custom_objects
+      ~YZLiteModel.log_dir
+      ~YZLiteModel.model_parameters
+      ~YZLiteModel.model_specification_path
+      ~YZLiteModel.n_classes
+      ~YZLiteModel.name
+      ~YZLiteModel.test_mode_enabled
+      ~YZLiteModel.tflite_archive_path
+      ~YZLiteModel.tflite_log_dir_path
+      ~YZLiteModel.tflite_metadata_entries
+      ~YZLiteModel.unquantized_tflite_log_dir_path
+      ~YZLiteModel.version
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~YZLiteModel.__init__
+      ~YZLiteModel.add_archive_dir
+      ~YZLiteModel.add_archive_file
+      ~YZLiteModel.add_event_handler
+      ~YZLiteModel.add_model_parameter_populate_callback
+      ~YZLiteModel.add_tflite_metadata_entry
+      ~YZLiteModel.check_archive_file_is_writable
+      ~YZLiteModel.create_log_dir
+      ~YZLiteModel.create_logger
+      ~YZLiteModel.deserialize_tflite_metadata
+      ~YZLiteModel.enable_test_mode
+      ~YZLiteModel.get_archive_dir
+      ~YZLiteModel.get_archive_file
+      ~YZLiteModel.get_attribute
+      ~YZLiteModel.get_tflite_metadata_summary
+      ~YZLiteModel.has_attribute
+      ~YZLiteModel.populate_model_parameters
+      ~YZLiteModel.serialize_tflite_metadata
+      ~YZLiteModel.set_model_parameter
+      ~YZLiteModel.summary
+      ~YZLiteModel.trigger_event
+   
+   

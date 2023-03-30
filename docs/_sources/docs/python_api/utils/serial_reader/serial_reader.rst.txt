@@ -1,0 +1,43 @@
+﻿SerialReader
+============
+
+.. currentmodule:: yzlite.utils.serial_reader
+
+.. autoclass:: SerialReader
+   :members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Properties
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~SerialReader.captured_data
+      ~SerialReader.error_message
+      ~SerialReader.failed
+      ~SerialReader.is_open
+      ~SerialReader.started
+      ~SerialReader.stopped
+   
+   
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~SerialReader.__init__
+      ~SerialReader.close
+      ~SerialReader.flush
+      ~SerialReader.list_ports
+      ~SerialReader.open
+      ~SerialReader.read
+      ~SerialReader.resolve_port
+      ~SerialReader.write
+   
+   

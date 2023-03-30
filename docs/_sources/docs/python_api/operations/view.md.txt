@@ -1,0 +1,5 @@
+# view_model
+
+```{eval-rst}
+.. autofunction::  yzlite.core.view_model
+```

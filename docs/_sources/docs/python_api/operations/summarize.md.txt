@@ -1,0 +1,5 @@
+# summarize_model
+
+```{eval-rst}
+.. autofunction::  yzlite.core.summarize_model
+```

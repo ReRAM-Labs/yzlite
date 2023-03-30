@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="title" content="ReRAM YZLite">
+<meta name="description" content="A Python package with command-line utilities and scripts to aid the development of machine learning models for Yizhu Technology 's embedded platforms">
+<meta name="keywords" content="machine learning, machine-learning, machinelearning, ml, ai, iot, Internet of things, aiot, tinyml, tensorflow, tensorflow-lite, tensorflow-lite-micro, keras-tensorflow, keras, tflite, embedded, embedded-systems, mcu, Microcontrollers, hardware, python, c++, cmake, keras, numpy, yizhu, yizhu labs">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Yizhu Technology">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ5MW943WF"></script>
+<script>
+    window.gTrackingId = 'G-HZ5MW943WF';
+</script>
+<meta name="google-site-verification" content="dsSsmnE2twOnfSAQk5zBBTrjMArsTJj809Bp-8mVlIw" />
+  
+  
+    <title>Model Profiler API Examples &#8212; YZLITE 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/custom.js"></script>
+    <script src="../../_static/js/apitoc.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Model Training API Examples" href="train_model.html" />
+    <link rel="prev" title="API Examples" href="../../docs/examples.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=red data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#yzlite/examples/profile_model" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="YZLITE 0.1.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../../_static/logo.png"
+                   alt="YZLITE 0.1.0 documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">ReRAM YZLite</span>
+          <span class="md-header-nav__topic"> Model Profiler API Examples </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    YZLITE Github Repository
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+            
+            <li class="md-tabs__item"><a href="tensor_engine_modeling_sdk_api_doc" class="md-tabs__link">ReRAM Engine  Documentation</a></li>
+            
+            <li class="md-tabs__item"><a href="https://github.com/tensorflow/tflite-micro" class="md-tabs__link">Tensorflow-Lite Micro Repository</a></li>
+            
+            <li class="md-tabs__item"><a href="https://www.tensorflow.org/learn" class="md-tabs__link">Tensorflow Documentation</a></li>
+          <li class="md-tabs__item"><a href="../../docs/examples.html" class="md-tabs__link">API Examples</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="YZLITE 0.1.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/logo.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    YZLITE Github Repository
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Basics</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/overview.html" class="md-nav__link">Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/why_yzlite.html" class="md-nav__link">Why YZLITE?</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/installation.html" class="md-nav__link">Installation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/command_line/index.html" class="md-nav__link">Command-Line</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/guides/index.html" class="md-nav__link">Modeling Guides</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Usage</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/tutorials.html" class="md-nav__link">Tutorials</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/examples.html" class="md-nav__link">API Examples</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Model Profiler API Examples </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Model Profiler API Examples</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="" id="localtoc">
+        <li class="md-nav__item"><a href="#yzlite-examples-profile-model--page-root" class="md-nav__link">Model Profiler API Examples</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#install-yzlite-python-package" class="md-nav__link">Install YZLITE Python Package</a>
+        </li>
+        <li class="md-nav__item"><a href="#import-python-packages" class="md-nav__link">Import Python Packages</a>
+        </li>
+        <li class="md-nav__item"><a href="#download-tflite-model-file" class="md-nav__link">Download .tflite model file</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-1-profile-tflite-file-in-basic-simulator" class="md-nav__link">Example 1: Profile .tflite file in basic simulator</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-2-profile-tflite-file-in-mvp-hardware-simulator" class="md-nav__link">Example 2: Profile .tflite file in MVP hardware simulator</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-3-profile-tflite-file-on-physical-device" class="md-nav__link">Example 3: Profile .tflite file on physical device</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-4-profile-model-before-training" class="md-nav__link">Example 4: Profile model before training</a>
+        </li></ul>
+            </nav>
+        </li>
+      <script type="text/javascript" src=../../_static/js/apitoc.js></script>
+  </ul>
+</nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="train_model.html" class="md-nav__link">Model Training API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="evaluate_model.html" class="md-nav__link">Model Evaluation API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="summarize_model.html" class="md-nav__link">Model Summary API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="view_model.html" class="md-nav__link">Model Visualizer API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="update_params.html" class="md-nav__link">Update Model Parameters API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quantize_model.html" class="md-nav__link">Model Quantization API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tflite_model.html" class="md-nav__link">TF-Lite Model API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tflite_micro_model.html" class="md-nav__link">TF-Lite Micro Model API Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../cpp/shared/uart_stream/examples/data_test/README.html" class="md-nav__link">UART Stream Data Test</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/python_api/index.html" class="md-nav__link">API Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/python_api/models/index.html" class="md-nav__link">Reference Models</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/python_api/datasets/index.html" class="md-nav__link">Reference Datasets</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/cpp_development/index.html" class="md-nav__link">C++ Development</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/cpp_development/examples/index.html" class="md-nav__link">C++ Examples</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Audio Related</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/audio/keyword_spotting_overview.html" class="md-nav__link">Keyword Spotting Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/audio/audio_feature_generator.html" class="md-nav__link">Audio Feature Generator</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/audio/audio_utilities.html" class="md-nav__link">Audio Utilities</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Other Information</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/faq/index.html" class="md-nav__link">Frequently Asked Questions</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/other/quick_reference.html" class="md-nav__link">Quick Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/other/supported_hardware.html" class="md-nav__link">Supported Hardware</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/guides/notebook_examples_guide.html" class="md-nav__link">Notebook Examples Guide</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/other/settings_file.html" class="md-nav__link">Settings File</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../docs/other/environment_variables.html" class="md-nav__link">Environment Variables</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="" id="localtoc">
+        <li class="md-nav__item"><a href="#yzlite-examples-profile-model--page-root" class="md-nav__link">Model Profiler API Examples</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#install-yzlite-python-package" class="md-nav__link">Install YZLITE Python Package</a>
+        </li>
+        <li class="md-nav__item"><a href="#import-python-packages" class="md-nav__link">Import Python Packages</a>
+        </li>
+        <li class="md-nav__item"><a href="#download-tflite-model-file" class="md-nav__link">Download .tflite model file</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-1-profile-tflite-file-in-basic-simulator" class="md-nav__link">Example 1: Profile .tflite file in basic simulator</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-2-profile-tflite-file-in-mvp-hardware-simulator" class="md-nav__link">Example 2: Profile .tflite file in MVP hardware simulator</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-3-profile-tflite-file-on-physical-device" class="md-nav__link">Example 3: Profile .tflite file on physical device</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-4-profile-model-before-training" class="md-nav__link">Example 4: Profile model before training</a>
+        </li></ul>
+            </nav>
+        </li>
+      <script type="text/javascript" src=../../_static/js/apitoc.js></script>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+
+          
+          <div class="breadcrumbs md-typeset">
+            <ul class="breadcrumb">
+              <li></li>
+              <li><a href="../../index.html"><i class="md-icon">home</i></a></li>
+                <li><a href="../../docs/examples.html" accesskey="U">API Examples</a></li>
+
+              <li class="activate"><a>Model Profiler API Examples</a></li>
+            </ul>
+          </div>
+          
+
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="model-profiler-api-examples">
+<h1 id="yzlite-examples-profile-model--page-root">Model Profiler API Examples<a class="headerlink" href="#yzlite-examples-profile-model--page-root" title="Permalink to this heading">¶</a></h1>
+<p>This demonstrates how to use the <a class="reference internal" href="../../docs/python_api/operations/profile.html"><span class="doc std std-doc">profile_model</span></a> API.</p>
+<p>Refer to the <a class="reference internal" href="../../docs/guides/model_profiler.html"><span class="doc std std-doc">Model Profiler</span></a> guide for more details.</p>
+<p><strong>NOTES:</strong></p>
+<ul class="simple">
+<li><p>Click here: <a class="reference external" href="https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/examples/profile_model.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a> to run this example interactively in your browser</p></li>
+<li><p>Refer to the <a class="reference internal" href="../../docs/guides/notebook_examples_guide.html"><span class="doc std std-doc">Notebook Examples Guide</span></a> for how to run this example locally in VSCode</p></li>
+</ul>
+<section id="install-yzlite-python-package">
+<h2 id="install-yzlite-python-package">Install YZLITE Python Package<a class="headerlink" href="#install-yzlite-python-package" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the YZLITE Python package (if necessary)</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>yizhu-yzlite
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-python-packages">
+<h2 id="import-python-packages">Import Python Packages<a class="headerlink" href="#import-python-packages" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the standard Python packages used by the examples</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="c1"># Import the necessary YZLITE APIs</span>
+<span class="kn">from</span> <span class="nn">yzlite.core</span> <span class="kn">import</span> <span class="n">profile_model</span>
+<span class="kn">from</span> <span class="nn">yzlite.utils.commander</span> <span class="kn">import</span> <span class="n">query_platform</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="download-tflite-model-file">
+<h2 id="download-tflite-model-file">Download .tflite model file<a class="headerlink" href="#download-tflite-model-file" title="Permalink to this heading">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> model file is required to run these examples.<br/>
+The following code downloads a model.</p>
+<p><strong>NOTE:</strong> Update <code class="docutils literal notranslate"><span class="pre">TFLITE_MODEL_URL</span></code> or <code class="docutils literal notranslate"><span class="pre">tflite_path</span></code> to point to your model if necesary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use .tflite mode found here:</span>
+<span class="c1"># https://github.com/chenxingqiang/yzlite/tree/master/yzlite/utils/test_helper/data/</span>
+<span class="c1"># NOTE: Update this URL to point to your model if necessary</span>
+<span class="n">TFLITE_MODEL_URL</span> <span class="o">=</span> <span class="s1">'https://github.com/chenxingqiang/yzlite/raw/master/yzlite/utils/test_helper/data/image_example1.tflite'</span>
+
+<span class="c1"># Download the .tflite file and save to the temp dir</span>
+<span class="n">tflite_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">()</span><span class="si">}</span><span class="s1">/image_example1.tflite'</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">tflite_path</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">TFLITE_MODEL_URL</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-1-profile-tflite-file-in-basic-simulator">
+<h2 id="example-1-profile-tflite-file-in-basic-simulator">Example 1: Profile .tflite file in basic simulator<a class="headerlink" href="#example-1-profile-tflite-file-in-basic-simulator" title="Permalink to this heading">¶</a></h2>
+<p>This example profiles the <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> model file in the “basic simulator” of the model profiler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profile the tflite model using the "basic simulator"</span>
+<span class="c1"># NOTE: Update tflite_path to point to your model if necessary</span>
+<span class="n">profiling_results</span> <span class="o">=</span> <span class="n">profile_model</span><span class="p">(</span><span class="n">tflite_path</span><span class="p">,</span> <span class="n">return_estimates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print the profiling results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">profiling_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Profiling Summary
+Name: image_example1
+Accelerator: None
+Input Shape: 1x96x96x1
+Input Data Type: int8
+Output Shape: 1x3
+Output Data Type: int8
+Flash, Model File Size (bytes): 15.7k
+RAM, Runtime Memory Size (bytes): 71.5k
+Operation Count: 2.6M
+Multiply-Accumulate Count: 1.2M
+Layer Count: 8
+Unsupported Layer Count: 0
+CPU Cycle Count: 13.1M
+CPU Utilization (%): 0.0
+Clock Rate (hz): 78.0M
+Energy (J): 2.3m
+J/Op: 884.5p
+J/MAC: 2.0n
+
+Model Layers
++-------+-----------------+--------+--------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+| Index | OpCode          | # Ops  | # MACs | CPU Cycles | Energy (J) | Input Shape             | Output Shape | Options                                             |
++-------+-----------------+--------+--------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+| 0     | conv_2d         | 1.2M   | 497.7k | 10.0M      | 1.9m       | 1x96x96x1,24x3x3x1,24   | 1x48x48x24   | Padding:same stride:2x2 activation:relu             |
+| 1     | average_pool_2d | 69.1k  | 0      | 985.7k     | 148.0u     | 1x48x48x24              | 1x24x24x24   | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 2     | conv_2d         | 842.2k | 418.2k | 1.3M       | 187.5u     | 1x24x24x24,16x3x3x24,16 | 1x11x11x16   | Padding:valid stride:2x2 activation:relu            |
+| 3     | conv_2d         | 565.7k | 279.9k | 718.6k     | 105.7u     | 1x11x11x16,24x3x3x16,24 | 1x9x9x24     | Padding:valid stride:1x1 activation:relu            |
+| 4     | average_pool_2d | 1.9k   | 0      | 30.8k      | 9.3u       | 1x9x9x24                | 1x4x4x24     | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 5     | reshape         | 0      | 0      | 250.4      | 0.0p       | 1x4x4x24,2              | 1x384        | Type=none                                           |
+| 6     | fully_connected | 2.3k   | 1.2k   | 5.2k       | 21.5n      | 1x384,3x384,3           | 1x3          | Activation:none                                     |
+| 7     | softmax         | 15.0   | 0      | 3.8k       | 16.5n      | 1x3                     | 1x3          | Type=softmaxoptions                                 |
++-------+-----------------+--------+--------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2-profile-tflite-file-in-mvp-hardware-simulator">
+<h2 id="example-2-profile-tflite-file-in-mvp-hardware-simulator">Example 2: Profile .tflite file in MVP hardware simulator<a class="headerlink" href="#example-2-profile-tflite-file-in-mvp-hardware-simulator" title="Permalink to this heading">¶</a></h2>
+<p>This example profiles the <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> model file in the MVP hardware accelerator simulator of the model profiler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profile the tflite model using the MVP hardware accelerator simulator</span>
+<span class="c1"># NOTE: Update tflite_path to point to your model if necessary</span>
+<span class="n">profiling_results</span> <span class="o">=</span> <span class="n">profile_model</span><span class="p">(</span><span class="n">tflite_path</span><span class="p">,</span> <span class="n">accelerator</span><span class="o">=</span><span class="s1">'MVP'</span><span class="p">,</span> <span class="n">return_estimates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print the profiling results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">profiling_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Profiling Summary
+Name: image_example1
+Accelerator: MVP
+Input Shape: 1x96x96x1
+Input Data Type: int8
+Output Shape: 1x3
+Output Data Type: int8
+Flash, Model File Size (bytes): 15.7k
+RAM, Runtime Memory Size (bytes): 85.3k
+Operation Count: 2.6M
+Multiply-Accumulate Count: 1.2M
+Layer Count: 8
+Unsupported Layer Count: 0
+Accelerator Cycle Count: 1.1M
+CPU Cycle Count: 81.3k
+CPU Utilization (%): 0.0
+Clock Rate (hz): 78.0M
+Energy (J): 153.0u
+J/Op: 57.9p
+J/MAC: 127.8p
+
+Model Layers
++-------+-----------------+--------+--------+------------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+| Index | OpCode          | # Ops  | # MACs | Acc Cycles | CPU Cycles | Energy (J) | Input Shape             | Output Shape | Options                                             |
++-------+-----------------+--------+--------+------------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+| 0     | conv_2d         | 1.2M   | 497.7k | 719.0k     | 11.2k      | 52.4u      | 1x96x96x1,24x3x3x1,24   | 1x48x48x24   | Padding:same stride:2x2 activation:relu             |
+| 1     | average_pool_2d | 69.1k  | 0      | 48.4k      | 22.7k      | 5.4u       | 1x48x48x24              | 1x24x24x24   | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 2     | conv_2d         | 842.2k | 418.2k | 223.8k     | 5.9k       | 45.7u      | 1x24x24x24,16x3x3x24,16 | 1x11x11x16   | Padding:valid stride:2x2 activation:relu            |
+| 3     | conv_2d         | 565.7k | 279.9k | 148.8k     | 8.0k       | 45.7u      | 1x11x11x16,24x3x3x16,24 | 1x9x9x24     | Padding:valid stride:1x1 activation:relu            |
+| 4     | average_pool_2d | 1.9k   | 0      | 1.3k       | 27.8k      | 3.7u       | 1x9x9x24                | 1x4x4x24     | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 5     | reshape         | 0      | 0      | 0          | 250.4      | 0.0p       | 1x4x4x24,2              | 1x384        | Type=none                                           |
+| 6     | fully_connected | 2.3k   | 1.2k   | 1.7k       | 1.5k       | 49.2n      | 1x384,3x384,3           | 1x3          | Activation:none                                     |
+| 7     | softmax         | 15.0   | 0      | 0          | 3.8k       | 16.5n      | 1x3                     | 1x3          | Type=softmaxoptions                                 |
++-------+-----------------+--------+--------+------------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-3-profile-tflite-file-on-physical-device">
+<h2 id="example-3-profile-tflite-file-on-physical-device">Example 3: Profile .tflite file on physical device<a class="headerlink" href="#example-3-profile-tflite-file-on-physical-device" title="Permalink to this heading">¶</a></h2>
+<p>This example profiles the <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> model file on a physically connected embedded device.</p>
+<p><strong>NOTE:</strong> A supported development board must be connected and properly enumerated for this example to work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determine the currently connected device</span>
+<span class="c1"># Just print an error and return if no device is connected</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">platform_name</span> <span class="o">=</span> <span class="n">query_platform</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Failed to determine connected device, err:</span><span class="se">\n</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Conencted device platform: </span><span class="si">{</span><span class="n">platform_name</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">accelerator</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="n">platform_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'brd2601a'</span><span class="p">,</span> <span class="s1">'brd4186b'</span><span class="p">):</span>
+    <span class="c1"># Use the MVP hardware accelerator if the platform supports it</span>
+    <span class="n">accelerator</span> <span class="o">=</span> <span class="s1">'MVP'</span>
+
+<span class="c1"># Profile the tflite model on the physical device</span>
+<span class="n">profiling_results</span> <span class="o">=</span> <span class="n">profile_model</span><span class="p">(</span>
+    <span class="n">tflite_path</span><span class="p">,</span>
+    <span class="n">accelerator</span><span class="o">=</span><span class="n">accelerator</span><span class="p">,</span>
+    <span class="n">use_device</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="c1"># Print the profiling results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">profiling_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Conencted device platform: brd2601
+Profiling Summary
+Name: image_example1
+Accelerator: None
+Input Shape: 1x96x96x1
+Input Data Type: int8
+Output Shape: 1x3
+Output Data Type: int8
+Flash, Model File Size (bytes): 15.7k
+RAM, Runtime Memory Size (bytes): 71.4k
+Operation Count: 2.6M
+Multiply-Accumulate Count: 1.2M
+Layer Count: 8
+Unsupported Layer Count: 0
+CPU Cycle Count: 9.5M
+CPU Utilization (%): 100.0
+Clock Rate (hz): 78.0M
+Time (s): 119.7m
+Ops/s: 22.1M
+MACs/s: 10.0M
+Inference/s: 8.4
+
+Model Layers
++-------+-----------------+--------+--------+------------+----------+-------------------------+--------------+-----------------------------------------------------+
+| Index | OpCode          | # Ops  | # MACs | CPU Cycles | Time (s) | Input Shape             | Output Shape | Options                                             |
++-------+-----------------+--------+--------+------------+----------+-------------------------+--------------+-----------------------------------------------------+
+| 0     | conv_2d         | 1.2M   | 497.7k | 6.3M       | 80.0m    | 1x96x96x1,24x3x3x1,24   | 1x48x48x24   | Padding:same stride:2x2 activation:relu             |
+| 1     | average_pool_2d | 69.1k  | 0      | 759.4k     | 9.6m     | 1x48x48x24              | 1x24x24x24   | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 2     | conv_2d         | 842.2k | 418.2k | 1.4M       | 17.6m    | 1x24x24x24,16x3x3x24,16 | 1x11x11x16   | Padding:valid stride:2x2 activation:relu            |
+| 3     | conv_2d         | 565.7k | 279.9k | 956.1k     | 12.1m    | 1x11x11x16,24x3x3x16,24 | 1x9x9x24     | Padding:valid stride:1x1 activation:relu            |
+| 4     | average_pool_2d | 1.9k   | 0      | 21.9k      | 270.0u   | 1x9x9x24                | 1x4x4x24     | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 5     | reshape         | 0      | 0      | 2.3k       | 30.0u    | 1x4x4x24,2              | 1x384        | Type=none                                           |
+| 6     | fully_connected | 2.3k   | 1.1k   | 5.1k       | 60.0u    | 1x384,3x384,3           | 1x3          | Activation:none                                     |
+| 7     | softmax         | 15.0   | 0      | 2.9k       | 60.0u    | 1x3                     | 1x3          | Type=softmaxoptions                                 |
++-------+-----------------+--------+--------+------------+----------+-------------------------+--------------+-----------------------------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-4-profile-model-before-training">
+<h2 id="example-4-profile-model-before-training">Example 4: Profile model before training<a class="headerlink" href="#example-4-profile-model-before-training" title="Permalink to this heading">¶</a></h2>
+<p>Training a model can be very time-consuming, and it is useful to know how efficiently a
+model will execute on an embedded device before investing time and energy into training it.<br/>
+For this reason, the YZLITE <a class="reference internal" href="../../docs/python_api/operations/profile.html"><span class="doc std std-doc">profile_model</span></a> API features a <code class="docutils literal notranslate"><span class="pre">build</span></code> argument to build a model and profile it <em>before</em> the model is fully trained.</p>
+<p>In this example, the <a class="reference internal" href="../../docs/python_api/models/examples/image_example1.html"><span class="doc std std-doc">image_example1</span></a> model is built
+at command-execution-time and profiled in the MVP hardware simulator.<br/>
+Note that <em>only</em> the <a class="reference internal" href="../../docs/guides/model_specification.html"><span class="doc std std-doc">model specification</span></a>  script is required,
+it does <em>not</em> need to be trained first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the image_example1 model then profile it using the MVP hardware accelerator simulator</span>
+<span class="c1"># NOTE: Since build=True, the model does NOT need to be trained first</span>
+<span class="n">profiling_results</span> <span class="o">=</span> <span class="n">profile_model</span><span class="p">(</span><span class="s1">'image_example1'</span><span class="p">,</span> <span class="n">accelerator</span><span class="o">=</span><span class="s1">'MVP'</span><span class="p">,</span> <span class="n">build</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_estimates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print the profiling results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">profiling_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "535ae1bb09b142dc8f3b65d6609a56a4", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/3
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f707079de6504ee1847f127a8bc9b85d", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/3
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "28c0f14f92704393970e20c8c8bac525", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/3
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9ed3e782130e4a9d9c353b25d19725a0", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 3 of 3). These functions will not be directly callable after loading.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: E:\tmpc8yu6n46\assets
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: E:\tmpc8yu6n46\assets
+c:\Users\reed\workspace\yizhu\yzlite\.venv\lib\site-packages\tensorflow\lite\python\convert.py:766: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn("Statistics for quantized inputs were expected, but not "
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Profiling Summary
+Name: my_model
+Accelerator: MVP
+Input Shape: 1x96x96x1
+Input Data Type: float32
+Output Shape: 1x3
+Output Data Type: float32
+Flash, Model File Size (bytes): 15.4k
+RAM, Runtime Memory Size (bytes): 85.4k
+Operation Count: 2.7M
+Multiply-Accumulate Count: 1.2M
+Layer Count: 10
+Unsupported Layer Count: 0
+Accelerator Cycle Count: 1.1M
+CPU Cycle Count: 415.3k
+CPU Utilization (%): 0.0
+Clock Rate (hz): 78.0M
+Energy (J): 219.6u
+J/Op: 82.0p
+J/MAC: 183.5p
+
+Model Layers
++-------+-----------------+--------+--------+------------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+| Index | OpCode          | # Ops  | # MACs | Acc Cycles | CPU Cycles | Energy (J) | Input Shape             | Output Shape | Options                                             |
++-------+-----------------+--------+--------+------------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+| 0     | quantize        | 36.9k  | 0      | 0          | 332.6k     | 66.4u      | 1x96x96x1               | 1x96x96x1    | Type=none                                           |
+| 1     | conv_2d         | 1.2M   | 497.7k | 719.0k     | 11.2k      | 52.4u      | 1x96x96x1,24x3x3x1,24   | 1x48x48x24   | Padding:same stride:2x2 activation:relu             |
+| 2     | average_pool_2d | 69.1k  | 0      | 48.4k      | 22.7k      | 5.4u       | 1x48x48x24              | 1x24x24x24   | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 3     | conv_2d         | 842.2k | 418.2k | 223.8k     | 5.9k       | 45.7u      | 1x24x24x24,16x3x3x24,16 | 1x11x11x16   | Padding:valid stride:2x2 activation:relu            |
+| 4     | conv_2d         | 565.7k | 279.9k | 148.8k     | 8.0k       | 45.7u      | 1x11x11x16,24x3x3x16,24 | 1x9x9x24     | Padding:valid stride:1x1 activation:relu            |
+| 5     | average_pool_2d | 1.9k   | 0      | 1.3k       | 27.8k      | 3.7u       | 1x9x9x24                | 1x4x4x24     | Padding:valid stride:2x2 filter:2x2 activation:none |
+| 6     | reshape         | 0      | 0      | 0          | 250.4      | 0.0p       | 1x4x4x24,2              | 1x384        | Type=none                                           |
+| 7     | fully_connected | 2.3k   | 1.2k   | 1.7k       | 1.5k       | 49.2n      | 1x384,3x384,3           | 1x3          | Activation:none                                     |
+| 8     | softmax         | 15.0   | 0      | 0          | 3.8k       | 16.5n      | 1x3                     | 1x3          | Type=softmaxoptions                                 |
+| 9     | dequantize      | 6.0    | 0      | 0          | 1.4k       | 159.1n     | 1x3                     | 1x3          | Type=none                                           |
++-------+-----------------+--------+--------+------------+------------+------------+-------------------------+--------------+-----------------------------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+      <a href="#" class="go-top"><i class="md-icon">arrow_upward</i>Back to Top</a>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../../docs/examples.html" title="API Examples"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> API Examples </span>
+              </div>
+            </a>
+          
+          
+            <a href="train_model.html" title="Model Training API Examples"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Model Training API Examples </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Yizhu Technology.
+              
+          </div>
+            Last updated on
+              Mar 01, 2023.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+        <button id="survey-link" class="feedback-button">Feedback</button>
+      </div>
+    </div>
+  </footer>
+  <div class="privacy-banner">
+    <div class="privacy-banner-wrapper">
+      <p>
+        <b>Important:</b> We use cookies only for functional and traffic analytics. <br />
+        We DO NOT use cookies for any marketing purposes. By using our site you acknowledge you have read and understood our <a class="privacy-policy" href="https://www.yizhu.com/about-us/legal/cookie-policy" target="_blank">Cookie Policy</a>.
+      </p>
+      <a class="privacy-banner-accept" href="#">Got it</a>
+    </div>
+</div>
+  
+<div class="survey-container" id="dlg-survey"> 
+    <div class="close" id="dlg-survey-close"><i class="md-icon">close</i></div>
+    <div class="msg">Please click the <b>submit</b> button at the end even if you do not answer all of the questions</div>
+    <iframe id="iframe-survey" style="width: 100%; height: 100%;"></iframe>
+</div>
+  
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

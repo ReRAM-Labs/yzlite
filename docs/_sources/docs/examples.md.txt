@@ -1,0 +1,42 @@
+# API Examples
+
+These examples demonstrate how to use the various YZLITE Python APIs.
+They are provided as [Jupyter Notebooks](https://jupyter.org) and  can either run
+locally in [VSCode](https://code.visualstudio.com) or they can run in your web-browser using [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb).
+
+See the [Notebook Examples Guide](./guides/notebook_examples_guide.md) for more details on how to run these examples.
+Also, refer to the documentation at the top of each example for specific details.
+
+
+| Name                                                                                            | Description                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Profile Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/profile_model.html)            | Examples of using the [profile_model()](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/profile.html) API                           |
+| [Train Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/train_model.html)                | Examples of using the [train_model()](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/train.html) API                               |
+| [Evaluate Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/evaluate_model.html)          | Examples of using the [evaluate_model()](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/evaluate.html) API                         |
+| [Summarize Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/summarize_model.html)        | Examples of using the [summarize_model()](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/summarize.html) API                       |
+| [View Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/view_model.html)                  | Examples of using the [view_model()](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/view.html) API                                 |
+| [Update Model Parameters](https://github.com/chenxingqiang/yzlite/yzlite/examples/update_params.html)  | Examples of using the [update_model_parameters()](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/update_model_parameters.html) API |
+| [Quantize Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/quantize_model.html)          | Examples of using the [quantize_model()](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/quantize.html) API                         |
+| [YZLITE Model](https://github.com/chenxingqiang/yzlite/docs/python_api/models/index.html)              | Examples of creating an [YZLiteModel](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/index.html) instance                            |
+| [TF-Lite Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/tflite_model.html)             | Examples of using a [TfliteModel](https://github.com/chenxingqiang/yzlite/docs/python_api/tflite_model/index.html) instance                            |
+| [TF-Lite Micro Model](https://github.com/chenxingqiang/yzlite/yzlite/examples/tflite_micro_model.html) | Examples of using a [TfliteMicroModel](https://github.com/chenxingqiang/yzlite/docs/python_api/tflite_micro_model/index.html) instance                 |
+| [UART Stream Example](https://github.com/chenxingqiang/yzlite/cpp/shared/uart_stream/examples/data_test/README.html) | Examples of using the [UartStream](https://github.com/chenxingqiang/yzlite/docs/python_api/utils/uart_stream/index.html) library       |
+
+
+```{eval-rst}
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   /yzlite/examples/profile_model
+   /yzlite/examples/train_model
+   /yzlite/examples/evaluate_model
+   /yzlite/examples/summarize_model
+   /yzlite/examples/view_model
+   /yzlite/examples/update_params
+   /yzlite/examples/quantize_model
+   /yzlite/examples/tflite_model
+   /yzlite/examples/tflite_micro_model
+   /cpp/shared/uart_stream/examples/data_test/README.md
+```
+
