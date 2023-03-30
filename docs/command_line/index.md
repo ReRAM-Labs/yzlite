@@ -5,7 +5,7 @@ __NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzli
 This describes how to enable and use the YZLITE command-line interface.
 
 ```{note}
-This assumes the YZLITE has been [installed](../installation.md) and is available on the command prompt.  
+This assumes the YZLITE has been [installed](../installation.md) and is available on the command prompt.
 ```
 
 ## Command Basics
@@ -32,14 +32,14 @@ If you're using a Python [virtual environment](https://docs.python.org/3/tutoria
 
 ### Command Format
 
-All YZLITE commands are accessible via the `yzlite` command-line command.  
+All YZLITE commands are accessible via the `yzlite` command-line command.
 The `yzlite` command expects arguments with the format:
 
 ```shell
 yzlite <operation> [<arguments>] [<options> ...]
 ```
 
-Where:  
+Where:
 
 - `<operation>` - The specific operation to perform (e.g. `profile`, `train`, etc.)
 - `<arguments>` - Operation-specific arguments (e.g. The name of an ML model)
@@ -77,7 +77,7 @@ The following operations are supported by the `yzlite` command:
 | [commander](https://github.com/ReRAM-Labs/yzlite/docs/command_line/commander.html)         | Run the Yizhu Technology 's [Simplicity Commander](https://www.yizhu.com/documents/public/user-guides/ug162-simplicity-commander-reference-guide.pdf) utility |
 
 ```{note}
-To get more information about a specific operation, issue the command:  
+To get more information about a specific operation, issue the command:
 
     yzlite <operation> --help
 ```

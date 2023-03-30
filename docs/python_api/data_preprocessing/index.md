@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Data Preprocessing
 
@@ -9,7 +9,7 @@ The following data pre-processing utilities are available:
 - [ParallelImageDataGenerator](./image_data_generator.md) - Allows for efficiently generating augmented image samples during model training and evaluation
 - [ParallelAudioDataGenerator](./audio_data_generator.md) - Allows for efficiently generating augments audio samples during model training and evaluation
 
-The source code for these APIs may be found on Github at [https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess).
+The source code for these APIs may be found on Github at [https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess).
 
 ```{toctree}
 :maxdepth: 1

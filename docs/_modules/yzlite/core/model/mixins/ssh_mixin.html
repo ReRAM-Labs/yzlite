@@ -150,7 +150,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -205,7 +205,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -439,8 +439,8 @@
 <span class="w">    </span><span class="sd">"""Provides various properties to the base :py:class:`~YZLiteModel` used by the ``ssh`` YZLITE command.</span>
 
 <span class="sd">    .. seealso::</span>
-<span class="sd">       - `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
-<span class="sd">       - `Cloud Training with vast.ai &lt;https://github.com/chenxingqiang/yzlite/yzlite/tutorials/cloud_training_with_vast_ai.html&gt;`_</span>
+<span class="sd">       - `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">       - `Cloud Training with vast.ai &lt;https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/cloud_training_with_vast_ai.html&gt;`_</span>
 <span class="sd">    </span>
 <span class="sd">    """</span>
 
@@ -449,7 +449,7 @@
     <span class="k">def</span> <span class="nf">ssh_remote_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Directory path to remote machine's workspace. This overrides any settings in ~/.yzlite/user_settings.yaml</span>
 <span class="sd">        </span>
-<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ssh.remote_dir'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="nd">@ssh_remote_dir</span><span class="o">.</span><span class="n">setter</span>
@@ -461,7 +461,7 @@
     <span class="k">def</span> <span class="nf">ssh_startup_cmds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">"""List of shell commands to execute before invoking YZLITE command. This overrides any settings in ~/.yzlite/user_settings.yaml</span>
 <span class="sd">        </span>
-<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ssh.startup_cmds'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="nd">@ssh_startup_cmds</span><span class="o">.</span><span class="n">setter</span>
@@ -473,7 +473,7 @@
     <span class="k">def</span> <span class="nf">ssh_shutdown_cmds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">"""List of shell commands to execute after invoking YZLITE command. This overrides any settings in ~/.yzlite/user_settings.yaml</span>
 <span class="sd">        </span>
-<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ssh.shutdown_cmds'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="nd">@ssh_shutdown_cmds</span><span class="o">.</span><span class="n">setter</span>
@@ -486,7 +486,7 @@
 <span class="w">        </span><span class="sd">"""List of local files to upload before invoking YZLITE command. All paths must be relative to the model specification script.</span>
 <span class="sd">        This overrides any settings in ~/.yzlite/user_settings.yaml</span>
 <span class="sd">        </span>
-<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ssh.upload_files'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="nd">@ssh_upload_files</span><span class="o">.</span><span class="n">setter</span>
@@ -499,7 +499,7 @@
 <span class="w">        </span><span class="sd">"""List of remote files to download after invoking YZLITE command. All paths must be relative to the model specification script.</span>
 <span class="sd">        This overrides any settings in ~/.yzlite/user_settings.yaml</span>
 <span class="sd">        </span>
-<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ssh.download_files'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="nd">@ssh_download_files</span><span class="o">.</span><span class="n">setter</span>
@@ -512,7 +512,7 @@
 <span class="w">        </span><span class="sd">"""List of environment variables to export in the remote machine's shell session before invoking YZLITE command.</span>
 <span class="sd">        This overrides any settings in ~/.yzlite/user_settings.yaml</span>
 <span class="sd">        </span>
-<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ssh.environment'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="nd">@ssh_environment</span><span class="o">.</span><span class="n">setter</span>
@@ -524,7 +524,7 @@
     <span class="k">def</span> <span class="nf">ssh_create_venv</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""If true then create the YZLITE python virtual environment in the specified remote_directory. This overrides the setting in ~/.yzlite/user_settings.yaml</span>
 <span class="sd">        </span>
-<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
+<span class="sd">        .. seealso:: `Model Training via SSH &lt;https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html&gt;`_</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ssh.create_venv'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="nd">@ssh_create_venv</span><span class="o">.</span><span class="n">setter</span>

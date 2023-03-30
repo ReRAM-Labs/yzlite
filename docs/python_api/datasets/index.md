@@ -1,10 +1,10 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Reference Datasets
 
 The YZLITE comes with datasets that are used by the [reference models](../models/index.md).
 
-The source code for these datasets may be found on Github: [https://github.com/chenxingqiang/yzlite/tree/master/yzlite/datasets](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/datasets).
+The source code for these datasets may be found on Github: [https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/datasets](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/datasets).
 
 ## Audio Datasets
 

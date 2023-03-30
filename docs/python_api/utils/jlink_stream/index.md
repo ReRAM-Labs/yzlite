@@ -1,10 +1,10 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # J-Link Stream
 
 This allows for transferring binary data between a Python script and a JLink-enabled embedded device via the debug interface.
 
-__NOTE:__ The embedded device must be running the [jlink_stream](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/jlink_stream) C++ library for this Python package to work.
+__NOTE:__ The embedded device must be running the [jlink_stream](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/jlink_stream) C++ library for this Python package to work.
 
 ## Example Usage
 

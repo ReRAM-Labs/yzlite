@@ -91,7 +91,7 @@ yzlite_set(MODEL_PROFILER_MODEL ~/my_models/my_model.yzlite.zip)
 
 # Specify the YZLITE model name
 # NOTE: The model specification must be on the model search path, see:
-#       https://github.com/chenxingqiang/yzlite/docs/guides/model_search_path.html
+#       https://github.com/ReRAM-Labs/yzlite/docs/guides/model_search_path.html
 yzlite_set(MODEL_PROFILER_MODEL image_example1)
 ```
 
@@ -112,7 +112,7 @@ yzlite_set(AUDIO_CLASSIFIER_MODEL ~/my_models/my_model.yzlite.zip)
 
 # Specify the YZLITE model name
 # NOTE: The model specification must be on the model search path, see:
-#       https://github.com/chenxingqiang/yzlite/docs/guides/model_search_path.html
+#       https://github.com/ReRAM-Labs/yzlite/docs/guides/model_search_path.html
 yzlite_set(AUDIO_CLASSIFIER_MODEL image_example1)
 ```
 

@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Serial Reader
 
@@ -6,7 +6,7 @@ This allows for reading from a serial port (e.g. from the UART of an embedded de
 
 ## Example Usage
 
-The following is a snippet taken from [profile_model.py:profile_model_on_device](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/core/profile_model.py#L146)
+The following is a snippet taken from [profile_model.py:profile_model_on_device](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/core/profile_model.py#L146)
 
 ```python
 import re

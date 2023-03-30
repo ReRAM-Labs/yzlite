@@ -61,7 +61,7 @@ If necessary, install Git:
 ### 5) Clone the YZLITE repository
 
 ```shell
-git clone https://github.com/chenxingqiang/yzlite.git
+git clone https://github.com/ReRAM-Labs/yzlite.git
 ```
 
 ## Build Sequence

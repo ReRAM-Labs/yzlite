@@ -8,7 +8,7 @@ After the model specification is finished, it may be invoked with one of the var
 
 ## Example Usage
 
-The following is a snippet from the [basic_example](https://github.com/chenxingqiang/yzlite/docs/python_api/models/examples/basic_example.html) reference model:
+The following is a snippet from the [basic_example](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/examples/basic_example.html) reference model:
 
 ```python
 import yzlite.core as yzlite_core
@@ -45,9 +45,9 @@ if __name__ == '__main__':
 
 ```
 
-See the [reference models](https://github.com/chenxingqiang/yzlite/docs/python_api/models/index.html) for more examples.
+See the [reference models](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/index.html) for more examples.
 
-Additional [Model Utilities](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/utilities.html) are also available.
+Additional [Model Utilities](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/utilities.html) are also available.
 
 ## API Reference
 

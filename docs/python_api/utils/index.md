@@ -1,10 +1,10 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Utilities
 
 The YZLITE Python package comes with various utility scripts.
 
-The source code for these APIs may be found on Github at [https://github.com/chenxingqiang/yzlite/tree/master/yzlite/utils](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/utils).
+The source code for these APIs may be found on Github at [https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/utils](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/utils).
 
 The following utilities are available:
 

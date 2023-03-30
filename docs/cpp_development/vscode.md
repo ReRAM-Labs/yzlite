@@ -101,7 +101,7 @@ Next, we need to install the YZLITE:
 
 ```shell
 # Clone the YZLITE GIT repository
-git clone https://github.com/chenxingqiang/yzlite.git
+git clone https://github.com/ReRAM-Labs/yzlite.git
 ```
 
 Then navigate to the YZLITE repository directory
