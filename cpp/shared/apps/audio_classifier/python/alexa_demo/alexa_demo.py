@@ -296,7 +296,7 @@ def generate_credentials(credentials_path: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Alexa Voice Services demo, see https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_alexa.html')
+        description='Alexa Voice Services demo, see https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_alexa.html')
     parser.add_argument('--setup', action='store_true',
                         default=False, help='Setup the AVS credentials')
     parser.add_argument('--baud', default=115200,

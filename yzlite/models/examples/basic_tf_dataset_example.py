@@ -3,9 +3,9 @@
 
 Basic YZLITE model example using the Tensorflow dataset API
 
-- Source code: `basic_tf_dataset_example.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/basic_tf_dataset_example.py>`_
+- Source code: `basic_tf_dataset_example.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/basic_tf_dataset_example.py>`_
 
-This provides a basic example of how to create a `model specification <https://github.com/chenxingqiang/yzlite/docs/guides/model_specification.html>`_
+This provides a basic example of how to create a `model specification <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_specification.html>`_
 using the `Tensorflow Dataset API <https://www.tensorflow.org/api_docs/python/tf/data/Dataset>`_ for dataset management.
 
 
@@ -268,7 +268,7 @@ my_model.tflite_converter['representative_dataset'] = my_representative_dataset_
 my_model.model_parameters['samplewise_norm.rescale'] = 1/255.
 
 # Most standard Python data types may be embedded
-# See: https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+# See: https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
 my_model.model_parameters['my_boolean'] = True
 my_model.model_parameters['my_string'] = 'This string will be embedded into the .tflite'
 my_model.model_parameters['my_bytes'] = b'This byte string will be embedded also'

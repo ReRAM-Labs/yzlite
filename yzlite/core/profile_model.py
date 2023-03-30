@@ -36,8 +36,8 @@ def profile_model(
     hardware simulator or on a physical device.
 
     .. seealso::
-       * `Model Profiler Guide <https://github.com/chenxingqiang/yzlite/docs/guides/model_profiler.html>`_
-       * `Model Profiler API examples <https://github.com/chenxingqiang/yzlite/yzlite/examples/profile_model.html>`_
+       * `Model Profiler Guide <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_profiler.html>`_
+       * `Model Profiler API examples <https://github.com/ReRAM-Labs/yzlite/yzlite/examples/profile_model.html>`_
 
     Args:
         model: The model to profile as either a :py:class:`yzlite.core.YZLiteModel` or :py:class:`yzlite.core.TfliteModel` instance,

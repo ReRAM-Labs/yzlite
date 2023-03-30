@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Tensorflow-Lite Model
 
@@ -24,7 +24,7 @@ summary = tflite_model.summary()
 print(summary)
 ```
 
-See the [TfliteModel API examples](https://github.com/chenxingqiang/yzlite/yzlite/examples/tflite_model.html) for more examples.
+See the [TfliteModel API examples](https://github.com/ReRAM-Labs/yzlite/yzlite/examples/tflite_model.html) for more examples.
 
 ## API Reference
 

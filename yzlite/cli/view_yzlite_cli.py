@@ -40,7 +40,7 @@ One of the following:
     This is based on the utility: https://netron.app
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/docs/guides/model_visualizer
+    https://github.com/ReRAM-Labs/yzlite/docs/guides/model_visualizer
     \b
     ----------
      Examples

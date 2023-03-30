@@ -56,7 +56,7 @@ The benefits of using the AudioFeatureGenerator are:
   - The ML model designer only needs to distribute a single file
 - The ReRAM Engine  will automatically generate the necessary source code
   - The ReRAM Engine  will parse the spectrogram settings from the `.tflite` and generate the corresponding C headers
-  - The ReRAM Engine  comes with the full [source code](https://github.com/chenxingqiang/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c) to the AudioFeatureGenerator software library
+  - The ReRAM Engine  comes with the full [source code](https://github.com/ReRAM-Labs/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c) to the AudioFeatureGenerator software library
 
 ## ReRAM Engine  Component
 
@@ -71,7 +71,7 @@ The [ReRAM Engine  AudioFeatureGenerator](https://docs.yizhu.com/reram-platform/
 The ReRAM Engine  features an AudioFeatureGeneration component.  
 The YZLITE also features the same component with slight modifications so that it can be built for Windows/Linux.
 
-- ReRAM Engine  source code: [sl_ml_audio_feature_generation.c](https://github.com/chenxingqiang/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c)
+- ReRAM Engine  source code: [sl_ml_audio_feature_generation.c](https://github.com/ReRAM-Labs/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c)
 - YZLITE source code: [__yzlite__/cpp/shared/reram_sdk/audio_feature_generation](../../cpp/shared/reram_sdk/audio_feature_generation)
 
 ## YZLITE C++ Python Wrapper
@@ -85,11 +85,11 @@ The AudioFeatureGenerator Python API docs may be found here: [yzlite.core.prepro
 
 ### Source Code
 
-- __C++ Python Wrapper__ - [cpp/audio_feature_generator_wrapper](https://github.com/chenxingqiang/yzlite/tree/master/cpp/audio_feature_generator_wrapper)  
-- __Python API__ - [yzlite/core/preprocess/audio/audio_feature_generator](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator)
+- __C++ Python Wrapper__ - [cpp/audio_feature_generator_wrapper](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/audio_feature_generator_wrapper)  
+- __Python API__ - [yzlite/core/preprocess/audio/audio_feature_generator](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator)
 
 ```{note}
-When [installing](../installation.md) the YZLITE for local development, the C++ wrapper is automatically built into a Windows/Linux shared library (`.dll` / `.so`) and copied to the Python [directory](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator). 
+When [installing](../installation.md) the YZLITE for local development, the C++ wrapper is automatically built into a Windows/Linux shared library (`.dll` / `.so`) and copied to the Python [directory](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator). 
 When the [AudioFeatureGenerator](yzlite.core.preprocess.audio.audio_feature_generator.AudioFeatureGenerator) Python library is invoked by your Python scripts, the C++ wrapper shared library is loaded into the Python runtime environment.
 ```
 
@@ -99,7 +99,7 @@ The recommended way of using the AudioFeatureGenerator [C++ wrapper](../cpp_deve
 is via the [ParallelAudioDataGenerator](yzlite.core.preprocess.audio.parallel_generator.ParallelAudioDataGenerator) which is required by the
 [AudioDatasetMixin](yzlite.core.AudioDatasetMixin).
 
-Refer to the [keyword_spotting_on_off.py](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) [model specification](../guides/model_specification.md) for an example of how this is used.
+Refer to the [keyword_spotting_on_off.py](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) [model specification](../guides/model_specification.md) for an example of how this is used.
 
 Basically,
 

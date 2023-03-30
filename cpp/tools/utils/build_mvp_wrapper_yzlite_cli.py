@@ -25,10 +25,10 @@ def build_mvp_wrapper_command(
 
     \b
     This builds the MVP-accelerated Tensorflow-Lite Micro kernels and MVP simulator Python wrapper:  
-    https://github.com/chenxingqiang/yzlite/tree/master/cpp/mvp_wrapper
+    https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/mvp_wrapper
     \b
     NOTE: The built wrapper library is copied to:
-    https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/tflite_micro/accelerators/mvp
+    https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/tflite_micro/accelerators/mvp
 
     """
 

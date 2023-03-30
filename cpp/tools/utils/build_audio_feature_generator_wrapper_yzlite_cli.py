@@ -26,10 +26,10 @@ def build_tflite_micro_wrapper_command(
 
     \b
     This builds the AudioFeatureGenerator Python wrapper:  
-    https://github.com/chenxingqiang/yzlite/tree/master/cpp/audio_feature_generator_wrapper
+    https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/audio_feature_generator_wrapper
     \b
     NOTE: The built wrapper library is copied to:
-    https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator
+    https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator
 
     """
 

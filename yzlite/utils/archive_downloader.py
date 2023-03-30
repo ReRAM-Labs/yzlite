@@ -1,6 +1,6 @@
 """Utilities for downloading and extracting archives
 
-See the source code on Github: `yzlite/utils/archive_downloader.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/archive_downloader.py>`_
+See the source code on Github: `yzlite/utils/archive_downloader.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/archive_downloader.py>`_
 """
 
 

@@ -38,7 +38,7 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/keyword_spotting_on_off.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/keyword_spotting_on_off.ipynb) - View this tutorial on Github\n",
 
     "- [Run on Colab](https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/keyword_spotting_on_off.ipynb) - Run this tutorial on Google Colab\n",
 
@@ -140,7 +140,7 @@
 
     "\n",
 
-    "See the [Standard Python Package Installation](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package) guide for more details on how to enable the `yzlite` command in your local terminal.\n",
+    "See the [Standard Python Package Installation](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package) guide for more details on how to enable the `yzlite` command in your local terminal.\n",
 
     "\n",
 
@@ -200,7 +200,7 @@
 
     "Run the command `yzlite --help` to ensure it is working.  \n",
 
-    "__NOTE:__ The exclamation point `!` tells the Notebook to run a shell command, it is not required in a [standard terminal](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package)"
+    "__NOTE:__ The exclamation point `!` tells the Notebook to run a shell command, it is not required in a [standard terminal](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package)"
 
    ]
 
@@ -474,7 +474,7 @@
 
     "- YZLITE [Python API](../../docs/python_api/data_preprocessing/audio_feature_generator.md)\n",
 
-    "- ReRAM Engine [firmware component](https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html#reram-sdk-component)\n",
+    "- ReRAM Engine [firmware component](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html#reram-sdk-component)\n",
 
     "\n",
 
@@ -552,7 +552,7 @@
 
     "\n",
 
-    "The completed model specification used for this tutorial may be found on Github: [keyword_spotting_on_off.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py).  \n",
+    "The completed model specification used for this tutorial may be found on Github: [keyword_spotting_on_off.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py).  \n",
 
     "\n",
 
@@ -1154,7 +1154,7 @@
 
     "#       or a Python function\n",
 
-    "# See: https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin.dataset\n",
+    "# See: https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin.dataset\n",
 
     "my_model.dataset = speech_commands_v2\n",
 
@@ -1186,7 +1186,7 @@
 
     "For this tutorial, we want to detect `on` and `off`, however,\n",
 
-    "you may modify this to any keyword that is found in the [Google Speech Commands](https://github.com/chenxingqiang/yzlite/docs/python_api/datasets/index.html#google-speech-commands-v2) dataset:\n",
+    "you may modify this to any keyword that is found in the [Google Speech Commands](https://github.com/ReRAM-Labs/yzlite/docs/python_api/datasets/index.html#google-speech-commands-v2) dataset:\n",
 
     "\n",
 
@@ -1446,7 +1446,7 @@
 
     "Please note that many times you do not need to define you own model. Instead, you can use a pre-defined model\n",
 
-    "such as [MobileNetV1](https://github.com/chenxingqiang/yzlite/docs/python_api/models/common_models.html#mobilenet-v1) or [ResNetv1-10](https://github.com/chenxingqiang/yzlite/docs/python_api/models/common_models.html#resnetv1-10). The YZLITE provides some common models as Python packages in the [Shared Models](https://github.com/chenxingqiang/yzlite/docs/python_api/models/common_models.html) section with example usage such as [image_classification.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/image_classification.py).\n",
+    "such as [MobileNetV1](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/common_models.html#mobilenet-v1) or [ResNetv1-10](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/common_models.html#resnetv1-10). The YZLITE provides some common models as Python packages in the [Shared Models](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/common_models.html) section with example usage such as [image_classification.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/image_classification.py).\n",
 
     "\n",
 
@@ -1734,7 +1734,7 @@
 
     "\n",
 
-    "This is useful for this tutorial as the YZLITE will automatically embed all of the [AudioFeatureGeneratorSettings](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html#audiofeaturegenerator-settings) into the generated `.tflite` model file.\n",
+    "This is useful for this tutorial as the YZLITE will automatically embed all of the [AudioFeatureGeneratorSettings](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html#audiofeaturegenerator-settings) into the generated `.tflite` model file.\n",
 
     "Later, the ReRAM Engine will read the settings from the `.tflite` model file when generating the project. \n",
 
@@ -4020,7 +4020,7 @@
 
     "\n",
 
-    "The standard ReRAM Engine also features an [audio_classifier](https://github.com/chenxingqiang/reram_sdk/tree/gsdk_4.0/app/common/example/audio_classifier) application.\n",
+    "The standard ReRAM Engine also features an [audio_classifier](https://github.com/ReRAM-Labs/reram_sdk/tree/gsdk_4.0/app/common/example/audio_classifier) application.\n",
 
     "\n",
 

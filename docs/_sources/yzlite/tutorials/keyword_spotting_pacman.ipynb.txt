@@ -86,7 +86,7 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/keyword_spotting_pacman.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/keyword_spotting_pacman.ipynb) - View this tutorial on Github\n",
 
     "- [Run on Colab](https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/keyword_spotting_pacman.ipynb) - Run this tutorial on Google Colab\n",
 
@@ -94,7 +94,7 @@
 
     "- [C++ Example Application](../../docs/cpp_development/examples/ble_audio_classifier.md) - View this tutorial's associated C++ example application\n",
 
-    "- [Pac-Man Webpage Source](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman) - View the Pac-Man webpage's source code on Github\n",
+    "- [Pac-Man Webpage Source](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman) - View the Pac-Man webpage's source code on Github\n",
 
     "- [Machine Learning Model](../../docs/python_api/models/yizhutech/keyword_spotting_pacman_v3.md) - View this tutorial's associated machine learning model\n",
 
@@ -184,7 +184,7 @@
 
     "\n",
 
-    "See the [Standard Python Package Installation](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package) guide for more details on how to enable the `yzlite` command in your local terminal.\n",
+    "See the [Standard Python Package Installation](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package) guide for more details on how to enable the `yzlite` command in your local terminal.\n",
 
     "\n",
 
@@ -262,7 +262,7 @@
 
     "Run the command `yzlite --help` to ensure it is working.  \n",
 
-    "__NOTE:__ The exclamation point `!` tells the Notebook to run a shell command, it is not required in a [standard terminal](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package)"
+    "__NOTE:__ The exclamation point `!` tells the Notebook to run a shell command, it is not required in a [standard terminal](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package)"
 
    ]
 
@@ -400,7 +400,7 @@
 
     "\n",
 
-    "The pre-defined [Model Specification](../../docs/guides/model_specification.md) used by the tutorial may be found on [Github](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py).\n",
+    "The pre-defined [Model Specification](../../docs/guides/model_specification.md) used by the tutorial may be found on [Github](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py).\n",
 
     "\n",
 
@@ -496,7 +496,7 @@
 
     "- [Model Profiler](../../docs/guides/model_profiler.md) - This allows for profiling the model on the embedded device and determining the inference latency __before__ fully training the model\n",
 
-    "- [Audio Visualizer Utility](https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html#audio-visualizer-utility) - This allows for visualizing the generated spectrograms in real-time"
+    "- [Audio Visualizer Utility](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html#audio-visualizer-utility) - This allows for visualizing the generated spectrograms in real-time"
 
    ]
 
@@ -644,7 +644,7 @@
 
     "\n",
 
-    "These values were found experimentally using the [Audio Visualizer Utility](https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html#audio-visualizer-utility).\n",
+    "These values were found experimentally using the [Audio Visualizer Utility](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html#audio-visualizer-utility).\n",
 
     "\n",
 
@@ -688,7 +688,7 @@
 
     "[Audio Feature Generator](../../docs/audio/audio_feature_generator.md). See the `audio_pipeline_with_augmentations()`\n",
 
-    "function in [keyword_spotting_pacman_v3.py](https://github.com/chenxingqiang/yzlite/docs/python_api/models/yizhutech/keyword_spotting_pacman_v3.html#model-specification) for more details.\n",
+    "function in [keyword_spotting_pacman_v3.py](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/yizhutech/keyword_spotting_pacman_v3.html#model-specification) for more details.\n",
 
     "\n",
 
@@ -888,7 +888,7 @@
 
     "\n",
 
-    "The [model specification](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py) file was then modified to apply random augmentations to the dataset samples and then [generate spectrograms](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio.html#yzlite.core.preprocess.utils.audio.apply_frontend) from the augmented samples.\n",
+    "The [model specification](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py) file was then modified to apply random augmentations to the dataset samples and then [generate spectrograms](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio.html#yzlite.core.preprocess.utils.audio.apply_frontend) from the augmented samples.\n",
 
     "The spectrograms are given to the model for training.\n",
 
@@ -1530,7 +1530,7 @@
 
     "\n",
 
-    "Once the [model specification](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py) is ready, it can be [trained](../../docs/guides/model_training.md) with the command:"
+    "Once the [model specification](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py) is ready, it can be [trained](../../docs/guides/model_training.md) with the command:"
 
    ]
 
@@ -1584,7 +1584,7 @@
 
    "source": [
 
-    "After training completes, a [model archive](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.yzlite.zip) file is generated containing the quantized `.tflite` model file. This is the file that is built into the firmware application."
+    "After training completes, a [model archive](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.yzlite.zip) file is generated containing the quantized `.tflite` model file. This is the file that is built into the firmware application."
 
    ]
 
@@ -1606,7 +1606,7 @@
 
     "\n",
 
-    "The application uses the [Audio Feature Generator](https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html#reram-sdk-component) library to generate spectrograms from the streaming microphone audio.\n",
+    "The application uses the [Audio Feature Generator](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html#reram-sdk-component) library to generate spectrograms from the streaming microphone audio.\n",
 
     "The spectrograms are then passed to the [Tensorflow-Lite Micro](https://github.com/tensorflow/tflite-micro) inference engine which uses the trained model from above to make predictions on if a keyword is found in the spectrogram.\n",
 
@@ -1628,7 +1628,7 @@
 
     "\n",
 
-    "A [Pac-Man Webpage](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman) is available that allows for playing the game \"Pac-Man\" using\n",
+    "A [Pac-Man Webpage](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman) is available that allows for playing the game \"Pac-Man\" using\n",
 
     "the keywords detected by the firmware application described above.\n",
 
@@ -1732,7 +1732,7 @@
 
     "\n",
 
-    "To run the webpage locally, simply open [index.html](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman/index.html) in your web browser (NOTE: double-click the __locally cloned__ `index.html` on your PC, not the one on Github).\n",
+    "To run the webpage locally, simply open [index.html](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman/index.html) in your web browser (NOTE: double-click the __locally cloned__ `index.html` on your PC, not the one on Github).\n",
 
     "\n",
 

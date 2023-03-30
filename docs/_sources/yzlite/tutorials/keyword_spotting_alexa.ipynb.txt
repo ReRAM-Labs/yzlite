@@ -70,7 +70,7 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/keyword_spotting_alexa.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/keyword_spotting_alexa.ipynb) - View this tutorial on Github\n",
 
     "- [C++ Example Application](../../docs/cpp_development/examples/audio_classifier.md) - View this tutorial's associated C++ example application\n",
 
@@ -104,7 +104,7 @@
 
     "\n",
 
-    "1. [Install](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package) the YZLITE Python package \n",
+    "1. [Install](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package) the YZLITE Python package \n",
 
     "2. Obtain a [BRD2601](https://www.yizhu.com/development-tools/wireless/efr32xg24-dev-kit) development kit\n",
 
@@ -214,21 +214,21 @@
 
     "\n",
 
-    "1. A [Python script](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/apps/audio_classifier/python/alexa_demo/alexa_demo.py) runs on the local PC and communicates with the development board via UART\n",
+    "1. A [Python script](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/apps/audio_classifier/python/alexa_demo/alexa_demo.py) runs on the local PC and communicates with the development board via UART\n",
 
     "1. A user says the keyword \"Alexa\" to the development board's microphone\n",
 
     "2. The [machine learning model](../../docs/python_api/models/yizhutech/keyword_spotting_alexa.md) running on the development detects the keyword \n",
 
-    "3. The development board begins compressing the microphone audio using the [Opus codec](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/opus) and streams the audio to the Python script via UART\n",
+    "3. The development board begins compressing the microphone audio using the [Opus codec](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/opus) and streams the audio to the Python script via UART\n",
 
-    "4. The development board uses a [Voice Activity Detection](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/voice_activity_detector) (VAD) library to determine when the user finishes the command\n",
+    "4. The development board uses a [Voice Activity Detection](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/voice_activity_detector) (VAD) library to determine when the user finishes the command\n",
 
     "5. The Python script sends the Opus-encoded audio to the AVS cloud\n",
 
     "6. The Python scripts receives the Alexa response from the AVS cloud and forwards to the development board via UART\n",
 
-    "7. The development board decompresses the [MP3-encoded](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/minimp3) audio and streams to the locally connected [speaker](https://www.adafruit.com/product/3885) via [VDAC](https://docs.yizhu.com/reram-platform/latest/emlib/api/efr32xg24/group-vdac) peripheral"
+    "7. The development board decompresses the [MP3-encoded](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/minimp3) audio and streams to the locally connected [speaker](https://www.adafruit.com/product/3885) via [VDAC](https://docs.yizhu.com/reram-platform/latest/emlib/api/efr32xg24/group-vdac) peripheral"
 
    ]
 
@@ -428,7 +428,7 @@
 
     "If one class has substantially more samples then the model may not adequately learn the intricacies of each class.\n",
 
-    "To help account for this, Tensorflow has the concept of [class weights](https://www.tensorflow.org/tutorials/structured_data/imbalanced_data#class_weights). The [YZLITE Model](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/index.html) also provides a [class_weights](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/dataset_mixin.html#yzlite.core.DatasetMixin.class_weights) property to automatically balance the classes during training.\n",
+    "To help account for this, Tensorflow has the concept of [class weights](https://www.tensorflow.org/tutorials/structured_data/imbalanced_data#class_weights). The [YZLITE Model](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/index.html) also provides a [class_weights](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/dataset_mixin.html#yzlite.core.DatasetMixin.class_weights) property to automatically balance the classes during training.\n",
 
     "\n",
 
@@ -520,7 +520,7 @@
 
     "The YZLITE features two tools to aid with the selection of the audio frontend parameters:  \n",
 
-    "- [Audio Visualizer](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html#audio-visualization-utility) - Allows for adjusting the AudioFeatureGenerator [settings](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_feature_generator_settings.html) and viewing the resulting spectrogram in real-time\n",
+    "- [Audio Visualizer](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html#audio-visualization-utility) - Allows for adjusting the AudioFeatureGenerator [settings](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_feature_generator_settings.html) and viewing the resulting spectrogram in real-time\n",
 
     "- [Model Profiler](../../docs/guides/model_profiler.md) - Allows for running and profiling the ML model on the embedded device _before_ fully training the ML model"
 
@@ -636,7 +636,7 @@
 
     "# This way, they are included in the generated .tflite model file\n",
 
-    "# See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html\n",
+    "# See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html\n",
 
     "my_model.model_parameters.update(frontend_settings)\n",
 
@@ -708,7 +708,7 @@
 
     "\n",
 
-    "The pre-generated results of this profiling command may found [here](https://github.com/chenxingqiang/yzlite/docs/python_api/models/yizhutech/keyword_spotting_alexa.html#model-profiling-report)."
+    "The pre-generated results of this profiling command may found [here](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/yizhutech/keyword_spotting_alexa.html#model-profiling-report)."
 
    ]
 
@@ -732,7 +732,7 @@
 
     "\n",
 
-    "The [keyword_spotting_alexa.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py) ML model augmentations are implemented in the `audio_pipeline_with_augmentations()` function. This function does the following:\n",
+    "The [keyword_spotting_alexa.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py) ML model augmentations are implemented in the `audio_pipeline_with_augmentations()` function. This function does the following:\n",
 
     "- Uses the [audiomentations](https://github.com/iver56/audiomentations) Python library to apply the various augmentations\n",
 
@@ -754,7 +754,7 @@
 
     "\n",
 
-    "In the [keyword_spotting_alexa.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py) model specification file, if you uncomment the line (near the middle of the script):\n",
+    "In the [keyword_spotting_alexa.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py) model specification file, if you uncomment the line (near the middle of the script):\n",
 
     "\n",
 
@@ -844,7 +844,7 @@
 
     "__HINT:__ This model can be trained in ~2hrs using [vast.ai](../../yzlite/tutorials/cloud_training_with_vast_ai.md).  \n",
 
-    "Be sure to select an instance with at least 48 CPUs (only 1 GPU is needed). Also be sure to update the `n_jobs` in [tf_dataset_utils.parallel_process()](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/tf_dataset.html#yzlite.core.preprocess.utils.tf_dataset.parallel_process) in [keyword_spotting_alexa.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py), e.g.:\n",
+    "Be sure to select an instance with at least 48 CPUs (only 1 GPU is needed). Also be sure to update the `n_jobs` in [tf_dataset_utils.parallel_process()](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/tf_dataset.html#yzlite.core.preprocess.utils.tf_dataset.parallel_process) in [keyword_spotting_alexa.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py), e.g.:\n",
 
     "\n",
 
@@ -904,11 +904,11 @@
 
     "\n",
 
-    "The pre-trained model archive used by this tutorial may be found at: [keyword_spottong_alexa.yzlite.zip](https://github.com/chenxingqiang/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip)\n",
+    "The pre-trained model archive used by this tutorial may be found at: [keyword_spottong_alexa.yzlite.zip](https://github.com/ReRAM-Labs/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip)\n",
 
     "\n",
 
-    "To verify that the model works, the [classify_audio](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html#audio-classification-utility) YZLITE command may be used.\n",
+    "To verify that the model works, the [classify_audio](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html#audio-classification-utility) YZLITE command may be used.\n",
 
     "This will program the trained model to the [development board](https://www.yizhu.com/development-tools/wireless/efr32xg24-dev-kit) and stream the dev board's microphone audio into the model. With this, you can issue keywords to the dev board and see the model's classification results in real-time.\n",
 
@@ -1008,7 +1008,7 @@
 
     "1. Configure the [Visual Studio Code](../../docs/cpp_development/vscode.md) _or_ [CMake Command Line](../../docs/cpp_development/command_line.md) development environment\n",
 
-    "   __NOTE:__ The application needs to be built for [embedded](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html#build-for-embedded)\n",
+    "   __NOTE:__ The application needs to be built for [embedded](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html#build-for-embedded)\n",
 
     "2. Create/modify the file: `<yzlite repo root>/user_options.cmake`\n",
 

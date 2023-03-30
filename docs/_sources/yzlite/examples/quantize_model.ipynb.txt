@@ -118,13 +118,13 @@
 
     "1. Fully [train](../../docs/guides/model_training.md) a model  \n",
 
-    "2. Later modify the [TrainMixin.tflite_converter](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tflite_converter) settings in the [model specification](https://github.com/chenxingqiang/yzlite/docs/guides/model_specification.html) script  \n",
+    "2. Later modify the [TrainMixin.tflite_converter](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tflite_converter) settings in the [model specification](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_specification.html) script  \n",
 
     "3. Run the [quantize_model](../../docs/python_api/operations/quantize.md) API to update the `.tflite` model file in the [model archive](../../docs/guides/model_archive.md).\n",
 
     "\n",
 
-    "In this example, it's assumed that the [TrainMixin.tflite_converter](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tflite_converter) settings in\n",
+    "In this example, it's assumed that the [TrainMixin.tflite_converter](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tflite_converter) settings in\n",
 
     "the [image_example1](../../docs/python_api/models/examples/image_example1.md) model specification script have been modified _after_ the model have been\n",
 

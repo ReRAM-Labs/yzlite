@@ -54,7 +54,7 @@
 
     "\n",
 
-    "Before continuing with this tutorial, ensure you have the YZLITE Python package [installed](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package) and that the virtual environment is activated (if applicable)."
+    "Before continuing with this tutorial, ensure you have the YZLITE Python package [installed](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package) and that the virtual environment is activated (if applicable)."
 
    ]
 
@@ -652,9 +652,9 @@
 
     "To account for these issues, the YZLITE features the callbacks:\n",
 
-    "- [my_model.build_model_function](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.build_model_function)\n",
+    "- [my_model.build_model_function](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.build_model_function)\n",
 
-    "- [my_model.dataset](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/dataset_mixin.html#yzlite.core.DatasetMixin.dataset)\n",
+    "- [my_model.dataset](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/dataset_mixin.html#yzlite.core.DatasetMixin.dataset)\n",
 
     "\n",
 
@@ -1074,7 +1074,7 @@
 
     "# Most standard Python data types may be embedded\n",
 
-    "# See: https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html \n",
+    "# See: https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html \n",
 
     "my_model.model_parameters['my_boolean'] = True \n",
 

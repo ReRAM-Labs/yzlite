@@ -254,7 +254,7 @@ def _update_gsdk_dir(gsdk_dir, git_tag, logger):
     from yzlite.utils.shell_cmd import run_shell_cmd
 
     if not os.path.exists(f'{gsdk_dir}/.git'):
-        gsdk_git_url = 'https://github.com/chenxingqiang/reram_sdk.git'
+        gsdk_git_url = 'https://github.com/ReRAM-Labs/reram_sdk.git'
         logger.info(
             f'Cloning ReRAM Engine from:\n{gsdk_git_url}\nto: {gsdk_dir}\nNOTE: This may take awhile as all of the GSDK binary assets need to be downloaded ...')
 

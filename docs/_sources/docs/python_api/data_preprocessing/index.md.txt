@@ -9,7 +9,7 @@ The following data pre-processing utilities are available:
 
 
 
-The source code for these APIs may be found on Github at [https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess).
+The source code for these APIs may be found on Github at [https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess).
 
 
 

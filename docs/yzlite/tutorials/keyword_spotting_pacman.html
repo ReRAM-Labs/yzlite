@@ -153,7 +153,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -208,7 +208,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -672,11 +672,11 @@
 <section id="quick-links">
 <h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/keyword_spotting_pacman.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
+<li><p><a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/keyword_spotting_pacman.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/keyword_spotting_pacman.ipynb">Run on Colab</a> - Run this tutorial on Google Colab</p></li>
 <li><p><a class="reference internal" href="cloud_training_with_vast_ai.html"><span class="doc std std-doc">Train in the “Cloud”</span></a> - <em>Vastly</em> improve training times by training this model in the “cloud”</p></li>
 <li><p><a class="reference internal" href="../../docs/cpp_development/examples/ble_audio_classifier.html"><span class="doc std std-doc">C++ Example Application</span></a> - View this tutorial’s associated C++ example application</p></li>
-<li><p><a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman">Pac-Man Webpage Source</a> - View the Pac-Man webpage’s source code on Github</p></li>
+<li><p><a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman">Pac-Man Webpage Source</a> - View the Pac-Man webpage’s source code on Github</p></li>
 <li><p><a class="reference internal" href="../../docs/python_api/models/yizhutech/keyword_spotting_pacman_v3.html"><span class="doc std std-doc">Machine Learning Model</span></a> - View this tutorial’s associated machine learning model</p></li>
 <li><p><a class="reference external" href="https://yzlite-pacman.web.app">Live Demo</a> - Play Pac-Man using the keywords: Left, Right, Up, Down</p></li>
 <li><p><a class="reference external" href="https://cms.tinyml.org/wp-content/uploads/talks2022/tinyML_Talks_Dan_Riedler_221025.pdf">Presentation PDF</a> - Presentation describing how this demo was created</p></li>
@@ -796,7 +796,7 @@ Commands:
 </section>
 <section id="creating-the-machine-learning-model">
 <h2 id="creating-the-machine-learning-model">Creating the Machine Learning Model<a class="headerlink" href="#creating-the-machine-learning-model" title="Permalink to this heading">¶</a></h2>
-<p>The pre-defined <a class="reference internal" href="../../docs/guides/model_specification.html"><span class="doc std std-doc">Model Specification</span></a> used by the tutorial may be found on <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py">Github</a>.</p>
+<p>The pre-defined <a class="reference internal" href="../../docs/guides/model_specification.html"><span class="doc std std-doc">Model Specification</span></a> used by the tutorial may be found on <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py">Github</a>.</p>
 <p>This model is a standard audio classification model designed to detect the classes:</p>
 <ul class="simple">
 <li><p>Left</p></li>
@@ -970,7 +970,7 @@ However, increasing this value also increases the model’s computational comple
 </pre></div>
 </div>
 <p>This command uses the microphone on the development board to record the video game’s generated audio. The recorded audio is saved to the local PC as a <code class="docutils literal notranslate"><span class="pre">.wav</span></code> file.</p>
-<p>The <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py">model specification</a> file was then modified to apply random augmentations to the dataset samples and then <a class="reference external" href="../../docs/python_api/data_preprocessing/audio.html#yzlite.core.preprocess.utils.audio.apply_frontend">generate spectrograms</a> from the augmented samples.
+<p>The <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py">model specification</a> file was then modified to apply random augmentations to the dataset samples and then <a class="reference external" href="../../docs/python_api/data_preprocessing/audio.html#yzlite.core.preprocess.utils.audio.apply_frontend">generate spectrograms</a> from the augmented samples.
 The spectrograms are given to the model for training.</p>
 <p><strong>NOTE:</strong> The spectrogram generation algorithm <a class="reference internal" href="../../docs/audio/audio_feature_generator.html"><span class="doc std std-doc">source code</span></a> is shared between the model training script and embedded runtime. This way, the generated spectrograms “look” the same during training and inference which should make the model more robust in the field.</p>
 <div class="cell docutils container">
@@ -1264,7 +1264,7 @@ Profiling time: 115.656699 seconds
 </section>
 <section id="training-the-model">
 <h3 id="training-the-model">Training the model<a class="headerlink" href="#training-the-model" title="Permalink to this heading">¶</a></h3>
-<p>Once the <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py">model specification</a> is ready, it can be <a class="reference internal" href="../../docs/guides/model_training.html"><span class="doc std std-doc">trained</span></a> with the command:</p>
+<p>Once the <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.py">model specification</a> is ready, it can be <a class="reference internal" href="../../docs/guides/model_training.html"><span class="doc std std-doc">trained</span></a> with the command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>yzlite<span class="w"> </span>train<span class="w"> </span>keyword_spotting_pacman_v3
@@ -1277,7 +1277,7 @@ Profiling time: 115.656699 seconds
 <h3 id="train-in-cloud">Train in cloud<a class="headerlink" href="#train-in-cloud" title="Permalink to this heading">¶</a></h3>
 <p>Alternatively, you can <em>vastly</em> improve the model training time by training this model in the “cloud”.<br/>
 See the tutorial: <a class="reference internal" href="cloud_training_with_vast_ai.html"><span class="doc std std-doc">Cloud Training with vast.ai</span></a> for more details.</p>
-<p>After training completes, a <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.yzlite.zip">model archive</a> file is generated containing the quantized <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> model file. This is the file that is built into the firmware application.</p>
+<p>After training completes, a <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_pacman_v3.yzlite.zip">model archive</a> file is generated containing the quantized <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> model file. This is the file that is built into the firmware application.</p>
 </section>
 </section>
 <section id="creating-the-firmware-application">
@@ -1289,7 +1289,7 @@ If a keyword is detected, a connected BLE client is sent a notification containi
 </section>
 <section id="creating-the-pac-man-webpage">
 <h2 id="creating-the-pac-man-webpage">Creating the Pac-Man Webpage<a class="headerlink" href="#creating-the-pac-man-webpage" title="Permalink to this heading">¶</a></h2>
-<p>A <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman">Pac-Man Webpage</a> is available that allows for playing the game “Pac-Man” using
+<p>A <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman">Pac-Man Webpage</a> is available that allows for playing the game “Pac-Man” using
 the keywords detected by the firmware application described above.</p>
 <p>This webpage was adapted from a game created by Lucio Panpinto, view original source code on <a class="reference external" href="https://github.com/luciopanepinto/pacman">GitHub</a>.</p>
 <p>The webpage was modified to use the <a class="reference external" href="https://itpnyu.github.io/p5ble-website/">p5.ble.js</a> library for communicating with the firmware application via Bluetooth Low Energy.</p>
@@ -1321,7 +1321,7 @@ for how include your model into the built application.</p>
 <section id="run-webpage-locally">
 <h3 id="run-webpage-locally">Run webpage locally<a class="headerlink" href="#run-webpage-locally" title="Permalink to this heading">¶</a></h3>
 <p>The demo’s webpage uses “vanilla” javascript+css+html. No special build systems are required.</p>
-<p>To run the webpage locally, simply open <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman/index.html">index.html</a> in your web browser (NOTE: double-click the <strong>locally cloned</strong> <code class="docutils literal notranslate"><span class="pre">index.html</span></code> on your PC, not the one on Github).</p>
+<p>To run the webpage locally, simply open <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/ble_audio_classifier/web/pacman/index.html">index.html</a> in your web browser (NOTE: double-click the <strong>locally cloned</strong> <code class="docutils literal notranslate"><span class="pre">index.html</span></code> on your PC, not the one on Github).</p>
 <p>When the webpage starts, follow the instructions but do <em>not</em> program the <code class="docutils literal notranslate"><span class="pre">.s37</span></code>. The locally built firmware application should have already been programmed as described in the the previous section.</p>
 </section>
 </section>

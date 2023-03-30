@@ -3,11 +3,11 @@
 
 Basic YZLITE model example
 
-- Source code: `basic_example.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/basic_example.py>`_
+- Source code: `basic_example.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/basic_example.py>`_
 
-This provides a basic example of how to create a `model specification <https://github.com/chenxingqiang/yzlite/docs/guides/model_specification.html>`_.
+This provides a basic example of how to create a `model specification <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_specification.html>`_.
 It is based off the `Simple MNIST convnet <https://keras.io/examples/vision/mnist_convnet/>`_ Keras example.
-It is designed to work with the `Add an Existing Script to YZLITE <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/add_existing_script_to_yzlite.html>`_ tutorial.
+It is designed to work with the `Add an Existing Script to YZLITE <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/add_existing_script_to_yzlite.html>`_ tutorial.
 
 Commands
 --------------
@@ -250,7 +250,7 @@ my_model.tflite_converter['representative_dataset'] = my_representative_dataset_
 my_model.model_parameters['samplewise_norm.rescale'] = 1/255.
 
 # Most standard Python data types may be embedded
-# See: https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+# See: https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
 my_model.model_parameters['my_boolean'] = True
 my_model.model_parameters['my_string'] = 'This string will be embedded into the .tflite'
 my_model.model_parameters['my_bytes'] = b'This byte string will be embedded also'

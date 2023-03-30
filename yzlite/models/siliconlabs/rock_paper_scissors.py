@@ -1,8 +1,8 @@
 """rock_paper_scissors
 *************************
 
-- Source code: `rock_paper_scissors.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/rock_paper_scissors.py>`_.
-- Pre-trained model: `rock_paper_scissors.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/rock_paper_scissors.yzlite.zip>`_.
+- Source code: `rock_paper_scissors.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/rock_paper_scissors.py>`_.
+- Pre-trained model: `rock_paper_scissors.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/rock_paper_scissors.yzlite.zip>`_.
 
 This provides an example of how to define a classification model
 that uses the Rock/Paper/Scissors dataset with the ParallelImageGenerator as its data source.

@@ -1,8 +1,8 @@
 """fingerprint_signature_generator
 ***********************************
 
-- Source code: `fingerprint_signature_generator.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.py>`_
-- Pre-trained model: `fingerprint_signature_generator.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.yzlite.zip>`_.
+- Source code: `fingerprint_signature_generator.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.py>`_
+- Pre-trained model: `fingerprint_signature_generator.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.yzlite.zip>`_.
 
 This model was adapted from `Image similarity estimation using a Siamese Network with a contrastive loss <https://keras.io/examples/vision/siamese_contrastive>`_.
 
@@ -13,7 +13,7 @@ In supervised similarity learning, the networks are then trained to maximize the
 while minimizing the distance between embeddings of similar classes, resulting in embedding spaces that reflect the class segmentation of the training inputs.
 
 
-Refer to the `Fingerprint Authentication Tutorial <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/fingerprint_authentication.html>`_ for more details.
+Refer to the `Fingerprint Authentication Tutorial <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/fingerprint_authentication.html>`_ for more details.
 
 Commands
 --------------

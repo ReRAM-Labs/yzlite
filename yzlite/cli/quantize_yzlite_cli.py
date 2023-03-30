@@ -54,7 +54,7 @@ May be one of the following:
     are modified after the model is trained.
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/docs/guides/model_quantization
+    https://github.com/ReRAM-Labs/yzlite/docs/guides/model_quantization
     \b
     ----------
      Examples

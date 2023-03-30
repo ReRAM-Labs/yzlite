@@ -1,8 +1,8 @@
 """image_example1
 ******************
 
-- Source code: `image_example1.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/image_example1.py>`_
-- Pre-trained model: `image_example1.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/image_example1.yzlite.zip>`_
+- Source code: `image_example1.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/image_example1.py>`_
+- Pre-trained model: `image_example1.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/image_example1.yzlite.zip>`_
 
 This provides an example of how to define a classification model
 that uses the Rock/Paper/Scissors dataset with the ParallelImageGenerator as its data source.

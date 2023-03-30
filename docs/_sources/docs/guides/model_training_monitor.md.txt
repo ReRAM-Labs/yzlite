@@ -27,7 +27,7 @@ The basic flow for using Tensorboard is as follows:
 ### 1) Configure the Tensorboard callback
 
 Tensorboard must first be enabled so that the necessary logs are generated during model training.
-This is done by configuring the [my_model.tensorboard](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tensorboard)
+This is done by configuring the [my_model.tensorboard](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tensorboard)
 property in your [model specification](./model_specification.md).
 
 e.g.: Add the following to your model's Python script:
@@ -128,14 +128,14 @@ yzlite train <my model> --clean
 
 ## Run Tensorboard from remote SSH session
 
-The Tensorboard utility may also be used when training on a [remote cloud machine](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/cloud_training_with_vast_ai.html) via SSH.
+The Tensorboard utility may also be used when training on a [remote cloud machine](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/cloud_training_with_vast_ai.html) via SSH.
 
 This is done as follows:
 
 ### 1) Configure the Tensorboard callback
 
 Tensorboard must first be enabled so that the necessary logs are generated during model training.
-This is done by configuring the [my_model.tensorboard](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tensorboard)
+This is done by configuring the [my_model.tensorboard](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/train_mixin.html#yzlite.core.TrainMixin.tensorboard)
 property in your [model specification](./model_specification.md).
 
 e.g.: Add the following to your model's Python script:

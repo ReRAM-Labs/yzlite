@@ -29,8 +29,8 @@ def update_model_parameters(
        The weights and model structure of the `.tflite` file are NOT modified. 
 
     .. seealso::
-       * `Model Parameters Guide <https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html>`_
-       * `Update model parameters API examples <https://github.com/chenxingqiang/yzlite/yzlite/examples/update_params.html>`_
+       * `Model Parameters Guide <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html>`_
+       * `Update model parameters API examples <https://github.com/ReRAM-Labs/yzlite/yzlite/examples/update_params.html>`_
 
     Args:
         model: Either the name of a model

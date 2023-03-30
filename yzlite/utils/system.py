@@ -1,6 +1,6 @@
 """General system utilities
 
-See the source code on Github: `yzlite/utils/system.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/system.py>`_
+See the source code on Github: `yzlite/utils/system.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/system.py>`_
 """
 import os
 import signal

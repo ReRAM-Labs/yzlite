@@ -8,7 +8,7 @@ This script generates a synthetic dataset for the keywords:
 - go
 
 See the corresponding tutorial for more details:
-https://github.com/chenxingqiang/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html
+https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html
 
 """
 
@@ -51,7 +51,7 @@ OUT_DIR = create_user_dir('datasets/generated/synthetic_direction_commands')
 def generate_dataset():
     """Generate the dataset
 
-    This generates the dataset using the `AudioDatasetGenerator <https://github.com/chenxingqiang/yzlite/docs/python_api/utils/audio_dataset_generator/index.html>`
+    This generates the dataset using the `AudioDatasetGenerator <https://github.com/ReRAM-Labs/yzlite/docs/python_api/utils/audio_dataset_generator/index.html>`
     Python package provided by the YZLITE.
 
     """

@@ -21,7 +21,7 @@ def ResNet10V1(
     .. seealso::
        * https://arxiv.org/pdf/1512.03385.pdf
        * https://keras.io/api/applications/resnet/
-       * https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/CIFAR10_ResNetv1/resnet_v1_eembc.py
+       * https://github.com/ReRAM-Labs/platform_ml_models/blob/master/eembc/CIFAR10_ResNetv1/resnet_v1_eembc.py
     """
 
     # Input layer, change kernel size to 7x7 and strides to 2 for an official resnet

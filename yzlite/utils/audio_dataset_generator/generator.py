@@ -16,7 +16,7 @@ from .generator_types import (Augmentation, BackendBase, GenerationConfig,
 class AudioDatasetGenerator:
     """Utility for generating synthetic keyword datasets
 
-    See the `Synthetic Audio Dataset Generation <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html>`_ tutorial for more details.
+    See the `Synthetic Audio Dataset Generation <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html>`_ tutorial for more details.
 
     .. note:: The generated audio files are 16kHz, 16-bit PCM ``.wav`` files.
 

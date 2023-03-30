@@ -3,14 +3,14 @@
 
 Image classification (ResNetv1-10 with CIFAR10)
 
-- Source code: `image_classification.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/image_classification.py>`_
-- Pre-trained model: `image_classification.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/image_classification.yzlite.zip>`_
+- Source code: `image_classification.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/image_classification.py>`_
+- Pre-trained model: `image_classification.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/image_classification.yzlite.zip>`_
 
 
 This was adapted from:
 
 * https://github.com/mlcommons/tiny/tree/master/benchmark/training/image_classification
-* https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/CIFAR10_ResNetv1/cifar10_main.py
+* https://github.com/ReRAM-Labs/platform_ml_models/blob/master/eembc/CIFAR10_ResNetv1/cifar10_main.py
 
 
 Dataset

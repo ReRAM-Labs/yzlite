@@ -1,6 +1,6 @@
 """File path utilities
 
-See the source code on Github: `yzlite/utils/path.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/path.py>`_
+See the source code on Github: `yzlite/utils/path.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/path.py>`_
 """
 import datetime
 import glob
@@ -173,7 +173,7 @@ def get_user_setting(name: str, default=None):
       serial_number: Adapter serial number
       ip_address: Adapter IP address
 
-    See `settings_file <https://github.com/chenxingqiang/yzlite/docs/other/settings_file.html>`_
+    See `settings_file <https://github.com/ReRAM-Labs/yzlite/docs/other/settings_file.html>`_
 
     """
     user_settings_path = fullpath(os.environ.get(

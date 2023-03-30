@@ -153,7 +153,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -207,7 +207,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -594,7 +594,7 @@ d. The model predictions are used to notify the application of keyword detection
 <li><p>The ReRAM Engine  will automatically generate the necessary source code</p>
 <ul>
 <li><p>The ReRAM Engine  will parse the spectrogram settings from the <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> and generate the corresponding C headers</p></li>
-<li><p>The ReRAM Engine  comes with the full <a class="reference external" href="https://github.com/chenxingqiang/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c">source code</a> to the AudioFeatureGenerator software library</p></li>
+<li><p>The ReRAM Engine  comes with the full <a class="reference external" href="https://github.com/ReRAM-Labs/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c">source code</a> to the AudioFeatureGenerator software library</p></li>
 </ul>
 </li>
 </ul>
@@ -611,8 +611,8 @@ d. The model predictions are used to notify the application of keyword detection
 <p>The ReRAM Engine  features an AudioFeatureGeneration component.<br/>
 The YZLITE also features the same component with slight modifications so that it can be built for Windows/Linux.</p>
 <ul class="simple">
-<li><p>ReRAM Engine  source code: <a class="reference external" href="https://github.com/chenxingqiang/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c">sl_ml_audio_feature_generation.c</a></p></li>
-<li><p>YZLITE source code: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/reram_sdk/audio_feature_generation"><strong>yzlite</strong>/cpp/shared/reram_sdk/audio_feature_generation</a></p></li>
+<li><p>ReRAM Engine  source code: <a class="reference external" href="https://github.com/ReRAM-Labs/reram_sdk/blob/gsdk_4.0/util/third_party/tensorflow_extra/src/sl_ml_audio_feature_generation.c">sl_ml_audio_feature_generation.c</a></p></li>
+<li><p>YZLITE source code: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/reram_sdk/audio_feature_generation"><strong>yzlite</strong>/cpp/shared/reram_sdk/audio_feature_generation</a></p></li>
 </ul>
 </section>
 </section>
@@ -625,12 +625,12 @@ This allows for executing the <a class="reference external" href="https://docs.y
 <section id="id1">
 <h3 id="id1">Source Code<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li><p><strong>C++ Python Wrapper</strong> - <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/cpp/audio_feature_generator_wrapper">cpp/audio_feature_generator_wrapper</a></p></li>
-<li><p><strong>Python API</strong> - <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator">yzlite/core/preprocess/audio/audio_feature_generator</a></p></li>
+<li><p><strong>C++ Python Wrapper</strong> - <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/audio_feature_generator_wrapper">cpp/audio_feature_generator_wrapper</a></p></li>
+<li><p><strong>Python API</strong> - <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator">yzlite/core/preprocess/audio/audio_feature_generator</a></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When <a class="reference internal" href="../installation.html"><span class="doc std std-doc">installing</span></a> the YZLITE for local development, the C++ wrapper is automatically built into a Windows/Linux shared library (<code class="docutils literal notranslate"><span class="pre">.dll</span></code> / <code class="docutils literal notranslate"><span class="pre">.so</span></code>) and copied to the Python <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator">directory</a>.
+<p>When <a class="reference internal" href="../installation.html"><span class="doc std std-doc">installing</span></a> the YZLITE for local development, the C++ wrapper is automatically built into a Windows/Linux shared library (<code class="docutils literal notranslate"><span class="pre">.dll</span></code> / <code class="docutils literal notranslate"><span class="pre">.so</span></code>) and copied to the Python <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/preprocess/audio/audio_feature_generator">directory</a>.
 When the <a class="reference internal" href="../python_api/data_preprocessing/audio_feature_generator.html#yzlite.core.preprocess.audio.audio_feature_generator.AudioFeatureGenerator" title="yzlite.core.preprocess.audio.audio_feature_generator.AudioFeatureGenerator"><span class="xref myst py py-class">AudioFeatureGenerator</span></a> Python library is invoked by your Python scripts, the C++ wrapper shared library is loaded into the Python runtime environment.</p>
 </div>
 </section>
@@ -639,7 +639,7 @@ When the <a class="reference internal" href="../python_api/data_preprocessing/au
 <p>The recommended way of using the AudioFeatureGenerator <a class="reference internal" href="../cpp_development/wrappers/audio_feature_generator_wrapper.html"><span class="doc std std-doc">C++ wrapper</span></a>
 is via the <a class="reference internal" href="../python_api/data_preprocessing/audio_data_generator.html#yzlite.core.preprocess.audio.parallel_generator.ParallelAudioDataGenerator" title="yzlite.core.preprocess.audio.parallel_generator.ParallelAudioDataGenerator"><span class="xref myst py py-class">ParallelAudioDataGenerator</span></a> which is required by the
 <a class="reference internal" href="../python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin" title="yzlite.core.AudioDatasetMixin"><span class="xref myst py py-class">AudioDatasetMixin</span></a>.</p>
-<p>Refer to the <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py">keyword_spotting_on_off.py</a> <a class="reference internal" href="../guides/model_specification.html"><span class="doc std std-doc">model specification</span></a> for an example of how this is used.</p>
+<p>Refer to the <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py">keyword_spotting_on_off.py</a> <a class="reference internal" href="../guides/model_specification.html"><span class="doc std std-doc">model specification</span></a> for an example of how this is used.</p>
 <p>Basically,</p>
 <p>1 ) In your <a class="reference internal" href="../guides/model_specification.html"><span class="doc std std-doc">model specification</span></a> file, define a model object to inherit the <a class="reference internal" href="../python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin" title="yzlite.core.AudioDatasetMixin"><span class="xref myst py py-class">AudioDatasetMixin</span></a>, e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModel</span><span class="p">(</span>

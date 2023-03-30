@@ -54,13 +54,13 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/synthetic_audio_dataset_generation.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/synthetic_audio_dataset_generation.ipynb) - View this tutorial on Github\n",
 
     "- [Run on Colab](https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/synthetic_audio_dataset_generation.ipynb) - Run this tutorial on Google Colab\n",
 
     "- [AudioDatasetGenerator API Reference](../../docs/python_api/utils/audio_dataset_generator/index.md) - View the Python API reference\n",
 
-    "- [Alexa Dataset Generation Example](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/audio_dataset_generator/examples/alexa_dataset_generator.py) - View the example Python script to generate an \"Alexa\" dataset\n",
+    "- [Alexa Dataset Generation Example](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/audio_dataset_generator/examples/alexa_dataset_generator.py) - View the example Python script to generate an \"Alexa\" dataset\n",
 
     "  "
 
@@ -360,7 +360,7 @@
 
     "\n",
 
-    "To help determine the character counts, the YZLITE features the API: [AudioDatasetGenerator.count_characters](https://github.com/chenxingqiang/yzlite/docs/python_api/utils/audio_dataset_generator/generator.html#yzlite.utils.audio_dataset_generator.AudioDatasetGenerator.count_characters)"
+    "To help determine the character counts, the YZLITE features the API: [AudioDatasetGenerator.count_characters](https://github.com/ReRAM-Labs/yzlite/docs/python_api/utils/audio_dataset_generator/generator.html#yzlite.utils.audio_dataset_generator.AudioDatasetGenerator.count_characters)"
 
    ]
 
@@ -516,7 +516,7 @@
 
     "\n",
 
-    "The Python script: [alexa_dataset_generator.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/audio_dataset_generator/examples/alexa_dataset_generator.py) demonstrates how to use this Python package to generate a synthetic \"Alexa\" dataset. \n",
+    "The Python script: [alexa_dataset_generator.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/audio_dataset_generator/examples/alexa_dataset_generator.py) demonstrates how to use this Python package to generate a synthetic \"Alexa\" dataset. \n",
 
     "\n",
 

@@ -10,7 +10,7 @@ class EvaluateClassifierMixin(EvaluateMixin):
 
     .. note:: This mixin is specific to "classification" models
 
-    Refer to the `Model Evaluation <https://github.com/chenxingqiang/yzlite/docs/guides/model_evaluation.html>`_ guide for more details.
+    Refer to the `Model Evaluation <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_evaluation.html>`_ guide for more details.
     """
 
     @property

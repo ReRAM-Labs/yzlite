@@ -20,7 +20,7 @@ class JlinkStreamOptions:
 class JlinkStream:
     """This allows for transferring binary data between a Python script and a JLink-enabled embedded device via the debug interface
 
-    See the source code on Github: `yzlite/utils/jlink_stream <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/jlink_stream>`_
+    See the source code on Github: `yzlite/utils/jlink_stream <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/jlink_stream>`_
     """
 
     def __init__(self, options: JlinkStreamOptions = None):

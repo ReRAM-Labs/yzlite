@@ -39,7 +39,7 @@ pip install yizhu-yzlite
 This wrapper is automatically built when installing from source, e.g.:
 
 ```shell
-git clone https://github.com/chenxingqiang/yzlite.git
+git clone https://github.com/ReRAM-Labs/yzlite.git
 cd yzlite
 pip install -e .
 ```

@@ -14,7 +14,7 @@ Both work together to stream data across the UART.
 
 
 
-See the source code for this example on Github: [cpp/shared/uart_stream/examples/data_test](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/uart_stream/examples/data_test)
+See the source code for this example on Github: [cpp/shared/uart_stream/examples/data_test](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/uart_stream/examples/data_test)
 
 
 
@@ -28,7 +28,7 @@ See the source code for this example on Github: [cpp/shared/uart_stream/examples
 
 
 
-__NOTE:__ The application needs to be built for [embedded](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html#build-for-embedded)
+__NOTE:__ The application needs to be built for [embedded](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html#build-for-embedded)
 
 
 

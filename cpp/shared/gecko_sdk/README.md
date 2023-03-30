@@ -1,6 +1,6 @@
 # ReRAM Engine
 
-This allows for building the [ReRAM Engine](https://github.com/chenxingqiang/reram_sdk/tree/gsdk_4.0) (GSDK) into applications.
+This allows for building the [ReRAM Engine](https://github.com/ReRAM-Labs/reram_sdk/tree/gsdk_4.0) (GSDK) into applications.
 
 __NOTE:__ The actual ReRAM Engine  source code is downloaded by the CMake [build script](./CMakeLists.txt).
 
@@ -22,4 +22,4 @@ where `GIT_TAG <commit>` points to the GIT commit that is downloaded.
 
 ## Additional Links
 
-- [C++ Development documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html)
+- [C++ Development documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html)

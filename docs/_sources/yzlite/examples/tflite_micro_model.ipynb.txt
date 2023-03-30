@@ -140,11 +140,11 @@
 
     "# Use .tflite mode found here:\n",
 
-    "# https://github.com/chenxingqiang/yzlite/tree/master/yzlite/utils/test_helper/data/\n",
+    "# https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/utils/test_helper/data/\n",
 
     "# NOTE: Update this URL to point to your model if necessary\n",
 
-    "TFLITE_MODEL_URL = 'https://github.com/chenxingqiang/yzlite/raw/master/yzlite/utils/test_helper/data/image_example1.tflite'\n",
+    "TFLITE_MODEL_URL = 'https://github.com/ReRAM-Labs/yzlite/raw/master/yzlite/utils/test_helper/data/image_example1.tflite'\n",
 
     "\n",
 

@@ -104,10 +104,10 @@ In this case, ONLY the .tflite will be programmed and the existing image_classif
     https://www.arducam.com/product/arducam-2mp-spi-camera-b0067-arduino
     must be connected to the development board.
     Refer to the online documentation for how to connect it to the development board:
-    https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/image_classifier.html#hardware-setup
+    https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/image_classifier.html#hardware-setup
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/yzlite/tutorials/image_classification
+    https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/image_classification
 
     \b
     ----------

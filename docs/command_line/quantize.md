@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # quantize
 
@@ -7,7 +7,7 @@ __NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/y
 ## Additional Documentation
 
 - [Model Profiler Guide](../guides/model_quantization.md)
-- [quantize_model API](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/quantize.html)
+- [quantize_model API](https://github.com/ReRAM-Labs/yzlite/docs/python_api/operations/quantize.html)
 
 ## Usage
 

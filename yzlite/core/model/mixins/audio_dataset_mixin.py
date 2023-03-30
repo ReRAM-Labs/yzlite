@@ -18,9 +18,9 @@ class AudioDatasetMixin(DataGeneratorDatasetMixin):
     """Provides audio dataset properties to the base :py:class:`~YZLiteModel`
 
     .. seealso::
-       - `AudioFeatureGenerator documentation <https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html>`_
-       - `AudioFeatureGenerator API docs <https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html>`_
-       - `ParallelAudioDataGenerator API docs <https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_data_generator.html>`_
+       - `AudioFeatureGenerator documentation <https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html>`_
+       - `AudioFeatureGenerator API docs <https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html>`_
+       - `ParallelAudioDataGenerator API docs <https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_data_generator.html>`_
     """
 
     @property

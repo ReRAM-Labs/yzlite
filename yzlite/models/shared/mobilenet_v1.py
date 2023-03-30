@@ -18,7 +18,7 @@ def MobileNetV1(
 
     .. seealso::
        * https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md
-       * https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/Person_detection/mobilenet_v1_eembc.py
+       * https://github.com/ReRAM-Labs/platform_ml_models/blob/master/eembc/Person_detection/mobilenet_v1_eembc.py
 
 
     """

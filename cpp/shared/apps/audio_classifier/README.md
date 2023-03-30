@@ -9,15 +9,15 @@ __NOTES:__
 
 - This application is able to be built for Windows/Linux _or_ a supported embedded target.
 - This application is designed to be used with the YZLITE command:
-[yzlite classify_audio](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html#audio-classification-utility)
+[yzlite classify_audio](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html#audio-classification-utility)
 
 ## Quick Links
 
-- [GitHub Source](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/apps/audio_classifier) - View this example's source code on Github
-- [Online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/audio_classifier.html) - View this example's online documentation
-- [Keyword Spotting Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_on_off.html) - View this example's associated tutorial
-- [Audio classifier utility](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html#audio-classification-utility) - View the audio classifier utility's documentation
-- [Alexa Demo](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_alexa.html) - Alexa Voice Services (AVS) demo using a Python script
+- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/apps/audio_classifier) - View this example's source code on Github
+- [Online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/audio_classifier.html) - View this example's online documentation
+- [Keyword Spotting Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_on_off.html) - View this example's associated tutorial
+- [Audio classifier utility](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html#audio-classification-utility) - View the audio classifier utility's documentation
+- [Alexa Demo](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_alexa.html) - Alexa Voice Services (AVS) demo using a Python script
 
 ## Behavior
 
@@ -50,11 +50,11 @@ results. This behavior can be disabled in the application configuration file.
 
 The default model used in this application is called `keyword_spotting_on_off_v2.tflite`
 and is able to classify audio into 3 different classes labeled "on", "off", "_unknown_". The source for the model can be found here:
-[https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py)
+[https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py)
 
 The application is designed to work with an audio classification model created
 using the Yizhu Technology ReRAM YZLite
-([YZLITE](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_on_off.html)).
+([YZLITE](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_on_off.html)).
 Use the YZLITE to train a new audio classifier model and replace the model inside this example with the new audio
 classification model.
 
@@ -80,13 +80,13 @@ of the model built into the firmware.
 __NOTE:__ The `--app none` option tells the command to _not_ update the audio_classifier application
 and only program the model file.
 
-See the [Audio classifier utility](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html#audio-classification-utility)
+See the [Audio classifier utility](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html#audio-classification-utility)
 documentation for more details.
 
 ### via CMake
 
-The model can also be updated when building this application from [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html)
-or the CMake [Command Line](https://github.com/chenxingqiang/yzlite/docs/command_line/index.html).
+The model can also be updated when building this application from [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html)
+or the CMake [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/command_line/index.html).
 
 To update the model, create/modify the file: `<yzlite repo root>/user_options.cmake`
 and add:
@@ -103,19 +103,19 @@ specified model will be built into the application.
 
 ## Build, Run, Debug
 
-See the [online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html) for how to build and run this application:
+See the [online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html) for how to build and run this application:
 
 ### Simplicity Studio
 
-If using [Simplicity Studio](https://github.com/chenxingqiang/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - Audio Classifier` Project.
+If using [Simplicity Studio](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - Audio Classifier` Project.
 
 ### Visual Studio Code
 
-If using [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html) select the `yzlite_audio_classifier` CMake target.
+If using [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html) select the `yzlite_audio_classifier` CMake target.
 
 ### Command-line
 
-If using the [Command Line](https://github.com/chenxingqiang/yzlite/docs/cpp_development/command_line.html) select the `yzlite_audio_classifier` CMake target.  
+If using the [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/command_line.html) select the `yzlite_audio_classifier` CMake target.  
 
 ## Dumping audio & spectrograms to PC
 
@@ -139,7 +139,7 @@ yzlite classify_audio keyword_spotting_on_off_v2 --device --dump-spectrograms
 yzlite classify_audio keyword_spotting_on_off_v2 --device --dump-audio
 ```
 
-See the [Audio classifier utility](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html#audio-classification-utility)
+See the [Audio classifier utility](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html#audio-classification-utility)
 documentation for more details.
 
 ## Model Parameters
@@ -147,14 +147,14 @@ documentation for more details.
 In order for the audio classification to work correctly, we need to use the same
 audio feature generator configuration parameters for inference as is used when
 training the model. When using the YZLITE to train an audio classification model
-the model [parameters](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin)
+the model [parameters](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin)
 will be embedded in the metadata section of the `.tflite`
 file. The model parameters are extracted from the `.tflite` at runtime.
 
 ## Modifications
 
 The application was originally taken from the
-[ReRAM Engine](https://github.com/chenxingqiang/reram_sdk/tree/gsdk_4.0/app/common/example/audio_classifier).
+[ReRAM Engine](https://github.com/ReRAM-Labs/reram_sdk/tree/gsdk_4.0/app/common/example/audio_classifier).
 
 It has been modified as follows:  
 
@@ -170,7 +170,7 @@ It has been modified as follows:
 ## CMake Variables
 
 This application supports the following __optional__ CMake variables.
-The variables may be specified on the [command-line](https://github.com/chenxingqiang/yzlite/docs/cpp_development/command_line.html) or in the [user_options.cmake](https://github.com/chenxingqiang/yzlite/docs/cpp_development/build_options.html) file.
+The variables may be specified on the [command-line](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/command_line.html) or in the [user_options.cmake](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/build_options.html) file.
 
 ### VERBOSE
 
@@ -183,7 +183,7 @@ yzlite_set(VERBOSE ON)
 ### WINDOW_MS
 
 Configure the length of the averaging window in milliseconds.
-This overrides the [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `average_window_duration_ms`.
+This overrides the [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `average_window_duration_ms`.
 
 ```shell
 yzlite_set(WINDOW_MS 750)
@@ -192,7 +192,7 @@ yzlite_set(WINDOW_MS 750)
 ### THRESHOLD
 
 Configure the detection threshold. This is a value from 0-255., 255 being the highest.
-This overrides the [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `detection_threshold`.
+This overrides the [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `detection_threshold`.
 
 ```shell
 yzlite_set(THRESHOLD 185)
@@ -201,7 +201,7 @@ yzlite_set(THRESHOLD 185)
 ### SUPPRESSION_MS
 
 The amount of time in milliseconds to wait after a detection to begin listening for keywords again.
-This overrides the [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `suppression_ms`.
+This overrides the [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `suppression_ms`.
 
 ```shell
 yzlite_set(SUPPRESSION_MS 500)
@@ -210,7 +210,7 @@ yzlite_set(SUPPRESSION_MS 500)
 ### COUNT
 
 The minimum number of inference results to average when calculating the detection value
-This overrides the [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `minimum_count`.
+This overrides the [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `minimum_count`.
 
 ```shell
 yzlite_set(COUNT 2)
@@ -219,7 +219,7 @@ yzlite_set(COUNT 2)
 ### VOLUME_GAIN
 
 The integer multiplier value to apply to each microphone sample.
-This overrides the [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `volume_gain`.
+This overrides the [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `volume_gain`.
 
 ```shell
 yzlite_set(VOLUME_GAIN 2)
@@ -228,7 +228,7 @@ yzlite_set(VOLUME_GAIN 2)
 ### LATENCY_MS
 
 This is the amount of time in milliseconds an audio loop takes.
-This overrides the [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `latency_ms`.
+This overrides the [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin) setting `latency_ms`.
 
 ```shell
 yzlite_set(LATENCY_MS 2)
@@ -237,7 +237,7 @@ yzlite_set(LATENCY_MS 2)
 ## AUDIO_CLASSIFIER_ENABLE_AUDIO_IO
 
 This enables audio input/output streaming via UART.
-This is currently only used in the [Keyword Spotting - Alexa](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_alexa.html) demo.
+This is currently only used in the [Keyword Spotting - Alexa](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_alexa.html) demo.
 
 ```shell
 yzlite_set(AUDIO_CLASSIFIER_ENABLE_AUDIO_IO ON)
@@ -247,8 +247,8 @@ __NOTE:__ When this feature is enabled, log prints are effectively disabled.
 
 ## Additional Reading
 
-- [YZLITE Documentation](https://github.com/chenxingqiang/yzlite)
-- [Audio Feature Generator](https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html)
-- [Audio Utilities](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html)
+- [YZLITE Documentation](https://github.com/ReRAM-Labs/yzlite)
+- [Audio Feature Generator](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html)
+- [Audio Utilities](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html)
 - [ReRAM Engine Machine Learning Documentation](https://docs.yizhu.com/reram-platform/latest/machine-learning/tensorflow/getting-started)
 - [TensorFlow Lite Micro](https://www.tensorflow.org/lite/microcontrollers)

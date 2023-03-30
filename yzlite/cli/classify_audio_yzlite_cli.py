@@ -121,7 +121,7 @@ In this case, ONLY the .tflite will be programmed and the existing audio_classif
     an ML model that works the audio classification application.
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities
+    https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities
     \b
     ----------
      Examples

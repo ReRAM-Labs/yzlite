@@ -1,8 +1,8 @@
 """audio_example1
 ********************
 
-- Source code: `audio_example1.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/audio_example1.py>`_
-- Pre-trained model archive: `audio_example1.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/audio_example1.yzlite.zip>`_
+- Source code: `audio_example1.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/audio_example1.py>`_
+- Pre-trained model archive: `audio_example1.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/audio_example1.yzlite.zip>`_
 
 This provides an example of how to create a Keyword Search (KWS) classification model.
 This example defines a model to detect the keywords:
@@ -297,7 +297,7 @@ my_model.class_weights = 'balanced'
 
 #################################################
 # AudioFeatureGenerator Settings
-# See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html
 frontend_settings = AudioFeatureGeneratorSettings()
 frontend_settings.sample_rate_hz = 16000
 frontend_settings.sample_length_ms = 1200

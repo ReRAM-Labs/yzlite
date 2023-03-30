@@ -32,5 +32,5 @@ The [patch_tensorflow.py](./patch_tensorflow.py) Python script is also used to m
 
 ## Additional Links
 
-- [C++ Development documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html)
-- [Python wrapper documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/wrappers/tflite_micro_wrapper.html)
+- [C++ Development documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html)
+- [Python wrapper documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/wrappers/tflite_micro_wrapper.html)

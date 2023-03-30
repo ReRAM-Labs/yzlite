@@ -29,10 +29,10 @@ def build_tflite_micro_wrapper_command(
 
     \b
     This builds the Tensorflow-Lite Micro Python wrapper:  
-    https://github.com/chenxingqiang/yzlite/tree/master/cpp/tflite_micro_wrapper
+    https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/tflite_micro_wrapper
     \b
     NOTE: The built wrapper library is copied to:
-    https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/tflite_micro
+    https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/tflite_micro
 
     """
 

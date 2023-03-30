@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # classify_image
 
@@ -6,8 +6,8 @@ Classify images from an RGB camera connected to a development board.
 
 ## Additional Documentation
 
-- [Image Classification Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/image_classification.html)
-- [Image Classifier App](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/image_classifier.html)
+- [Image Classification Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/image_classification.html)
+- [Image Classifier App](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/image_classifier.html)
 
 ## Usage
 

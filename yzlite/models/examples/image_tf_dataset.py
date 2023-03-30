@@ -3,7 +3,7 @@
 
 Image classification example using the Tensorflow dataset API
 
-- Source code: `image_tf_dataset.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/image_tf_dataset.py>`_
+- Source code: `image_tf_dataset.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/image_tf_dataset.py>`_
 
 This provides an example of how to use the `Tensorflow Dataset API <https://www.tensorflow.org/api_docs/python/tf/data/Dataset>`_
 with the various Tensorflow `image augmentations <https://www.tensorflow.org/api_docs/python/tf/image>`_
@@ -283,7 +283,7 @@ def image_augmentation(batch: np.ndarray, seed: np.ndarray) -> np.ndarray:
 # This will be embedded into the generated .tflite.
 # At runtime, the embedded device should retrieve this parameter and normalize the images
 # before sending to the Tensorflow-Lite Micro interpreter for classification.
-# See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
 my_model.model_parameters['samplewise_norm.mean_and_std'] = True
 
 

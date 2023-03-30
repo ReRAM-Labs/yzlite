@@ -3,12 +3,12 @@
 
 TF-Lite Micro Speech reference model
 
-- Source code: `tflite_micro_speech.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_speech.py>`_
-- Pre-trained model: `tflite_micro_speech.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_speech.yzlite.zip>`_
+- Source code: `tflite_micro_speech.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_speech.py>`_
+- Pre-trained model: `tflite_micro_speech.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_speech.yzlite.zip>`_
 
 
 Taken from:
-https://github.com/chenxingqiang/platform_ml_models/tree/master/eembc/TFLite_micro_speech
+https://github.com/ReRAM-Labs/platform_ml_models/tree/master/eembc/TFLite_micro_speech
 
 
 Dataset

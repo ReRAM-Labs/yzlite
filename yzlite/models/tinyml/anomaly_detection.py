@@ -3,15 +3,15 @@
 
 MLPerf Tiny anomaly detection reference model
 
-- Source code: `anomaly_detection.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.py>`_
-- Pre-trained model: `anomaly_detection.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.yzlite.zip>`_
+- Source code: `anomaly_detection.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.py>`_
+- Pre-trained model: `anomaly_detection.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.yzlite.zip>`_
 
 
 Taken from:
 https://github.com/mlcommons/tiny/tree/master/benchmark/training/anomaly_detection
 
 Additional information:
-https://github.com/chenxingqiang/platform_ml_models/tree/master/eembc/ToyADMOS_FC_AE
+https://github.com/ReRAM-Labs/platform_ml_models/tree/master/eembc/ToyADMOS_FC_AE
 
 
 Dataset
@@ -263,7 +263,7 @@ my_model.metrics = ['mean_squared_error']
 # The directory of the training data
 def download_dataset():
     return download_verify_extract(
-        url='https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/features_toy_car_all.7z',
+        url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/features_toy_car_all.7z',
         dest_subdir='datasets/toyadmos/preprocessed/v1',
         file_hash='8FC5779A38694EB17E75AD21EF457BD39E6EF937',
         show_progress=True,

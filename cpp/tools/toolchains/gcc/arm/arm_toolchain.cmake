@@ -58,7 +58,7 @@ if(NOT TOOLCHAIN_DIR)
             unset(PYTHON_EXECUTABLE CACHE)
             file(REMOVE "${_bin_dir}/CMakeCache.txt")
             file(REMOVE_RECURSE "${_bin_dir}/CMakeFiles")
-            message(FATAL_ERROR "${_err_msg}\nFailed to download GCC ARM toolchain, see: ${CMAKE_CURRENT_LIST_DIR}/download.log\nAlso see: https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html\n\n")
+            message(FATAL_ERROR "${_err_msg}\nFailed to download GCC ARM toolchain, see: ${CMAKE_CURRENT_LIST_DIR}/download.log\nAlso see: https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html\n\n")
         endif()
 
         list(GET output 0 TOOLCHAIN_DIR)

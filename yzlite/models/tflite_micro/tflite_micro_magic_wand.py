@@ -1,8 +1,8 @@
 """tflite_micro_magic_wand
 *******************************
 
-- Source code: `tflite_micro_magic_wand.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_magic_wand.py>`_
-- Pre-trained model: `tflite_micro_magic_wand.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_magic_wand.yzlite.zip>`_
+- Source code: `tflite_micro_magic_wand.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_magic_wand.py>`_
+- Pre-trained model: `tflite_micro_magic_wand.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_magic_wand.yzlite.zip>`_
 
 
 https://github.com/tensorflow/tflite-micro/tree/main/tensorflow/lite/micro/examples/magic_wand

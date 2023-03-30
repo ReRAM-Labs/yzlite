@@ -68,7 +68,7 @@ This option places an upper limit on the number of samples per class that are us
 
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/docs/guides/model_evaluation
+    https://github.com/ReRAM-Labs/yzlite/docs/guides/model_evaluation
     \b
     ----------
      Examples

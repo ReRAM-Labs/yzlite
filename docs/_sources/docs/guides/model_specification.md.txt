@@ -324,13 +324,13 @@ my_model.datagen = ParallelImageDataGenerator(
 
 Alternatively, you may use the [Tensorflow Dataset API](https://www.tensorflow.org/api_docs/python/tf/data/Dataset).
 In this case, only the [DatasetMixin](yzlite.core.DatasetMixin) is required. 
-Note the YZLITE provides additional APIs to aid the creation of the Tensorflow datasets, see [Tensorflow Dataset Utilities](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/utilities.html#tensorflow-dataset).
+Note the YZLITE provides additional APIs to aid the creation of the Tensorflow datasets, see [Tensorflow Dataset Utilities](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/utilities.html#tensorflow-dataset).
 
 
 The YZLITE comes with reference models using the [Tensorflow Dataset API](https://www.tensorflow.org/api_docs/python/tf/data/Dataset):  
-- [basic_tf_dataset_example](https://github.com/chenxingqiang/yzlite/docs/python_api/models/examples/basic_tf_dataset_example.html)
-- [image_tf_dataset](https://github.com/chenxingqiang/yzlite/docs/python_api/models/examples/image_tf_dataset.html)
-- [audio_tf_dataset](https://github.com/chenxingqiang/yzlite/docs/python_api/models/examples/audio_tf_dataset.html)
+- [basic_tf_dataset_example](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/examples/basic_tf_dataset_example.html)
+- [image_tf_dataset](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/examples/image_tf_dataset.html)
+- [audio_tf_dataset](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/examples/audio_tf_dataset.html)
 
 
 ### Evaluation Settings
@@ -377,14 +377,14 @@ yzlite_model.model_parameters['log_level'] = 'info'
 
 See the [reference models](../python_api/models/index.md) for complete model specification scripts:
 
-- [yizhutech.keyword_spotting_on_off](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py)
-- [examples.image_example1](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/image_example1.py)
-- [examples.audio_example1](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/audio_example1.py)
-- [examples.conv1d_example](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/conv1d_example.py)
-- [examples.siamese_contrastive](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/siamese_contrastive.py)
-- [tflite_micro.tflite_micro_speech](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_speech.py)
-- [tflite_micro.tflite_micro_magic_wand](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_magic_wand.py)
-- [tinyml.anomaly_detection](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.py)
-- [tinyml.image_classification](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/image_classification.py)
-- [tinyml.keyword_spotting](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/keyword_spotting.py)
-- [tinyml.visual_wake_words](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.py)
+- [yizhutech.keyword_spotting_on_off](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py)
+- [examples.image_example1](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/image_example1.py)
+- [examples.audio_example1](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/audio_example1.py)
+- [examples.conv1d_example](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/conv1d_example.py)
+- [examples.siamese_contrastive](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/siamese_contrastive.py)
+- [tflite_micro.tflite_micro_speech](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_speech.py)
+- [tflite_micro.tflite_micro_magic_wand](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tflite_micro/tflite_micro_magic_wand.py)
+- [tinyml.anomaly_detection](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.py)
+- [tinyml.image_classification](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/image_classification.py)
+- [tinyml.keyword_spotting](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/keyword_spotting.py)
+- [tinyml.visual_wake_words](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.py)

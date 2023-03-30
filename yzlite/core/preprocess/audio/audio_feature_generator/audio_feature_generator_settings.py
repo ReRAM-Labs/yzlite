@@ -5,7 +5,7 @@ from typing import Tuple
 
 
 class AudioFeatureGeneratorSettings(dict):
-    """Settings for the `AudioFeatureGenerator <https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html>`_
+    """Settings for the `AudioFeatureGenerator <https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html>`_
 
 
     **Example Usage**
@@ -36,11 +36,11 @@ class AudioFeatureGeneratorSettings(dict):
         # If this is used in a model specification file,
         # be sure to add the Audio Feature generator settings to the model parameters.
         # This way, they are included in the generated .tflite model file
-        # See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+        # See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
         my_model.model_parameters.update(frontend_settings)
 
 
-    See the `Audio Feature Generator <https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html>`_ guide for more details.
+    See the `Audio Feature Generator <https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html>`_ guide for more details.
     """
 
     def __init__(self, **kwargs):

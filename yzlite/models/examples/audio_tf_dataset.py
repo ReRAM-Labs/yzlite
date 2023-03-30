@@ -3,7 +3,7 @@
 
 Audio classification example using the Tensorflow dataset API
 
-- Source code: `audio_tf_dataset.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/audio_tf_dataset.py>`_
+- Source code: `audio_tf_dataset.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/audio_tf_dataset.py>`_
 
 This provides an example of how to use the `Tensorflow Dataset API <https://www.tensorflow.org/api_docs/python/tf/data/Dataset>`_
 with the third-party Python library `audiomentations <https://github.com/iver56/audiomentations>`_
@@ -231,7 +231,7 @@ my_model.tflite_converter['representative_dataset'] = 'generate'
 
 ##########################################################################
 # Specify AudioFeatureGenerator Settings
-# See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html
 #
 frontend_settings = AudioFeatureGeneratorSettings()
 
@@ -271,7 +271,7 @@ frontend_settings.quantize_dynamic_scale_range_db = 40.0
 
 # Add the Audio Feature generator settings to the model parameters
 # This way, they are included in the generated .tflite model file
-# See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
 my_model.model_parameters.update(frontend_settings)
 
 

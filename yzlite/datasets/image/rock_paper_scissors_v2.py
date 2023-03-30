@@ -13,7 +13,7 @@ import logging
 
 from yzlite.utils.archive_downloader import download_verify_extract
 
-DOWNLOAD_URL = 'https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/rock_paper_scissors_v2.7z'
+DOWNLOAD_URL = 'https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/rock_paper_scissors_v2.7z'
 """Public download URL"""
 VERIFY_SHA1 = '77ED1793BE7871DCAA79D935B39BA4D23A28E2C3'
 """SHA1 hash of archive file"""

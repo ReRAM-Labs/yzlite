@@ -12,7 +12,7 @@ The following model operation APIs are available:
 - [summarize_model()](summarize.md) - Generate text summary of a model
 
 
-The source code for these APIs may be found on Github at [https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core).
+The source code for these APIs may be found on Github at [https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core).
 
 
 

@@ -32,7 +32,7 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/onnx_to_tflite.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/onnx_to_tflite.ipynb) - View this tutorial on Github\n",
 
     "- [Run on Colab](https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/onnx_to_tflite.ipynb) - Run this tutorial on Google Colab"
 

@@ -3,13 +3,13 @@
 
 Visual Wakeword - Person detection (MobileNetv1 with COCO14)
 
-- Source code: `visual_wake_words.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.py>`_
-- Pre-trained model: `visual_wake_words.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.yzlite.zip>`_
+- Source code: `visual_wake_words.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.py>`_
+- Pre-trained model: `visual_wake_words.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.yzlite.zip>`_
 
 Taken from:
 
 * https://github.com/mlcommons/tiny/blob/master/benchmark/training/visual_wake_words
-* https://github.com/chenxingqiang/platform_ml_models/tree/master/eembc/Person_detection
+* https://github.com/ReRAM-Labs/platform_ml_models/tree/master/eembc/Person_detection
 
 
 Dataset

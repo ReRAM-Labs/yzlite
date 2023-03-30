@@ -277,7 +277,7 @@ my_model.tflite_converter['representative_dataset'] = 'generate'
 
 ##########################################################################
 # Specify AudioFeatureGenerator Settings
-# See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html
 #
 frontend_settings = AudioFeatureGeneratorSettings()
 
@@ -317,7 +317,7 @@ frontend_settings.quantize_dynamic_scale_range_db = 40.0
 
 # Add the Audio Feature generator settings to the model parameters
 # This way, they are included in the generated .tflite model file
-# See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
 my_model.model_parameters.update(frontend_settings)
 
 

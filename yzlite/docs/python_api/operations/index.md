@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Model Operations
 
@@ -12,7 +12,7 @@ The following model operation APIs are available:
 - [view_model()](view.md) - View a model in an interactive diagram
 - [summarize_model()](summarize.md) - Generate text summary of a model
 
-The source code for these APIs may be found on Github at [https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core).
+The source code for these APIs may be found on Github at [https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core).
 
 ```{toctree}
 :maxdepth: 1

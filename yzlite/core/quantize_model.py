@@ -34,8 +34,8 @@ def quantize_model(
     This will also add any metadata to the generated `.tflite` model file.
 
     .. seealso::
-       * `Model Quantization Guide <https://github.com/chenxingqiang/yzlite/docs/guides/model_quantization.html>`_
-       * `Model quantization API examples <https://github.com/chenxingqiang/yzlite/yzlite/examples/quantize_model.html>`_
+       * `Model Quantization Guide <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_quantization.html>`_
+       * `Model quantization API examples <https://github.com/ReRAM-Labs/yzlite/yzlite/examples/quantize_model.html>`_
 
     Args:
         model: :py:class:`yzlite.core.YZLiteModel` instance, name of YZLITE model, path to model archive (.yzlite.zip) or specification script (.py)

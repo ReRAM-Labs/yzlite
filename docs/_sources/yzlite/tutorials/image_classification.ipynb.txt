@@ -72,7 +72,7 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/image_classification.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/image_classification.ipynb) - View this tutorial on Github\n",
 
     "- [Run on Colab](https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/image_classification.ipynb) - Run this tutorial on Google Colab\n",
 
@@ -174,7 +174,7 @@
 
     "\n",
 
-    "See the [Standard Python Package Installation](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package) guide for more details on how to enable the `yzlite` command in your local terminal.\n",
+    "See the [Standard Python Package Installation](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package) guide for more details on how to enable the `yzlite` command in your local terminal.\n",
 
     "\n",
 
@@ -200,7 +200,7 @@
 
     "\n",
 
-    "See the [Hardware Setup](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/image_classifier.html#hardware-setup) section of the Image Classification C++ example application for details on how to connect the camera to the development board. \n",
+    "See the [Hardware Setup](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/image_classifier.html#hardware-setup) section of the Image Classification C++ example application for details on how to connect the camera to the development board. \n",
 
     "\n",
 
@@ -260,7 +260,7 @@
 
     "Run the command `yzlite --help` to ensure it is working.  \n",
 
-    "__NOTE:__ The exclamation point `!` tells the Notebook to run a shell command, it is not required in a [standard terminal](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package)"
+    "__NOTE:__ The exclamation point `!` tells the Notebook to run a shell command, it is not required in a [standard terminal](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package)"
 
    ]
 
@@ -490,7 +490,7 @@
 
     "\n",
 
-    "This tutorial uses the [Rock, Paper, Scissors](https://github.com/chenxingqiang/yzlite/docs/python_api/datasets/index.html#rock-paper-scissors-v2) dataset.\n",
+    "This tutorial uses the [Rock, Paper, Scissors](https://github.com/ReRAM-Labs/yzlite/docs/python_api/datasets/index.html#rock-paper-scissors-v2) dataset.\n",
 
     "\n",
 
@@ -1204,7 +1204,7 @@
 
     "\n",
 
-    "The completed model specification used for this tutorial may be found on Github: [rock_paper_scissors.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/rock_paper_scissors.py).  \n",
+    "The completed model specification used for this tutorial may be found on Github: [rock_paper_scissors.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/rock_paper_scissors.py).  \n",
 
     "\n",
 
@@ -1708,7 +1708,7 @@
 
     "\n",
 
-    "Next, we specify the dataset. In this tutorial we use the [Rock Paper Scissors v2](https://github.com/chenxingqiang/yzlite/docs/python_api/datasets/index.html#rock-paper-scissors-v2) dataset which comes as an YZLITE package.\n",
+    "Next, we specify the dataset. In this tutorial we use the [Rock Paper Scissors v2](https://github.com/ReRAM-Labs/yzlite/docs/python_api/datasets/index.html#rock-paper-scissors-v2) dataset which comes as an YZLITE package.\n",
 
     "\n",
 

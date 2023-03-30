@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # UART Stream
 
@@ -8,14 +8,14 @@ Features:
 
 - Asynchronous reception of binary data
 - Data flow control
-- C++ library (see [__yzlite repo__/cpp/shared/uart_stream](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/uart_stream))
+- C++ library (see [__yzlite repo__/cpp/shared/uart_stream](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/uart_stream))
 - Send/receive "commands"
 
-__NOTE:__ The embedded device must be running the [uart_stream](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/uart_stream) C++ library for this Python package to work.
+__NOTE:__ The embedded device must be running the [uart_stream](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/uart_stream) C++ library for this Python package to work.
 
 ## Example Usage
 
-The following is a snippet taken from [alexa_demo.py](https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/audio_classifier/python/alexa_demo/alexa_demo.py)
+The following is a snippet taken from [alexa_demo.py](https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/audio_classifier/python/alexa_demo/alexa_demo.py)
 
 ```python
 import io
@@ -45,7 +45,7 @@ with UartStream() as uart:
 
 ```
 
-Also see [UART Stream Data Test](https://github.com/chenxingqiang/yzlite/cpp/shared/uart_stream/examples/data_test/README.html)
+Also see [UART Stream Data Test](https://github.com/ReRAM-Labs/yzlite/cpp/shared/uart_stream/examples/data_test/README.html)
 
 ## API Reference
 

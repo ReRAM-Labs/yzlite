@@ -153,7 +153,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -209,7 +209,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -488,8 +488,8 @@
   <span class="target" id="module-yzlite.models.yizhutech.keyword_spotting_alexa"></span><section id="keyword-spotting-alexa">
 <h1 id="docs-python-api-models-yizhutech-keyword-spotting-alexa--page-root">keyword_spotting_alexa<a class="headerlink" href="#docs-python-api-models-yizhutech-keyword-spotting-alexa--page-root" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
-<li><p>Source code: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a></p></li>
-<li><p>Pre-trained model: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip">keyword_spotting_alexa.yzlite.zip</a></p></li>
+<li><p>Source code: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a></p></li>
+<li><p>Pre-trained model: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip">keyword_spotting_alexa.yzlite.zip</a></p></li>
 </ul>
 <p>This model is designed to detect the keyword: “Alexa”.</p>
 <p>It based on the <a class="reference external" href="https://arxiv.org/pdf/2010.09960.pdf">Temporal Efficient Neural Network (TENet)</a> model architecture:</p>
@@ -983,7 +983,7 @@ yzlite<span class="w"> </span>profile<span class="w"> </span>keyword_spotting_al
 
 <span class="c1">##########################################################################################</span>
 <span class="c1"># Specify AudioFeatureGenerator Settings</span>
-<span class="c1"># See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html</span>
+<span class="c1"># See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html</span>
 <span class="c1">#</span>
 <span class="n">frontend_settings</span> <span class="o">=</span> <span class="n">AudioFeatureGeneratorSettings</span><span class="p">()</span>
 
@@ -1014,7 +1014,7 @@ yzlite<span class="w"> </span>profile<span class="w"> </span>keyword_spotting_al
 
 <span class="c1"># Add the Audio Feature generator settings to the model parameters</span>
 <span class="c1"># This way, they are included in the generated .tflite model file</span>
-<span class="c1"># See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html</span>
+<span class="c1"># See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html</span>
 <span class="n">my_model</span><span class="o">.</span><span class="n">model_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">frontend_settings</span><span class="p">)</span>
 
 
@@ -1412,7 +1412,7 @@ yzlite<span class="w"> </span>profile<span class="w"> </span>keyword_spotting_al
 
         <span class="c1"># Download the BRD2601 background microphone audio and add it to the _background_noise_/brd2601 of the dataset</span>
         <span class="n">download_verify_extract</span><span class="p">(</span>
-            <span class="n">url</span><span class="o">=</span><span class="s1">'https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z'</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="s1">'https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z'</span><span class="p">,</span>
             <span class="n">dest_dir</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">dataset_dir</span><span class="si">}</span><span class="s1">/_background_noise_/brd2601'</span><span class="p">,</span>
             <span class="n">file_hash</span><span class="o">=</span><span class="s1">'3069A85002965A7830C660343C215EDD4FAE39C6'</span><span class="p">,</span>
             <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>

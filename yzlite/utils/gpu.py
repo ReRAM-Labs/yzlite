@@ -1,6 +1,6 @@
 """GPU utilities
 
-See the source code on Github: `yzlite/utils/gpu.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/gpu.py>`_
+See the source code on Github: `yzlite/utils/gpu.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/gpu.py>`_
 """
 
 import atexit

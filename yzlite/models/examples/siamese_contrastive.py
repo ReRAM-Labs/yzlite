@@ -1,7 +1,7 @@
 """siamese_contrastive
 *************************
 
-Source code: `siamese_contrastive.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/siamese_contrastive.py>`_
+Source code: `siamese_contrastive.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/siamese_contrastive.py>`_
 
 This example was adapted from https://keras.io/examples/vision/siamese_contrastive.
 

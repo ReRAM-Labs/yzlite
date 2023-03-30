@@ -17,7 +17,7 @@ from .base_mixin import BaseMixin
 class TrainMixin(BaseMixin):
     """Provides training properties and methods to the base :py:class:`~YZLiteModel`
 
-    Refer to the `Model Training <https://github.com/chenxingqiang/yzlite/docs/guides/model_training.html>`_ guide for more details.
+    Refer to the `Model Training <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training.html>`_ guide for more details.
     """
 
     @property
@@ -586,7 +586,7 @@ class TrainMixin(BaseMixin):
            used to perform custom quantization
 
         .. seealso::
-           * `Model Quantization <https://github.com/chenxingqiang/yzlite/docs/guides/model_quantization.html>`_ guide
+           * `Model Quantization <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_quantization.html>`_ guide
            * `tf.lite.TFLiteConverter <https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter>`_
            * `Post-training integer quantization <https://www.tensorflow.org/lite/performance/post_training_integer_quant>`_
         """

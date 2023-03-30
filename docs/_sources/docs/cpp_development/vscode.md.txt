@@ -4,7 +4,7 @@ This describes how to development C++ applications in the YZLITE using Microsoft
 Using this guide, you can build C++ applications for Windows/Linux or supported embedded platforms.
 
 __NOTES:__
-- All of the YZLITE C++ source code may be found at: [__yzlite repo__/cpp](https://github.com/chenxingqiang/yzlite/tree/master/cpp/)
+- All of the YZLITE C++ source code may be found at: [__yzlite repo__/cpp](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/)
 - Internally, VSCode uses CMake to build the applications
 - Refer to the [example applications](./examples/index.md) or [Python wrappers](./wrappers/index.md) documentation for more details about what comes with the YZLITE
 - Alternatively, applications may be built for Yizhu-Tech's embedded targets using [Simplicity Studio](./simplicity_studio.md)
@@ -110,7 +110,7 @@ Next, we need to install the YZLITE:
 
 ```shell
 # Clone the YZLITE GIT repository
-git clone https://github.com/chenxingqiang/yzlite.git
+git clone https://github.com/ReRAM-Labs/yzlite.git
 ```
 
 Then navigate to the YZLITE repository directory
@@ -204,7 +204,7 @@ It has the similar to:
 
 ## Build for Windows or Linux
 
-Many of the YZLITE [applications](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/apps) support running on Windows/Linux or embedded targets.
+Many of the YZLITE [applications](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/apps) support running on Windows/Linux or embedded targets.
 The following describes how to build for Windows/Linux.
 
 

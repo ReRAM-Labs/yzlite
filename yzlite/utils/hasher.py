@@ -1,6 +1,6 @@
 """Data hashing utilities
 
-See the source code on Github: `yzlite/utils/hasher.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/hasher.py>`_
+See the source code on Github: `yzlite/utils/hasher.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/hasher.py>`_
 """
 import hashlib
 import os

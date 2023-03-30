@@ -9,7 +9,7 @@ This demonstrates of to read and decode an MP3 file and play on a connected spea
 
 ## Setup Steps
 
-0 ) See the [YZLITE C++ Development Docs](https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html) for setting up your environment
+0 ) See the [YZLITE C++ Development Docs](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html) for setting up your environment
 
 1 ) Connect a supported development board (e.g. BRD2601B) to your PC
 

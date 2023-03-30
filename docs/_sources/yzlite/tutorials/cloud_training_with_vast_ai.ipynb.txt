@@ -52,7 +52,7 @@
 
     "\n",
 
-    "__CAUTION:__ [vast.ai](https://vast.ai) is not free! A credit card is required. [vast.ai](https://vast.ai/) is a paid, third-party service that is not affiliated with Yizhu Technology. Yizhu Technology is not responsible for any losses incurred while using this software. Refer to the YZLITE [License](https://github.com/chenxingqiang/yzlite/blob/master/LICENSE.md) for the terms of use of this software.\n",
+    "__CAUTION:__ [vast.ai](https://vast.ai) is not free! A credit card is required. [vast.ai](https://vast.ai/) is a paid, third-party service that is not affiliated with Yizhu Technology. Yizhu Technology is not responsible for any losses incurred while using this software. Refer to the YZLITE [License](https://github.com/ReRAM-Labs/yzlite/blob/master/LICENSE.md) for the terms of use of this software.\n",
 
     "\n",
 
@@ -90,7 +90,7 @@
 
     "- [vast.ai FAQ](https://vast.ai/faq/) - vast.ai frequently asked questions\n",
 
-    "- [YZLITE Installation](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package) - Install the YZLITE"
+    "- [YZLITE Installation](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package) - Install the YZLITE"
 
    ]
 
@@ -280,7 +280,7 @@
 
     "\n",
 
-    "Refer to the \"Standard Python Package\" [Installation Guide](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package) for more details.\n",
+    "Refer to the \"Standard Python Package\" [Installation Guide](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package) for more details.\n",
 
     "\n",
 
@@ -740,7 +740,7 @@
 
     "\n",
 
-    "If you're using a the [Tensorflow Dataset API](https://www.tensorflow.org/api_docs/python/tf/data/Dataset), it also features the API [parallel_process](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/utilities.html#yzlite.core.preprocess.utils.tf_dataset.parallel_process) which allows for parallel processing in the Tensorflow dataset.\n",
+    "If you're using a the [Tensorflow Dataset API](https://www.tensorflow.org/api_docs/python/tf/data/Dataset), it also features the API [parallel_process](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/utilities.html#yzlite.core.preprocess.utils.tf_dataset.parallel_process) which allows for parallel processing in the Tensorflow dataset.\n",
 
     "\n",
 
@@ -892,7 +892,7 @@
 
     "\n",
 
-    "1. Download the model specification file (i.e. python script): [keyword_spotting_on_off_v2.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py) to your local machine\n",
+    "1. Download the model specification file (i.e. python script): [keyword_spotting_on_off_v2.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py) to your local machine\n",
 
     "2. Open `keyword_spotting_on_off_v2.py` on your local machine in a text editor\n",
 
@@ -930,7 +930,7 @@
 
     "The model is trained on a remote machine. This means the dataset needs to be downloaded to the remote machine before training starts.\n",
 
-    "The [keyword_spotting_on_off_v2](https://github.com/chenxingqiang/yzlite/docs/python_api/models/yizhutech/keyword_spotting_on_off_v2.html) model uses the [Google Speech Commands v2](https://github.com/chenxingqiang/yzlite/docs/python_api/datasets/index.html#module-yzlite.datasets.audio.speech_commands.speech_commands_v2) dataset which manages downloading the dataset.\n",
+    "The [keyword_spotting_on_off_v2](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/yizhutech/keyword_spotting_on_off_v2.html) model uses the [Google Speech Commands v2](https://github.com/ReRAM-Labs/yzlite/docs/python_api/datasets/index.html#module-yzlite.datasets.audio.speech_commands.speech_commands_v2) dataset which manages downloading the dataset.\n",
 
     "\n",
 
@@ -978,9 +978,9 @@
 
     "\n",
 
-    "- See [visual_wake_words.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.py) for a working example.\n",
+    "- See [visual_wake_words.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/visual_wake_words.py) for a working example.\n",
 
-    "- See [fingerprint_signature_generator.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.py) for a more complex example using a custom dataset class."
+    "- See [fingerprint_signature_generator.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.py) for a more complex example using a custom dataset class."
 
    ]
 

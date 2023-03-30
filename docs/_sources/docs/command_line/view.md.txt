@@ -4,7 +4,7 @@ View a model's graph in an interactive visualizer.
 ## Additional Documentation
 
 - [Model Visualizer Guide](../guides/model_visualizer.md)
-- [view_model API](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/view.html)
+- [view_model API](https://github.com/ReRAM-Labs/yzlite/docs/python_api/operations/view.html)
 
 
 ## Usage

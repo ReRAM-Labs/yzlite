@@ -14,9 +14,9 @@
 
     "\n",
 
-    "This tutorial describes how to use the weights from the pre-trained trained model [keyword_spotting_mobilenetv2](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py),\n",
+    "This tutorial describes how to use the weights from the pre-trained trained model [keyword_spotting_mobilenetv2](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py),\n",
 
-    "as a starting point for training a new model, [keyword_spotting_with_transfer_learning.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py), to detect the keywords:\n",
+    "as a starting point for training a new model, [keyword_spotting_with_transfer_learning.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py), to detect the keywords:\n",
 
     "\n",
 
@@ -66,7 +66,7 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/keyword_spotting_with_transfer_learning.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/keyword_spotting_with_transfer_learning.ipynb) - View this tutorial on Github\n",
 
     "- [Run on Colab](https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/keyword_spotting_with_transfer_learning.ipynb) - Run this tutorial on Google Colab\n",
 
@@ -126,7 +126,7 @@
 
     "- [Keyword Spotting Tutorial](../../yzlite/tutorials/keyword_spotting_on_off.md) - Detailed tutorial describing how to create a Keyword Spotting model using the YZLITE\n",
 
-    "- [Model Optimization Tutorial](../../yzlite/tutorials/model_optimization.md) - Describes how to develop the [keyword_spotting_mobilenetv2](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py) model used by this tutorial"
+    "- [Model Optimization Tutorial](../../yzlite/tutorials/model_optimization.md) - Describes how to develop the [keyword_spotting_mobilenetv2](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py) model used by this tutorial"
 
    ]
 
@@ -204,7 +204,7 @@
 
     "\n",
 
-    "The pre-trained, base model, whose weights are transferred to the new model, may be found on Github: [keyword_spotting_mobilenetv2](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py).\n",
+    "The pre-trained, base model, whose weights are transferred to the new model, may be found on Github: [keyword_spotting_mobilenetv2](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py).\n",
 
     "\n",
 
@@ -330,11 +330,11 @@
 
     "\n",
 
-    "The completed model specification used by this tutorial may be found on Github: [keyword_spotting_with_transfer_learning.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py)\n",
+    "The completed model specification used by this tutorial may be found on Github: [keyword_spotting_with_transfer_learning.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py)\n",
 
     "\n",
 
-    "This model specification is very similar to the base model specification, [keyword_spotting_mobilenetv2](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py), with the following key differences:"
+    "This model specification is very similar to the base model specification, [keyword_spotting_mobilenetv2](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py), with the following key differences:"
 
    ]
 
@@ -578,7 +578,7 @@
 
     "To loads the weights:\n",
 
-    "1. Instantiate a [MobileNetV2()](https://github.com/chenxingqiang/yzlite/docs/python_api/models/common_models.html#mobilenet-v2) instance\n",
+    "1. Instantiate a [MobileNetV2()](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/common_models.html#mobilenet-v2) instance\n",
 
     "2. Load the keyword_spotting_mobilenetv2 [MtlkObject](../../docs/python_api//yzlite_model/index.md)\n",
 

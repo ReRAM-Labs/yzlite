@@ -1,6 +1,6 @@
 """Utilities for generating a "C" header file from binary data
 
-See the source code on Github: `yzlite/utils/bin2header.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/bin2header.py>`_
+See the source code on Github: `yzlite/utils/bin2header.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/bin2header.py>`_
 """
 import argparse
 import os

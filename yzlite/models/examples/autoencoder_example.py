@@ -1,8 +1,8 @@
 """autoencoder_example
 ************************
 
-- Source code: `autoencoder_example.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/autoencoder_example.py>`_
-- Pre-trained model: `autoencoder_example.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/autoencoder_example.yzlite.zip>`_
+- Source code: `autoencoder_example.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/autoencoder_example.py>`_
+- Pre-trained model: `autoencoder_example.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/autoencoder_example.yzlite.zip>`_
 
 
 This demonstrates how to build an autoencoder model.

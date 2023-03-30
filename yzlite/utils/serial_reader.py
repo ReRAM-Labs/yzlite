@@ -28,7 +28,7 @@ class SerialReader:
         fail_regex: Regex or list of Regex to use match against received serial data to abort read()
         callback_regex: (Regex,Callback) or list of (Regex,Callback) which will invoke the given callback with the re.Match for each regex
 
-    See the source code on Github: `yzlite/utils/serial_reader.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/serial_reader.py>`_
+    See the source code on Github: `yzlite/utils/serial_reader.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/serial_reader.py>`_
     """
 
     def __init__(

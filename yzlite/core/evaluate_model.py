@@ -42,8 +42,8 @@ def evaluate_model(
     based on the given :py:class:`yzlite.core.YZLiteModel` instance.
 
     .. seealso::
-       * `Model Evaluation Guide <https://github.com/chenxingqiang/yzlite/docs/guides/model_evaluation.html>`_
-       * `Model Evaluation API Examples <https://github.com/chenxingqiang/yzlite/yzlite/examples/evaluate_model.html>`_
+       * `Model Evaluation Guide <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_evaluation.html>`_
+       * `Model Evaluation API Examples <https://github.com/ReRAM-Labs/yzlite/yzlite/examples/evaluate_model.html>`_
 
 
     Args:

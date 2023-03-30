@@ -1,6 +1,6 @@
 """Utilities for extracting archives
 
-See the source code on Github: `yzlite/utils/archive.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/archive.py>`_
+See the source code on Github: `yzlite/utils/archive.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/archive.py>`_
 """
 import gzip
 import os

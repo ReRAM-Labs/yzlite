@@ -33,7 +33,7 @@ class WeightsAndBiasesMixin(BaseMixin):
 
     .. seealso::
 
-       - `Tutorial: Cloud logging with Weights & Biases <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/cloud_logging_with_wandb.html>`_
+       - `Tutorial: Cloud logging with Weights & Biases <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/cloud_logging_with_wandb.html>`_
        - `Weights & Biases Documentation <https://docs.wandb.ai>`_
 
     """

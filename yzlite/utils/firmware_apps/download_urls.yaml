@@ -1,68 +1,68 @@
 yzlite_audio_classifier-audio_io-brd2601-mvp:
   date: "2023-02-27T22:19:28.274Z"
   sha1: 5e76526525e4d233ebd6bfbc7884fdfec8f0067e
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-audio_io-brd2601-mvp-00a0ebce.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-audio_io-brd2601-mvp-00a0ebce.zip
 yzlite_audio_classifier-brd2204-none:
   date: "2023-02-27T22:12:42.997Z"
   sha1: c654c08ade01c3b3f996379e2a81e9b1740df74e
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd2204-none-c6da9227.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd2204-none-c6da9227.zip
 yzlite_audio_classifier-brd2601-mvp:
   date: "2023-02-27T22:16:32.416Z"
   sha1: 667db356c79a77eca32eb8b975072fba50436466
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd2601-mvp-3ef89fa2.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd2601-mvp-3ef89fa2.zip
 yzlite_audio_classifier-brd2601-none:
   date: "2023-02-27T22:15:16.871Z"
   sha1: 1966576b496ceb7979208bd1dea6922dc4d78eeb
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd2601-none-0699bc79.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd2601-none-0699bc79.zip
 yzlite_audio_classifier-brd4166-none:
   date: "2023-02-27T22:14:00.374Z"
   sha1: 270ccaf5c14fb40f554822aa0cfa9c2d5a54ee31
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd4166-none-a815ad2b.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-brd4166-none-a815ad2b.zip
 yzlite_audio_classifier-linux-none:
   date: "2023-02-03T00:59:58.930Z"
   sha1: 85723e9a642f4dbd102b650c2ab9a3b7766be458
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-linux-none-8e2ad414.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-linux-none-8e2ad414.zip
 yzlite_audio_classifier-windows-none:
   date: "2023-02-27T22:17:43.931Z"
   sha1: f458cf91ec3dd033ec9fe9eb5b7d39c0d0db15be
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-windows-none-c55063a0.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_audio_classifier/yzlite_audio_classifier-windows-none-c55063a0.zip
 yzlite_fingerprint_authenticator-brd2601-mvp:
   date: "2023-02-27T22:24:32.174Z"
   sha1: a6dbf602fb7dca19d4870eb4ae03a778f3ec5f28
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_fingerprint_authenticator/yzlite_fingerprint_authenticator-brd2601-mvp-e324573e.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_fingerprint_authenticator/yzlite_fingerprint_authenticator-brd2601-mvp-e324573e.zip
 yzlite_fingerprint_authenticator-brd2601-none:
   date: "2023-02-27T22:23:15.886Z"
   sha1: ebc99e0b99f2e31267cf46987d422f60290fa992
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_fingerprint_authenticator/yzlite_fingerprint_authenticator-brd2601-none-b918538f.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_fingerprint_authenticator/yzlite_fingerprint_authenticator-brd2601-none-b918538f.zip
 yzlite_image_classifier-brd2601-mvp:
   date: "2023-02-27T22:22:00.664Z"
   sha1: 510a250aa91b20261dbc4cd17bd613a9d523c380
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_image_classifier/yzlite_image_classifier-brd2601-mvp-db9639de.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_image_classifier/yzlite_image_classifier-brd2601-mvp-db9639de.zip
 yzlite_image_classifier-brd2601-none:
   date: "2023-02-27T22:20:43.506Z"
   sha1: 7d46db8dcfe2badf303262e64ce2c031b40dc519
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_image_classifier/yzlite_image_classifier-brd2601-none-2641a0c0.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_image_classifier/yzlite_image_classifier-brd2601-none-2641a0c0.zip
 yzlite_model_profiler-brd2204-none:
   date: "2023-02-27T22:04:55.425Z"
   sha1: e5b7e6d849da15c50b084310ef71331fb7a12a32
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd2204-none-db33ad52.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd2204-none-db33ad52.zip
 yzlite_model_profiler-brd2601-mvp:
   date: "2023-02-27T22:11:23.320Z"
   sha1: fffd04fac9deb8ee8af48fbe63cd5e4385e5a383
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd2601-mvp-25128317.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd2601-mvp-25128317.zip
 yzlite_model_profiler-brd2601-none:
   date: "2023-02-27T22:10:05.688Z"
   sha1: b3b6344b69b30eeace8c2f7cc5d9066f784174e4
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd2601-none-34c6b62f.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd2601-none-34c6b62f.zip
 yzlite_model_profiler-brd4166-none:
   date: "2023-02-27T22:06:14.147Z"
   sha1: 7c54ea0e572160938e86f77b8872d788a8d43d7e
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd4166-none-13a5f5ba.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd4166-none-13a5f5ba.zip
 yzlite_model_profiler-brd4186-mvp:
   date: "2023-02-27T22:08:48.922Z"
   sha1: 6d49b14a7466d384cb090402a76df871875d58be
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd4186-mvp-62a58efb.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd4186-mvp-62a58efb.zip
 yzlite_model_profiler-brd4186-none:
   date: "2023-02-27T22:07:29.098Z"
   sha1: 7902b72ce7066bded1508e6af3f9ccbfa9a3e1e3
-  url: https://github.com/chenxingqiang/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd4186-none-97dd1153.zip
+  url: https://github.com/ReRAM-Labs/yzlite_assets/raw/master/applications/yzlite_model_profiler/yzlite_model_profiler-brd4186-none-97dd1153.zip

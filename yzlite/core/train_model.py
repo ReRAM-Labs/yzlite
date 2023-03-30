@@ -36,8 +36,8 @@ def train_model(
     """Train a model using Keras and Tensorflow
 
     .. seealso::
-       * `Model Training Guide <https://github.com/chenxingqiang/yzlite/docs/guides/model_training.html>`_
-       * `Model Training API Examples <https://github.com/chenxingqiang/yzlite/yzlite/examples/train_model.html>`_
+       * `Model Training Guide <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training.html>`_
+       * `Model Training API Examples <https://github.com/ReRAM-Labs/yzlite/yzlite/examples/train_model.html>`_
        * `KerasModel.fit() <https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit>`_
 
     Args:

@@ -5,7 +5,7 @@ Evaluate a trained model to determine how accurate it is.
 ## Additional Documentation
 
 - [Model Evaluation Guide](../guides/model_evaluation.md)
-- [evaluate_model API](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/evaluate.html)
+- [evaluate_model API](https://github.com/ReRAM-Labs/yzlite/docs/python_api/operations/evaluate.html)
 
 
 ## Usage

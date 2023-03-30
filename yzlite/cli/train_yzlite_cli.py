@@ -72,7 +72,7 @@ May be one of the following:
     - Training log
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/docs/guides/model_training
+    https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training
     \b
     ----------
      Examples

@@ -43,7 +43,7 @@ The following are examples of using the `classify_audio` command:
 
 ### Classify using PC Microphone
 
-- Use the pre-trained ML model [keyword_spotting_on_off.py](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py)
+- Use the pre-trained ML model [keyword_spotting_on_off.py](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py)
 - Use your local PC's microphone
 - Verbosely print the ML model's classification results to the terminal
 - Set the detection threshold to 150 or 255 (a lower threshold means easier keyword detections with higher false-positives)
@@ -60,7 +60,7 @@ Processing should occur much faster on a PC compared to an embedded device.
 We can add an artificial delay to simulate the delay that would occur on an embedded device.  
 Refer to the [Keyword Spotting Overview](./keyword_spotting_overview.md) for why this matters.
 
-- Use the pre-trained ML model [keyword_spotting_mobilenetv2.py](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py)
+- Use the pre-trained ML model [keyword_spotting_mobilenetv2.py](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py)
 - Use your local PC's microphone
 - Verbosely print the ML model's classification results to the terminal
 - Simulate the audio loop latency of 200ms
@@ -107,7 +107,7 @@ Assuming you have a supported development board, you can also use the board's
 microphone to classify audio __on__ the development board. i.e. The entire
 audio classification (Audio processing + ML) runs on the embedded device.
 
-- Use the pre-trained ML model [keyword_spotting_on_off.py](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py)
+- Use the pre-trained ML model [keyword_spotting_on_off.py](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/models/yizhutech/keyword_spotting_on_off.py)
 - Use the connected development board
 - Verbosely print the ML model's classification results to the terminal
 - Set the detection threshold to 150 or 255 (a lower threshold means easier keyword detections with higher false-positives)
@@ -196,7 +196,7 @@ __NOTE:__ Internally, this will install the [wxPython](https://www.wxpython.org/
 
 ## Synthetic Audio Dataset Generator
 
-The YZLITE features the [AudioDatasetGenerator](https://github.com/chenxingqiang/yzlite/docs/python_api/utils/audio_dataset_generator/index.html) Python package. This allows for generating custom keyword audio datasets using synthetically generated data.
+The YZLITE features the [AudioDatasetGenerator](https://github.com/ReRAM-Labs/yzlite/docs/python_api/utils/audio_dataset_generator/index.html) Python package. This allows for generating custom keyword audio datasets using synthetically generated data.
 
 The dataset samples are generated using the Text-to-Speech (TTS) services provided by:
 
@@ -204,4 +204,4 @@ The dataset samples are generated using the Text-to-Speech (TTS) services provid
 - [Microsoft (Azure)](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/text-to-speech)
 - [Amazon Web Services (AWS)](https://aws.amazon.com/polly)
 
-Refer to the [Synthetic Audio Dataset Generation](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html) tutorial for more information.
+Refer to the [Synthetic Audio Dataset Generation](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html) tutorial for more information.

@@ -9,12 +9,12 @@ from yzlite.utils.system import get_current_os
 
 DOWNLOAD_URLS = {
     'windows': dict(
-        url='https://github.com/chenxingqiang/yzlite_assets/raw/master/tools/commander/Commander_win32_x64_1v12p0b1057.zip',
+        url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/tools/commander/Commander_win32_x64_1v12p0b1057.zip',
         subdir='v1.12',
         sha1='17C6D488A92979AA8F17C436D150A1F9A6F1694B'
     ),
     'linux': dict(
-        url='https://github.com/chenxingqiang/yzlite_assets/raw/master/tools/commander/Commander_linux_x86_64_1v12p0b1057.tar.bz',
+        url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/tools/commander/Commander_linux_x86_64_1v12p0b1057.tar.bz',
         subdir='v1.12',
         sha1='F45DC198D34546E17614FAA223EAB6B30E14ECD1'
     )

@@ -6,10 +6,10 @@ __NOTE:__ This application _only_ supports running on supported embedded targets
 
 ## Quick Links
 
-- [GitHub Source](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/apps/fingerprint_authenticator) - View this example's source code on Github
+- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/apps/fingerprint_authenticator) - View this example's source code on Github
 - [Hardware Setup](#hardware-setup) - View the required hardware setup for this example
-- [Online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/fingerprint_authenticator.html) - View this example's online documentation
-- [Fingerprint Authentication Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/fingerprint_authentication.html) - View this example's associated tutorial
+- [Online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/fingerprint_authenticator.html) - View this example's online documentation
+- [Fingerprint Authentication Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/fingerprint_authentication.html) - View this example's associated tutorial
 - [R503 Fingerprint Module](https://www.adafruit.com/product/4651) - View the fingerprint reader's product page
 
 ## Video
@@ -57,16 +57,16 @@ yzlite fingerprint_reader
 
 A state diagram of this application is as follows:
 
-![](https://github.com/chenxingqiang/yzlite/img/fingerprint_authenticator_state_diagram.png)
+![](https://github.com/ReRAM-Labs/yzlite/img/fingerprint_authenticator_state_diagram.png)
 
 ## Signature Generation Model
 
-The application is designed to run with a model similar to [fingerprint_signature_generator](https://github.com/chenxingqiang/yzlite/docs/python_api/models/yizhutech/fingerprint_signature_generator.html)
+The application is designed to run with a model similar to [fingerprint_signature_generator](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/yizhutech/fingerprint_signature_generator.html)
 
 This model receives a pre-processed grayscale image of the fingerprint and generates its
 corresponding unique signature.
 
-Refer to [Fingerprint Authentication Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/fingerprint_authentication.html) for more details on how to create this model.
+Refer to [Fingerprint Authentication Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/fingerprint_authentication.html) for more details on how to create this model.
 
 ## Updating the model
 
@@ -102,8 +102,8 @@ __NOTE:__ The `--app none` option tells the command to _not_ update the fingepri
 
 ### via CMake
 
-The model can also be updated when building this application from [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html)
-or the CMake [Command Line](https://github.com/chenxingqiang/yzlite/docs/command_line/index.html).
+The model can also be updated when building this application from [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html)
+or the CMake [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/command_line/index.html).
 
 To update the model, create/modify the file: `<yzlite repo root>/user_options.cmake`
 and add:
@@ -138,19 +138,19 @@ The following default pin mappings are used by:
 
 ## Build, Run, Debug
 
-See the [online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html) for how to build and run this application:
+See the [online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html) for how to build and run this application:
 
 ### Simplicity Studio
 
-If using [Simplicity Studio](https://github.com/chenxingqiang/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - Fingerprint Authenticator` Project.
+If using [Simplicity Studio](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - Fingerprint Authenticator` Project.
 
 ### Visual Studio Code
 
-If using [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html) select the `yzlite_fingerprint_authenticator` CMake target.
+If using [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html) select the `yzlite_fingerprint_authenticator` CMake target.
 
 ### Command-line
 
-If using the [Command Line](https://github.com/chenxingqiang/yzlite/docs/cpp_development/command_line.html) select the `yzlite_fingerprint_authenticator` CMake target.  
+If using the [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/command_line.html) select the `yzlite_fingerprint_authenticator` CMake target.  
 
 ## Dumping images to PC
 
@@ -172,8 +172,8 @@ which will display the images from the fingerprint reader and save them to the l
 
 ## Build Settings
 
-When building this application using [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html)
-or the [Command Line](https://github.com/chenxingqiang/yzlite/docs/cpp_development/command_line.html) several options may be configured
+When building this application using [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html)
+or the [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/command_line.html) several options may be configured
 to control how the app is built.
 
 To specify the settings, create/modify the file:  
@@ -200,7 +200,7 @@ yzlite_set(FINGERPRINT_AUTHENTICATOR_MODEL ~/my_models/my_model.yzlite.zip)
 
 # Specify the YZLITE model name
 # NOTE: The model specification must be on the model search path, see:
-#       https://github.com/chenxingqiang/yzlite/docs/guides/model_search_path.html
+#       https://github.com/ReRAM-Labs/yzlite/docs/guides/model_search_path.html
 yzlite_set(FINGERPRINT_AUTHENTICATOR_MODEL fingerprint_signature_generator)
 ```
 

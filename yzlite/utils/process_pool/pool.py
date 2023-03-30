@@ -84,7 +84,7 @@ class ProcessPool:
             results.append(y)
 
 
-    See the source code on Github: `yzlite/utils/process_pool <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/process_pool>`_
+    See the source code on Github: `yzlite/utils/process_pool <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/process_pool>`_
 
     Args:
         entry_point: The Python function to execute in separate subprocesses.

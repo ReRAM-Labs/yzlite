@@ -1,6 +1,6 @@
 # MVP Python Wrapper
 
-This allows for running the MVP-accelerated Tensorflow-Lite Micro (TFLM) [kernels](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/reram_sdk/tflite_micro_mvp_kernels) from a Python script.
+This allows for running the MVP-accelerated Tensorflow-Lite Micro (TFLM) [kernels](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/reram_sdk/tflite_micro_mvp_kernels) from a Python script.
 
 This is useful as it allows for running `.tflite` model files in the MVP simulator and determining values such as:
 - Required runtime memory (i.e. RAM)
@@ -13,9 +13,9 @@ This wrapper is not used directly. Instead, it is loaded by the [TfliteMicro](yz
 
 ## Source Code
 
-- [Python wrapper](https://github.com/chenxingqiang/yzlite/tree/master/cpp//mvp_wrapper) - This makes the MVP-accelerated TFLM kernels accessible to Python
-- [MVP Tensorflow-Lite Micro Kernels](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/reram_sdk/tflite_micro_mvp_kernels) - The MVP-accelerated Tensorflow-Lite Micro kernels. These run on the embedded device _or_ in the MVP simulator
-- [Python API](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core//tflite_micro) - Python package that loads the TFLM [wrapper](./tflite_micro_wrapper.md) as well as this Python wrapper
+- [Python wrapper](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//mvp_wrapper) - This makes the MVP-accelerated TFLM kernels accessible to Python
+- [MVP Tensorflow-Lite Micro Kernels](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/reram_sdk/tflite_micro_mvp_kernels) - The MVP-accelerated Tensorflow-Lite Micro kernels. These run on the embedded device _or_ in the MVP simulator
+- [Python API](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core//tflite_micro) - Python package that loads the TFLM [wrapper](./tflite_micro_wrapper.md) as well as this Python wrapper
 
 
 
@@ -42,7 +42,7 @@ pip install yizhu-yzlite
 This wrapper is automatically built when installing from source, e.g.:
 
 ```shell
-git clone https://github.com/chenxingqiang/yzlite.git
+git clone https://github.com/ReRAM-Labs/yzlite.git
 cd yzlite
 pip install -e .
 ```

@@ -102,7 +102,7 @@
 
     "\n",
 
-    "For this tutorial, we'll debug the [basic_example](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/basic_example.py) that comes with the YZLITE.\n",
+    "For this tutorial, we'll debug the [basic_example](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/basic_example.py) that comes with the YZLITE.\n",
 
     "Download the [basic_example](https://raw.githubusercontent.com/YizhuTech/yzlite/master/yzlite/models/examples/basic_example.py) Python script to your local PC \n",
 

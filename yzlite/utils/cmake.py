@@ -1,6 +1,6 @@
 """Utilities for invoking CMake
 
-See the source code on Github: `yzlite/utils/cmake.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/cmake.py>`_
+See the source code on Github: `yzlite/utils/cmake.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/cmake.py>`_
 """
 
 import logging

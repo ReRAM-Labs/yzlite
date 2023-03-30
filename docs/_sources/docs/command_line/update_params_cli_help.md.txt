@@ -12,7 +12,7 @@
  The weights and model structure of the .tflite file are NOT modified.
 
  For more details see:
- https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters
+ https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters
 
  ----------
   Examples

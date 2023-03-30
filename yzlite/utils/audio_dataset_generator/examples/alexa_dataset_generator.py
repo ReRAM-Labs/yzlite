@@ -2,7 +2,7 @@
 This script generates a synthetic "alexa" dataset.
 
 See the corresponding tutorial for more details:
-https://github.com/chenxingqiang/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html
+https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html
 
 """
 

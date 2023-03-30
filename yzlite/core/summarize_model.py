@@ -26,8 +26,8 @@ def summarize_model(
     and return the summary as a string
 
     .. seealso::
-       * `Model Summary Guide <https://github.com/chenxingqiang/yzlite/docs/guides/model_summary.html>`_
-       * `Model summary API examples <https://github.com/chenxingqiang/yzlite/yzlite/examples/summarize_model.html>`_
+       * `Model Summary Guide <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_summary.html>`_
+       * `Model summary API examples <https://github.com/ReRAM-Labs/yzlite/yzlite/examples/summarize_model.html>`_
 
 
     Args:

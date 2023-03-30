@@ -1,6 +1,6 @@
 """Data logging utilities
 
-See the source code on Github: `yzlite/utils/logger.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/logger.py>`_
+See the source code on Github: `yzlite/utils/logger.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/logger.py>`_
 """
 import atexit
 import io

@@ -174,7 +174,7 @@ def _copy_file(src, dst, repo_name=None):
     # If a testing repo name was given
     # then update any URLs found in the html docs files
     if repo_name:
-        data = data.replace('github.com/chenxingqiang/yzlite',
+        data = data.replace('github.com/ReRAM-Labs/yzlite',
                             f'{repo_name}.github.io/yzlite')
         data = data.replace('YizhuTech.github.io/yzlite',
                             f'{repo_name}.github.io/yzlite')

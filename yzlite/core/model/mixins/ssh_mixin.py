@@ -9,8 +9,8 @@ class SshMixin(BaseMixin):
     """Provides various properties to the base :py:class:`~YZLiteModel` used by the ``ssh`` YZLITE command.
 
     .. seealso::
-       - `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
-       - `Cloud Training with vast.ai <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/cloud_training_with_vast_ai.html>`_
+       - `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
+       - `Cloud Training with vast.ai <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/cloud_training_with_vast_ai.html>`_
 
     """
 
@@ -18,7 +18,7 @@ class SshMixin(BaseMixin):
     def ssh_remote_dir(self) -> str:
         """Directory path to remote machine's workspace. This overrides any settings in ~/.yzlite/user_settings.yaml
 
-        .. seealso:: `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
+        .. seealso:: `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
         """
         return self._attributes.get_value('ssh.remote_dir', default=None)
 
@@ -30,7 +30,7 @@ class SshMixin(BaseMixin):
     def ssh_startup_cmds(self) -> List[str]:
         """List of shell commands to execute before invoking YZLITE command. This overrides any settings in ~/.yzlite/user_settings.yaml
 
-        .. seealso:: `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
+        .. seealso:: `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
         """
         return self._attributes.get_value('ssh.startup_cmds', default=None)
 
@@ -42,7 +42,7 @@ class SshMixin(BaseMixin):
     def ssh_shutdown_cmds(self) -> List[str]:
         """List of shell commands to execute after invoking YZLITE command. This overrides any settings in ~/.yzlite/user_settings.yaml
 
-        .. seealso:: `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
+        .. seealso:: `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
         """
         return self._attributes.get_value('ssh.shutdown_cmds', default=None)
 
@@ -55,7 +55,7 @@ class SshMixin(BaseMixin):
         """List of local files to upload before invoking YZLITE command. All paths must be relative to the model specification script.
         This overrides any settings in ~/.yzlite/user_settings.yaml
 
-        .. seealso:: `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
+        .. seealso:: `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
         """
         return self._attributes.get_value('ssh.upload_files', default=None)
 
@@ -68,7 +68,7 @@ class SshMixin(BaseMixin):
         """List of remote files to download after invoking YZLITE command. All paths must be relative to the model specification script.
         This overrides any settings in ~/.yzlite/user_settings.yaml
 
-        .. seealso:: `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
+        .. seealso:: `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
         """
         return self._attributes.get_value('ssh.download_files', default=None)
 
@@ -81,7 +81,7 @@ class SshMixin(BaseMixin):
         """List of environment variables to export in the remote machine's shell session before invoking YZLITE command.
         This overrides any settings in ~/.yzlite/user_settings.yaml
 
-        .. seealso:: `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
+        .. seealso:: `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
         """
         return self._attributes.get_value('ssh.environment', default=None)
 
@@ -93,7 +93,7 @@ class SshMixin(BaseMixin):
     def ssh_create_venv(self) -> bool:
         """If true then create the YZLITE python virtual environment in the specified remote_directory. This overrides the setting in ~/.yzlite/user_settings.yaml
 
-        .. seealso:: `Model Training via SSH <https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html>`_
+        .. seealso:: `Model Training via SSH <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html>`_
         """
         return self._attributes.get_value('ssh.create_venv', default=None)
 

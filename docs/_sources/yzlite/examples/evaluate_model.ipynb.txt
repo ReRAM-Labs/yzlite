@@ -112,7 +112,7 @@
 
     "\n",
 
-    "The following example evaluates the [image_example1](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/image_example1.py) model \n",
+    "The following example evaluates the [image_example1](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/image_example1.py) model \n",
 
     "using the `.h5` (i.e. non-quantized, float32 weights) model file.  \n",
 
@@ -324,7 +324,7 @@
 
     "\n",
 
-    "The following example evaluates the [image_example1](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/image_example1.py) model \n",
+    "The following example evaluates the [image_example1](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/image_example1.py) model \n",
 
     "using the `.tflite` (i.e. quantized, int8 weights) model file.  \n",
 
@@ -536,7 +536,7 @@
 
     "\n",
 
-    "The following example evaluates the [anomaly_detection](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.py) model \n",
+    "The following example evaluates the [anomaly_detection](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/anomaly_detection.py) model \n",
 
     "using the `.h5` (i.e. non-quantized, float32 weights) model file.  \n",
 

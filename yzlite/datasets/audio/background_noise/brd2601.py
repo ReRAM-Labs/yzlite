@@ -13,7 +13,7 @@ from yzlite.core.preprocess.utils import audio as audio_utils
 
 from .. import utils
 
-DOWNLOAD_URL = 'https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z'
+DOWNLOAD_URL = 'https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z'
 """The public download URL"""
 VERIFY_SHA1 = '3069A85002965A7830C660343C215EDD4FAE39C6'
 """The SHA1 hash of the downloaded archive"""

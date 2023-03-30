@@ -14,10 +14,10 @@ This Python API loads the C++ Python wrapper shared library into the Python runt
 
 ## Source Code
 
-- [Python wrapper](https://github.com/chenxingqiang/yzlite/tree/master/cpp//tflite_micro_wrapper) - This makes the Tensorflow-Lite Micro C++ library accessible to Python
-- [Tensorflow-Lite Micro](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/tflite_micro) - This is the Tensorflow-Lite Micro C++ library plus some additional helpers to aid development (__NOTE:__ The actual TFLM [library](https://github.com/tensorflow/tflite-micro) is downloaded by the build scripts)
-- [TfliteMicroModel](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/tflite_micro_model) - This is a helper C++ library to make interfacing to the TFLM library easier for applications
-- [Python API](https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core//tflite_micro) - Python package that loads this C++ wrapper
+- [Python wrapper](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//tflite_micro_wrapper) - This makes the Tensorflow-Lite Micro C++ library accessible to Python
+- [Tensorflow-Lite Micro](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/tflite_micro) - This is the Tensorflow-Lite Micro C++ library plus some additional helpers to aid development (__NOTE:__ The actual TFLM [library](https://github.com/tensorflow/tflite-micro) is downloaded by the build scripts)
+- [TfliteMicroModel](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/tflite_micro_model) - This is a helper C++ library to make interfacing to the TFLM library easier for applications
+- [Python API](https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core//tflite_micro) - Python package that loads this C++ wrapper
 
 
 ## Additional Links
@@ -43,7 +43,7 @@ pip install yizhu-yzlite
 This wrapper is automatically built when installing from source, e.g.:
 
 ```shell
-git clone https://github.com/chenxingqiang/yzlite.git
+git clone https://github.com/ReRAM-Labs/yzlite.git
 cd yzlite
 pip install -e .
 ```

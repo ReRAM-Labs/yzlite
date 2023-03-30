@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 Installation
 =================
@@ -7,7 +7,7 @@ The YZLITE supports three modes of installation:
 
 - [Standard Python Package](#standard-python-package) - Use the YZLITE like any other package in your local Python3 environment
 - [Google Colab](#google-colab) - Run the YZLITE in the [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb) cloud servers. This allows for running the YZLITE _without_ installing it locally
-- [Local Development](#local-development) - Locally build the YZLITE C++ [Python wrappers](https://github.com/chenxingqiang/yzlite/docs/cpp_development/wrappers/index.html) and [examples](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/index.html) from source
+- [Local Development](#local-development) - Locally build the YZLITE C++ [Python wrappers](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/wrappers/index.html) and [examples](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/index.html) from source
 
 ```{note}
 [Python3.7, Python3.8, Python3.9, Python3.10](https://www.python.org/downloads/) is required
@@ -50,7 +50,7 @@ This step is __highly recommended__ as the YZLITE installs other dependencies li
 2 ) Install the YZLITE Python package via [pip](https://pip.pypa.io/):  
 
   This installs the pre-built Python package. This is the easiest and fastest approach to installing the YZLITE.  
-  However, the package may not be up-to-date with the [Github repository](https://github.com/chenxingqiang/yzlite).
+  However, the package may not be up-to-date with the [Github repository](https://github.com/ReRAM-Labs/yzlite).
 
   ```{eval-rst}
 .. tab-set::
@@ -70,7 +70,7 @@ This step is __highly recommended__ as the YZLITE installs other dependencies li
 
   __OR__
 
-  This builds and installs the Python package from the [Github repository](https://github.com/chenxingqiang/yzlite). This may take longer
+  This builds and installs the Python package from the [Github repository](https://github.com/ReRAM-Labs/yzlite). This may take longer
   to install but will use the most up-to-date source code.
 
   ```{eval-rst}
@@ -80,13 +80,13 @@ This step is __highly recommended__ as the YZLITE installs other dependencies li
 
       .. code-block:: shell
 
-         pip  install git+https://github.com/chenxingqiang/yzlite.git[full]
+         pip  install git+https://github.com/ReRAM-Labs/yzlite.git[full]
 
    .. tab-item:: Linux
 
       .. code-block:: shell
       
-         pip3 install git+https://github.com/chenxingqiang/yzlite.git[full]
+         pip3 install git+https://github.com/ReRAM-Labs/yzlite.git[full]
   ```
 
   __NOTE:__ The `[full]` part of the command is _optional_. This will install additional dependencies used by some the the YZLITE commands.
@@ -186,7 +186,7 @@ Before installing, you must have [Python3.7, 3.8, 3.9, 3.10](https://www.python.
 1 ) Clone the YZLITE GIT repository
 
 ```shell
-git clone https://github.com/chenxingqiang/yzlite
+git clone https://github.com/ReRAM-Labs/yzlite
 ```
 
 2 ) Run the install script at the root of the repository

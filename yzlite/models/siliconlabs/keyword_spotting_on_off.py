@@ -1,12 +1,12 @@
 """keyword_spotting_on_off
 **************************
 
-- Source code: `keyword_spotting_on_off.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py>`_
-- Pre-trained model: `keyword_spotting_on_off.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.yzlite.zip>`_
+- Source code: `keyword_spotting_on_off.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py>`_
+- Pre-trained model: `keyword_spotting_on_off.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.yzlite.zip>`_
 
 
 This model specification script is designed to work with the
-`Keyword Spotting On/Off <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_on_off.html>`_ tutorial.
+`Keyword Spotting On/Off <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_on_off.html>`_ tutorial.
 
 This model is a CNN classifier to detect the keywords:
 
@@ -352,7 +352,7 @@ my_model.tflite_converter['representative_dataset'] = 'generate'
 # Specify the dataset
 # NOTE: This can also be an absolute path to a directory
 #       or a Python function
-# See: https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin.dataset
+# See: https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin.dataset
 my_model.dataset = speech_commands_v2
 # We're using a 'categorical_crossentropy' loss
 # so must also use a `categorical` class mode for the data generation
@@ -380,7 +380,7 @@ my_model.class_weights = 'balanced'
 # These settings must be used during modeling training
 # AND by embedded device at runtime
 #
-# See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html
 frontend_settings = AudioFeatureGeneratorSettings()
 
 # This can also be 16k for slightly better performance at the cost of more RAM

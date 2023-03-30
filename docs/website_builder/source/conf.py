@@ -249,22 +249,22 @@ for fn in recursive_listdir(docs_src_dir, return_relative_paths=True):
     with open(src_path, 'r') as f:
         data = ''
         for line in f:
-            if 'Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file' in line:
+            if 'Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file' in line:
                 continue
 
             # Update the relative links to C++ code to point to the github repo
-            # https://github.com/chenxingqiang/yzlite/cpp
+            # https://github.com/ReRAM-Labs/yzlite/cpp
             match = cpp_path_re.match(line)
             if match:
                 line = line.replace(match.group(
-                    1), 'https://github.com/chenxingqiang/yzlite/tree/master/cpp/')
+                    1), 'https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/')
             else:
                 # Update the relative links to python code to point to the github repo
-                # https://github.com/chenxingqiang/yzlite/yzlite/core
+                # https://github.com/ReRAM-Labs/yzlite/yzlite/core
                 match = yzlite_path_re.match(line)
                 if match:
                     line = line.replace(match.group(
-                        1), 'https://github.com/chenxingqiang/yzlite/tree/master/yzlite/core/')
+                        1), 'https://github.com/ReRAM-Labs/yzlite/tree/master/yzlite/core/')
             data += line
 
     with open(dst_path, 'w') as f:
@@ -321,7 +321,7 @@ url_re2 = re.compile(
 docs_img_re = re.compile(
     r'.*\((https:\/\/github.com\/YizhuTech\/yzlite\/raw\/master\/docs\/img\/).*', re.I)
 # If the line contains something like:
-# (https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model.html#yzlite.core.TrainMixin.tflite_converter)
+# (https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model.html#yzlite.core.TrainMixin.tflite_converter)
 # Then we cannot convert it to it's corresponding relative markdown URL, so it's not supported
 not_supported_url_re = re.compile(
     r'.*\(https:\/\/yizhutech\.github\.io\/yzlite\/.*\.html#.*[\.\-].*\)', re.I)

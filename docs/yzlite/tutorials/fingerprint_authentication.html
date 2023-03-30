@@ -153,7 +153,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -208,7 +208,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -678,7 +678,7 @@
 <section id="quick-links">
 <h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/fingerprint_authentication.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
+<li><p><a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/fingerprint_authentication.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/fingerprint_authentication.ipynb">Run on Colab</a> - Run this tutorial on Google Colab</p></li>
 <li><p><a class="reference internal" href="../../docs/cpp_development/examples/fingerprint_authenticator.html"><span class="doc std std-doc">C++ Example Application</span></a> - View this tutorial’s associated C++ example application</p></li>
 <li><p><a class="reference internal" href="../../docs/python_api/models/yizhutech/fingerprint_signature_generator.html"><span class="doc std std-doc">Machine Learning Model</span></a> - View this tutorial’s associated machine learning model</p></li>
@@ -867,14 +867,14 @@ After the command completes, repeat the command with as many other peoples’ fi
 <h3 id="data-preprocessing">Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this heading">¶</a></h3>
 <p>The <a class="reference external" href="https://www.adafruit.com/product/4651">R503 Fingerprint Module</a> generates 192x192 grayscale images.<br/>
 Additional preprocessing is applied to the raw images to help the ML model learn the important features of the images.</p>
-<p>The preprocessing algorithm source may be found in <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator_dataset.py">fingerprint_signature_generator_dataset.py</a></p>
+<p>The preprocessing algorithm source may be found in <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator_dataset.py">fingerprint_signature_generator_dataset.py</a></p>
 <p>The following algorithms are used:</p>
 <ul class="simple">
 <li><p><strong>Color space balancing</strong> - This uses simple statistical centering and removes outliers</p></li>
 <li><p><strong>Sharpening</strong> - This applies 2D convolution using a harpening filter: <code class="docutils literal notranslate"><span class="pre">original</span> <span class="pre">+</span> <span class="pre">(original</span> <span class="pre">?</span> <span class="pre">blurred)</span> <span class="pre">×</span> <span class="pre">amount</span></code></p></li>
 <li><p><strong>Quality rejection</strong> - Using simple heuristics, if the image is found to be too blurry it is dropped</p></li>
 </ul>
-<p><strong>NOTE:</strong> These algorithms are used to preprocess the training dataset <em>and</em> on the embedded device at runtime (see <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/fingerprint_authenticator/data_preprocessor.cc">data_preprocessor.cc</a>)</p>
+<p><strong>NOTE:</strong> These algorithms are used to preprocess the training dataset <em>and</em> on the embedded device at runtime (see <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/fingerprint_authenticator/data_preprocessor.cc">data_preprocessor.cc</a>)</p>
 </section>
 <section id="generating-fingerprint-pairs">
 <h3 id="generating-fingerprint-pairs">Generating fingerprint pairs<a class="headerlink" href="#generating-fingerprint-pairs" title="Permalink to this heading">¶</a></h3>
@@ -884,12 +884,12 @@ Additional preprocessing is applied to the raw images to help the ML model learn
 <li><p><strong>match</strong> - Images are of the <em>same</em> fingerprint</p></li>
 <li><p><strong>no-match</strong> - Images are of <em>different</em> fingerprints</p></li>
 </ul>
-<p>The <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator_dataset.py">fingerprint_signature_generator_dataset.py</a> script is used to generate the image pairs from the fingerprint dataset.</p>
+<p>The <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator_dataset.py">fingerprint_signature_generator_dataset.py</a> script is used to generate the image pairs from the fingerprint dataset.</p>
 </section>
 </section>
 <section id="creating-the-model">
 <h2 id="creating-the-model">Creating the Model<a class="headerlink" href="#creating-the-model" title="Permalink to this heading">¶</a></h2>
-<p>The <a class="reference internal" href="../../docs/guides/model_specification.html"><span class="doc std std-doc">model specification</span></a> used by this tutorial may be found on Github: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.py">fingerprint_signature_generator.py</a>.</p>
+<p>The <a class="reference internal" href="../../docs/guides/model_specification.html"><span class="doc std std-doc">model specification</span></a> used by this tutorial may be found on Github: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/fingerprint_signature_generator.py">fingerprint_signature_generator.py</a>.</p>
 <section id="dataset">
 <h3 id="dataset">Dataset<a class="headerlink" href="#dataset" title="Permalink to this heading">¶</a></h3>
 <p>Due to privacy concerns, no dataset is provided by this tutorial. You must generate your own dataset using the instructions in this tutorial.</p>
@@ -906,7 +906,7 @@ Additional preprocessing is applied to the raw images to help the ML model learn
 <section id="loss-function">
 <h3 id="loss-function">Loss Function<a class="headerlink" href="#loss-function" title="Permalink to this heading">¶</a></h3>
 <p>As per the Keras tutorial: <a class="reference external" href="https://keras.io/examples/vision/siamese_contrastive/">Image similarity estimation using a Siamese Network with a contrastive loss</a>, a <strong>contrastive loss</strong> function is used for model training.</p>
-<p>The source code for the custom loss function may be found on Github: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/core/keras/losses.py">yzlite/core/keras/losses.py</a></p>
+<p>The source code for the custom loss function may be found on Github: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/core/keras/losses.py">yzlite/core/keras/losses.py</a></p>
 <p>The basic formula for contrastive loss is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contrastive</span> <span class="n">loss</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">true_value</span><span class="p">)</span> <span class="o">*</span> <span class="n">square</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span> <span class="o">+</span> <span class="n">true_value</span> <span class="o">*</span> <span class="n">square</span><span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">margin</span><span class="o">-</span><span class="n">prediction</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">))</span>
 </pre></div>
@@ -940,7 +940,7 @@ So, the <strong>exact</strong> parameters and algorithms used for color balancin
 <span class="n">my_model</span><span class="o">.</span><span class="n">model_parameters</span><span class="p">[</span><span class="s1">'verify_center_threshold'</span><span class="p">]</span> <span class="o">=</span> <span class="n">preprocess_params</span><span class="p">[</span><span class="s1">'verify_center_threshold'</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>And then read by the firmware application at runtime: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/apps/fingerprint_authenticator/data_preprocessor.cc">data_preprocessor.cc</a></p>
+<p>And then read by the firmware application at runtime: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/apps/fingerprint_authenticator/data_preprocessor.cc">data_preprocessor.cc</a></p>
 </section>
 <section id="saving-the-model">
 <h3 id="saving-the-model">Saving the model<a class="headerlink" href="#saving-the-model" title="Permalink to this heading">¶</a></h3>

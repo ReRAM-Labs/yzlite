@@ -8,7 +8,7 @@ to be invoked from a Python script. This allows for sharing source code between 
 The Python wrappers use [PyBind11](https://pybind11.readthedocs.io/en/stable/index.html) to manage
 converting data between Python and C++.
 
-The source code for the wrappers may be found on Github at [__yzlite__/cpp](https://github.com/chenxingqiang/yzlite/tree/master/cpp/)
+The source code for the wrappers may be found on Github at [__yzlite__/cpp](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/)
 
 The following wrappers are available:
 - [Audio Feature Generator](./audio_feature_generator_wrapper.md) - Allows for sharing spectrogram generation algorithms between model training scripts and embedded targets

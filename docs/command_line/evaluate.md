@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # evaluate
 
@@ -7,7 +7,7 @@ Evaluate a trained model to determine how accurate it is.
 ## Additional Documentation
 
 - [Model Evaluation Guide](../guides/model_evaluation.md)
-- [evaluate_model API](https://github.com/chenxingqiang/yzlite/docs/python_api/operations/evaluate.html)
+- [evaluate_model API](https://github.com/ReRAM-Labs/yzlite/docs/python_api/operations/evaluate.html)
 
 ## Usage
 

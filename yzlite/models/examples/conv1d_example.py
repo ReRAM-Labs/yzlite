@@ -1,7 +1,7 @@
 """conv1d_example
 ********************
 
-Source code: `conv1d_example.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/conv1d_example.py>`_
+Source code: `conv1d_example.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/conv1d_example.py>`_
 
 This demonstrates how to create a Conv1D model.
 
@@ -243,7 +243,7 @@ my_model.tflite_converter['representative_dataset'] = 'generate'
 # Audio Data Provider Settings
 
 def load_dataset():
-    DOWNLOAD_URL = 'https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/ekg_waveforms.zip'
+    DOWNLOAD_URL = 'https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/ekg_waveforms.zip'
     VERIFY_SHA1 = '8221333C8ECEF29843D05B6385A4F47074820480'
     path = download_verify_extract(
         url=DOWNLOAD_URL,

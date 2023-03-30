@@ -79,10 +79,10 @@ In this case, ONLY the .tflite will be programmed and the existing fingerprint_a
     Additionally, an R503 fingerprint module: https://www.adafruit.com/product/4651
     must be connected connected to the development board.
     Refer to the online documentation for how to connect it to the development:
-    https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/fingerprint_authenticator.html#hardware-setup
+    https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/fingerprint_authenticator.html#hardware-setup
     \b
     For more details, ee:
-    https://github.com/chenxingqiang/yzlite/yzlite/tutorials/fingerprint_authentication
+    https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/fingerprint_authentication
     """
     # Import all required packages here instead of at top
     # to help improve the CLI's responsiveness

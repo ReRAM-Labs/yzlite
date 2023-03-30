@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Audio Dataset Generator
 
@@ -8,11 +8,11 @@ This allows for generating a synthetic keyword audio datasets using:
 - [Microsoft (Azure)](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/text-to-speech)
 - [Amazon Web Services (AWS)](https://aws.amazon.com/polly)
 
-See the [Synthetic Audio Dataset Generation](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html) tutorial for more details.
+See the [Synthetic Audio Dataset Generation](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html) tutorial for more details.
 
 ## Example Usage
 
-The following is a snippet taken from [alexa_dataset_generator.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/audio_dataset_generator/examples/alexa_dataset_generator.py)
+The following is a snippet taken from [alexa_dataset_generator.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/audio_dataset_generator/examples/alexa_dataset_generator.py)
 
 ```python
 import tqdm

@@ -23,23 +23,23 @@ There are no Yizhu Technology support services for this software at this time.
 This is a Python package with command-line utilities and scripts to aid the development
 of machine learning models for Yizhu-Tech's embedded platforms.
 
-See the [YZLITE Overview](https://github.com/chenxingqiang/yzlite/docs/overview.html) for an overview of how the various features of the YZLITE are used to
+See the [YZLITE Overview](https://github.com/ReRAM-Labs/yzlite/docs/overview.html) for an overview of how the various features of the YZLITE are used to
 create machine learning models for embedded devices.
 
 The features of this Python package include:
-- [Command-line](https://github.com/chenxingqiang/yzlite/docs/command_line/index.html) - Execute all ML operations from simple command-line interface
-- [Python API](https://github.com/chenxingqiang/yzlite/docs/python_api/python_api.html) - Execute all ML operations from a Python script
-- [Model Profiler](https://github.com/chenxingqiang/yzlite/docs/guides/model_profiler.html) - Determine how efficiently an ML model will execute on an embedded platform
-- [Model Training](https://github.com/chenxingqiang/yzlite/docs/guides/model_training.html) - Train an ML model using [Google Tensorflow](https://www.tensorflow.org/)
-- [Model Training Monitor](https://github.com/chenxingqiang/yzlite/docs/guides/model_training_monitor.html) - Monitor/profile the training of a model using [Tensorboard](https://www.tensorflow.org/tensorboard)
-- [Remote Training via SSH](https://github.com/chenxingqiang/yzlite/docs/guides/model_training_via_ssh.html) - Securely and seamlessly train the model on a remote "cloud" machine
-- [Model Evaluation](https://github.com/chenxingqiang/yzlite/docs/guides/model_evaluation.html) - Evaluate a trained ML model's accuracy and other metrics
-- [Model Summary](https://github.com/chenxingqiang/yzlite/docs/guides/model_summary.html) - Generate a summary of the model's contents
-- [Model Visualization](https://github.com/chenxingqiang/yzlite/docs/guides/model_visualizer.html) - Interactively view the ML model's structure
-- [Model Quantization](https://github.com/chenxingqiang/yzlite/docs/guides/model_quantization.html) - Reduce the memory footprint of an ML model by using the [Tensorflow-Lite Converter](https://www.tensorflow.org/lite/convert)
-- [Model Parameters](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html) - Embed custom parameters into the generated model file
-- [Audio Utilities](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html) - Utilities to visualize and classify real-time audio for keyword spotting
-- [Python C++ Wrappers](https://github.com/chenxingqiang/yzlite/docs/cpp_development/wrappers/index.html) - Execute C++ libraries (including [Tensorflow-Lite Micro](https://github.com/tensorflow/tflite-micro)) from a Python interface
+- [Command-line](https://github.com/ReRAM-Labs/yzlite/docs/command_line/index.html) - Execute all ML operations from simple command-line interface
+- [Python API](https://github.com/ReRAM-Labs/yzlite/docs/python_api/python_api.html) - Execute all ML operations from a Python script
+- [Model Profiler](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_profiler.html) - Determine how efficiently an ML model will execute on an embedded platform
+- [Model Training](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training.html) - Train an ML model using [Google Tensorflow](https://www.tensorflow.org/)
+- [Model Training Monitor](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_monitor.html) - Monitor/profile the training of a model using [Tensorboard](https://www.tensorflow.org/tensorboard)
+- [Remote Training via SSH](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training_via_ssh.html) - Securely and seamlessly train the model on a remote "cloud" machine
+- [Model Evaluation](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_evaluation.html) - Evaluate a trained ML model's accuracy and other metrics
+- [Model Summary](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_summary.html) - Generate a summary of the model's contents
+- [Model Visualization](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_visualizer.html) - Interactively view the ML model's structure
+- [Model Quantization](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_quantization.html) - Reduce the memory footprint of an ML model by using the [Tensorflow-Lite Converter](https://www.tensorflow.org/lite/convert)
+- [Model Parameters](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html) - Embed custom parameters into the generated model file
+- [Audio Utilities](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html) - Utilities to visualize and classify real-time audio for keyword spotting
+- [Python C++ Wrappers](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/wrappers/index.html) - Execute C++ libraries (including [Tensorflow-Lite Micro](https://github.com/tensorflow/tflite-micro)) from a Python interface
 
 
 
@@ -53,7 +53,7 @@ pip  install yizhu-yzlite
 pip3 install yizhu-yzlite
 ```
 
-Refer to [Installation Guide](https://github.com/chenxingqiang/yzlite/docs/installation.html) for more details on how to install the YZLITE.
+Refer to [Installation Guide](https://github.com/ReRAM-Labs/yzlite/docs/installation.html) for more details on how to install the YZLITE.
 
 
 ## License
@@ -217,7 +217,7 @@ setup(
     description='This allows for developing embedded machine learning models using Tensorflow-Lite Micro',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/chenxingqiang/yzlite',
+    url='https://github.com/ReRAM-Labs/yzlite',
     author='Yizhu Technology',
     license='SPDX-License-Identifier: Zlib',
     classifiers=[

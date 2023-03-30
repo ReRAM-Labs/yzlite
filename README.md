@@ -2,9 +2,9 @@
 
 The YZLite package by Yizhu Technology is an experimental Python package with command-line utilities and scripts for developing machine learning models for embedded platforms. It provides features such as command-line interface, Python API, model profiler, model training and evaluation, model summary, visualization, quantization, audio feature generation, C++ Python wrappers, and more. The package does not come with any warranty or support services, but it is supported by online documentation and community support. YZLite can be installed using pre-built Python package or by building from Github. The software is provided "as-is" without any warranty, but it can be used for any purpose including commercial applications, subject to certain restrictions.
 
-<a href="https://github.com/chenxingqiang/yzlite" target="_blank">![version](https://img.shields.io/badge/YZLITE%20Version-0.1.0-red?style=for-the-badge)</a>
+<a href="https://github.com/ReRAM-Labs/yzlite" target="_blank">![version](https://img.shields.io/badge/YZLITE%20Version-0.1.0-red?style=for-the-badge)</a>
 <a href="https://pypi.org/project/yizhu-yzlite" target="_blank">![PyPI - Python Version](https://img.shields.io/pypi/pyversions/yizhu-yzlite?style=for-the-badge)</a>
-<a href="https://github.com/chenxingqiang/reram_sdk/tree/G0)" target="_blank">![gsdk](https://img.shields.io/badge/ReRAM%20SDK-G0-green?style=for-the-badge)</a>
+<a href="https://github.com/ReRAM-Labs/reram_sdk/tree/G0)" target="_blank">![gsdk](https://img.shields.io/badge/ReRAM%20SDK-G0-green?style=for-the-badge)</a>
 <a href="https://github.com/tensorflow/tflite-micro/tree/1caee4d5045f2744515fb8ca063bc66958e3f79b" target="_blank">![tflm](https://img.shields.io/badge/Tensorflow--Lite%20Micro-February%202023-orange?style=for-the-badge)</a>
 <a href="https://www.tensorflow.org/api_docs" target="_blank">![tf](https://img.shields.io/badge/Tensorflow-2.11-yellow?style=for-the-badge)</a>
 
@@ -59,7 +59,7 @@ Install the pre-built Python package:
 
 ```
 
-Or, build and install the Python package from [Github](https://github.com/chenxingqiang/yzlite):
+Or, build and install the Python package from [Github](https://github.com/ReRAM-Labs/yzlite):
 
 ```{eval-rst}
 .. tab-set::
@@ -68,13 +68,13 @@ Or, build and install the Python package from [Github](https://github.com/chenxi
 
       .. code-block:: shell
 
-         pip  install git+https://github.com/chenxingqiang/yzlite.git
+         pip  install git+https://github.com/ReRAM-Labs/yzlite.git
 
    .. tab-item:: Linux
 
       .. code-block:: shell
 
-         pip3 install git+https://github.com/chenxingqiang/yzlite.git
+         pip3 install git+https://github.com/ReRAM-Labs/yzlite.git
 ```
 
 Refer to the [Installation Guide](./docs/installation.md) for more details on how to install the YZLITE.

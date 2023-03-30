@@ -8,7 +8,7 @@ class SignalHandler(object):
 
     e.g. detect when CTRL+C is pressed and issue a callback
 
-    See the source code on Github: `yzlite/utils/signal_handler.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/signal_handler.py>`_
+    See the source code on Github: `yzlite/utils/signal_handler.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/signal_handler.py>`_
     """
 
     def __init__(

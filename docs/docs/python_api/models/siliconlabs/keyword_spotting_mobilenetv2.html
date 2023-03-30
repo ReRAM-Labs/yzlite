@@ -153,7 +153,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -209,7 +209,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -488,8 +488,8 @@
   <span class="target" id="module-yzlite.models.yizhutech.keyword_spotting_mobilenetv2"></span><section id="keyword-spotting-mobilenetv2">
 <h1 id="docs-python-api-models-yizhutech-keyword-spotting-mobilenetv2--page-root">keyword_spotting_mobilenetv2<a class="headerlink" href="#docs-python-api-models-yizhutech-keyword-spotting-mobilenetv2--page-root" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
-<li><p>Source code: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2.py</a></p></li>
-<li><p>Pre-trained model: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.yzlite.zip">keyword_spotting_mobilenetv2.yzlite.zip</a></p></li>
+<li><p>Source code: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2.py</a></p></li>
+<li><p>Pre-trained model: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.yzlite.zip">keyword_spotting_mobilenetv2.yzlite.zip</a></p></li>
 </ul>
 <p>This model specification script is designed to work with the
 <a class="reference external" href="../../../../yzlite/tutorials/model_optimization.html">Model Optimization</a> tutorial.</p>
@@ -1058,7 +1058,7 @@ yzlite<span class="w"> </span>profile<span class="w"> </span>keyword_spotting_mo
 <span class="c1"># Specify the dataset</span>
 <span class="c1"># NOTE: This can also be an absolute path to a directory</span>
 <span class="c1">#       or a Python function</span>
-<span class="c1"># See: https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin.dataset</span>
+<span class="c1"># See: https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/audio_dataset_mixin.html#yzlite.core.AudioDatasetMixin.dataset</span>
 <span class="n">my_model</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">speech_commands_v2</span>
 <span class="c1"># We're using a 'categorical_crossentropy' loss</span>
 <span class="c1"># so must also use a `categorical` class mode for the data generation</span>
@@ -1082,7 +1082,7 @@ yzlite<span class="w"> </span>profile<span class="w"> </span>keyword_spotting_mo
 <span class="c1"># These settings must be used during modeling training</span>
 <span class="c1"># AND by embedded device at runtime</span>
 <span class="c1">#</span>
-<span class="c1"># See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html</span>
+<span class="c1"># See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html</span>
 <span class="n">frontend_settings</span> <span class="o">=</span> <span class="n">AudioFeatureGeneratorSettings</span><span class="p">()</span>
 
 <span class="n">frontend_settings</span><span class="o">.</span><span class="n">sample_rate_hz</span> <span class="o">=</span> <span class="mi">16000</span>  <span class="c1"># We use 16k for slightly better performance at the cost of more RAM</span>
@@ -1118,14 +1118,14 @@ yzlite<span class="w"> </span>profile<span class="w"> </span>keyword_spotting_mo
     <span class="n">params</span><span class="p">:</span><span class="n">ParallelProcessParams</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">"""This slightly modified from the standard function that comes with the YZLITE:</span>
-<span class="sd">    https://github.com/chenxingqiang/yzlite/blob/master/yzlite/core/preprocess/audio/parallel_generator/iterator.py#L241</span>
+<span class="sd">    https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/core/preprocess/audio/parallel_generator/iterator.py#L241</span>
 
 <span class="sd">    This implementation crops "known" samples and adds</span>
 <span class="sd">    them to the "unknown" samples.</span>
 
 <span class="sd">    This way, the model only considers "known" samples when</span>
 <span class="sd">    they fully appear in the spectrogram.</span>
-<span class="sd">    See: https://github.com/chenxingqiang/yzlite/docs/keyword_spotting_overview.html</span>
+<span class="sd">    See: https://github.com/ReRAM-Labs/yzlite/docs/keyword_spotting_overview.html</span>
 
 <span class="sd">    """</span>
 

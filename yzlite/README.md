@@ -19,4 +19,4 @@ This directory has the following structure:
 /tutorials                      - YZLITE tutorials
 ```
 
-Refer to the [Python API Reference](https://github.com/chenxingqiang/yzlite/docs/python_api/python_api.html) for more details.
+Refer to the [Python API Reference](https://github.com/ReRAM-Labs/yzlite/docs/python_api/python_api.html) for more details.

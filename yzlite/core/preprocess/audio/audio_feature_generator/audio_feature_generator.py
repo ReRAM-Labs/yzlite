@@ -77,10 +77,10 @@ class AudioFeatureGenerator:
         )
 
     .. seealso::
-       - `AudioFeatureGenerator documentation <https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html>`_
-       - `AudioFeatureGenerator Python Wrapper <https://github.com/chenxingqiang/yzlite/docs/cpp_development/wrappers/audio_feature_generator_wrapper.html>`_
-       - `Microfrontend implementation <https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/microfrontend>`_
-       - `ParallelAudioDataGenerator API docs <https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_data_generator.html>`_
+       - `AudioFeatureGenerator documentation <https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html>`_
+       - `AudioFeatureGenerator Python Wrapper <https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/wrappers/audio_feature_generator_wrapper.html>`_
+       - `Microfrontend implementation <https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/microfrontend>`_
+       - `ParallelAudioDataGenerator API docs <https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_data_generator.html>`_
     """
 
     def __init__(self, settings: AudioFeatureGeneratorSettings):

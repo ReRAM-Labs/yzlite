@@ -9,10 +9,10 @@ __NOTE:__ This application _only_ supports running on supported embedded targets
 
 ## Quick Links
 
-- [GitHub Source](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/apps/image_classifier) - View this example's source code on Github
+- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/apps/image_classifier) - View this example's source code on Github
 - [Hardware Setup](#hardware-setup) - View the required hardware setup for this example
-- [Online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/image_classifier.html) - View this example's online documentation
-- [Image Classification Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/image_classification.html) - View this example's associated tutorial
+- [Online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/image_classifier.html) - View this example's online documentation
+- [Image Classification Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/image_classification.html) - View this example's associated tutorial
 - [Arducam Camera Module](https://www.arducam.com/product/arducam-2mp-spi-camera-b0067-arduino/) - View the camera module's product page
 
 ## Video
@@ -50,14 +50,14 @@ The datatype should be either `int8` or `float32`.
 
 The application also supports "normalizing" the input.
 
-If the `samplewise_norm.rescale` [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#imagedatasetmixin)
+If the `samplewise_norm.rescale` [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#imagedatasetmixin)
 is given, then each element in the image is multiplied by this scaling factor, i.e.:
 
 ```
 model_input_tensor = img * samplewise_norm.rescale
 ```
 
-If the `samplewise_norm.mean_and_std` [model parameter](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#imagedatasetmixin)
+If the `samplewise_norm.mean_and_std` [model parameter](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#imagedatasetmixin)
 is given, then each element in the image is centered about its mean and scaled by its standard deviation, i.e.:
 
 ```
@@ -115,8 +115,8 @@ __NOTE:__ The `--app none` option tells the command to _not_ update the image_cl
 
 ### via CMake
 
-The model can also be updated when building this application from [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html)
-or the CMake [Command Line](https://github.com/chenxingqiang/yzlite/docs/command_line/index.html).
+The model can also be updated when building this application from [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html)
+or the CMake [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/command_line/index.html).
 
 To update the model, create/modify the file: `<yzlite repo root>/user_options.cmake`
 and add:
@@ -171,19 +171,19 @@ The following default pin mappings are used by:
 
 ## Build, Run, Debug
 
-See the [online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html) for how to build and run this application:
+See the [online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html) for how to build and run this application:
 
 ### Simplicity Studio
 
-If using [Simplicity Studio](https://github.com/chenxingqiang/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - Image Classifier` Project.
+If using [Simplicity Studio](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - Image Classifier` Project.
 
 ### Visual Studio Code
 
-If using [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html) select the `yzlite_image_classifier` CMake target.
+If using [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html) select the `yzlite_image_classifier` CMake target.
 
 ### Command-line
 
-If using the [Command Line](https://github.com/chenxingqiang/yzlite/docs/cpp_development/command_line.html) select the `yzlite_image_classifier` CMake target.  
+If using the [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/command_line.html) select the `yzlite_image_classifier` CMake target.  
 
 ## Dumping images to PC
 
@@ -205,8 +205,8 @@ which will display the images from the camera and also save sufficiently differe
 
 ## Build Settings
 
-When building this application using [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html)
-or the [Command Line](https://github.com/chenxingqiang/yzlite/docs/cpp_development/command_line.html) several options may be configured
+When building this application using [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html)
+or the [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/command_line.html) several options may be configured
 to control how the app is built.
 
 To specify the settings, create/modify the file:  
@@ -233,7 +233,7 @@ yzlite_set(IMAGE_CLASSIFIER_MODEL ~/my_models/my_model.yzlite.zip)
 
 # Specify the YZLITE model name
 # NOTE: The model specification must be on the model search path, see:
-#       https://github.com/chenxingqiang/yzlite/docs/guides/model_search_path.html
+#       https://github.com/ReRAM-Labs/yzlite/docs/guides/model_search_path.html
 yzlite_set(IMAGE_CLASSIFIER_MODEL rock_paper_scissors)
 ```
 

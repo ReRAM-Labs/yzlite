@@ -26,9 +26,9 @@ class UartStream:
     - Send/receive "commands"
 
 
-    See the source code on Github: `yzlite/utils/uart_stream.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/utils/uart_stream.py>`_
+    See the source code on Github: `yzlite/utils/uart_stream.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/utils/uart_stream.py>`_
 
-    See the corresponding example C++ app on Github: `cpp/shared/uart_stream/examples/data_test <https://github.com/chenxingqiang/yzlite/blob/master/cpp/shared/uart_stream/examples/data_test>`_
+    See the corresponding example C++ app on Github: `cpp/shared/uart_stream/examples/data_test <https://github.com/ReRAM-Labs/yzlite/blob/master/cpp/shared/uart_stream/examples/data_test>`_
 
 
     Args:

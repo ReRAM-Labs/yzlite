@@ -17,7 +17,7 @@ def FullyConnectedAutoEncoder(
     .. seealso::
        * http://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds
        * https://github.com/y-kawagu/dcase2020_task2_baseline
-       * https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/ToyADMOS_FC_AE/toyadmos_autoencoder_eembc.py
+       * https://github.com/ReRAM-Labs/platform_ml_models/blob/master/eembc/ToyADMOS_FC_AE/toyadmos_autoencoder_eembc.py
     """
 
     # Input layer

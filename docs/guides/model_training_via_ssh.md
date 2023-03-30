@@ -432,7 +432,7 @@ Where:
 
 ### SshMixin
 
-The [SshMixin](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/ssh_mixin.html) model mixin allows for defining model-specific SSH settings.
+The [SshMixin](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/ssh_mixin.html) model mixin allows for defining model-specific SSH settings.
 
 __NOTE:__ This mixin is __optional__, it is _not_ required to run the model with the `ssh` command.
 
@@ -473,7 +473,7 @@ my_model.ssh_shutdown_cmds = ['echo "all done"']
 
 ### ~/.yzlite/user_settings.yaml
 
-The [user_settings.yaml](https://github.com/chenxingqiang/yzlite/docs/other/settings_file.html) file allows for defining user-specific YZLITE settings.  
+The [user_settings.yaml](https://github.com/ReRAM-Labs/yzlite/docs/other/settings_file.html) file allows for defining user-specific YZLITE settings.  
 This file must be manually created at `~/.yzlite/user_settings.yaml`.
 
 The following SSH settings may be added to this file (all settings are __optional__):

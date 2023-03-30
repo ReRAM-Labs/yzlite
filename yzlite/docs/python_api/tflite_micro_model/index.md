@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # Tensorflow-Lite Micro Model
 
@@ -17,7 +17,7 @@ profiling_results = TfliteMicro.profile_model(tflite_path)
 print(profiling_results)
 ```
 
-See the [TfliteMicroModel API examples](https://github.com/chenxingqiang/yzlite/yzlite/examples/tflite_micro_model.html) for more examples.
+See the [TfliteMicroModel API examples](https://github.com/ReRAM-Labs/yzlite/yzlite/examples/tflite_micro_model.html) for more examples.
 
 ## API Reference
 

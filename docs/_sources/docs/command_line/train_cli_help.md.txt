@@ -16,7 +16,7 @@
  - Training log
 
  For more details see:
- https://github.com/chenxingqiang/yzlite/docs/guides/model_training
+ https://github.com/ReRAM-Labs/yzlite/docs/guides/model_training
 
  ----------
   Examples

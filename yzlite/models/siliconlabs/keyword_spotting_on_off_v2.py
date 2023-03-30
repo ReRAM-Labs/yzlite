@@ -1,8 +1,8 @@
 """keyword_spotting_on_off_v2
 *******************************
 
-- Source code: `keyword_spotting_on_off_v2.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py>`_
-- Pre-trained model: `keyword_spotting_on_off_v2.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.yzlite.zip>`_
+- Source code: `keyword_spotting_on_off_v2.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.py>`_
+- Pre-trained model: `keyword_spotting_on_off_v2.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off_v2.yzlite.zip>`_
 
 This model is a CNN classifier to detect the keywords:
 
@@ -11,7 +11,7 @@ This model is a CNN classifier to detect the keywords:
 
 
 This model specification script is designed to work with the
-`Keyword Spotting On/Off <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_on_off.html>`_ tutorial.
+`Keyword Spotting On/Off <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_on_off.html>`_ tutorial.
 
 
 Training the Model
@@ -55,7 +55,7 @@ When training the student model, the ``keyword_spotting_on_off_v2.teacher.h5`` w
 Changes from v1
 ----------------
 
-The following changes have been made from the original `keyword_spotting_on_off <https://github.com/chenxingqiang/yzlite/docs/python_api/models/yizhutech/keyword_spotting_on_off.html>`_ model:
+The following changes have been made from the original `keyword_spotting_on_off <https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/yizhutech/keyword_spotting_on_off.html>`_ model:
 
 #. Cleaned the :py:class:`yzlite.datasets.audio.speech_commands.speech_commands_v2` dataset by removing invalid samples
 
@@ -77,7 +77,7 @@ The following changes have been made from the original `keyword_spotting_on_off 
 #. Increased the size of the "on" and "off" classes
 
    * ~9k synthetic samples for each class were generated using the `Google Cloud Text-to-Speech Feature <https://codelabs.developers.google.com/codelabs/cloud-text-speech-python3#0>`_
-   * These samples were added to the Google `speech_commands <https://github.com/chenxingqiang/yzlite/docs/python_api/datasets/index.html#google-speech-commands-v2>`_ dataset
+   * These samples were added to the Google `speech_commands <https://github.com/ReRAM-Labs/yzlite/docs/python_api/datasets/index.html#google-speech-commands-v2>`_ dataset
 
 #. Increased the size of the "unknown" class
 
@@ -91,7 +91,7 @@ The following changes have been made from the original `keyword_spotting_on_off 
 
    * Sounds of crowds, conferences, etc.
 
-#. Added `BRD2601 <https://github.com/chenxingqiang/yzlite/docs/other/supported_hardware.html#brd2601>`_ background noise to all samples
+#. Added `BRD2601 <https://github.com/ReRAM-Labs/yzlite/docs/other/supported_hardware.html#brd2601>`_ background noise to all samples
 
    * The dev board microphone has a low frequency "hum"; this was recorded and added to all the training samples so they "look" closer to what would be seen at runtime
 
@@ -640,7 +640,7 @@ my_model.train_callbacks = [
 
 ##########################################################################
 # Specify AudioFeatureGenerator Settings
-# See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html
 #
 frontend_settings = AudioFeatureGeneratorSettings()
 
@@ -672,7 +672,7 @@ frontend_settings.quantize_dynamic_scale_range_db = 40.0
 
 # Add the Audio Feature generator settings to the model parameters
 # This way, they are included in the generated .tflite model file
-# See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
 my_model.model_parameters.update(frontend_settings)
 
 
@@ -1000,7 +1000,7 @@ class MyDataset(yzlite_core.YZLiteDataset):
 
         # Download the synthetic on/off dataset and extract into the speech commands dataset
         download_verify_extract(
-            url='https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/synthetic_on_off_v1.7z',
+            url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/synthetic_on_off_v1.7z',
             dest_dir=dataset_dir,
             file_hash='0e691aaa4e61c82720b397fb82f5702d8355df11',
             show_progress=False,
@@ -1010,7 +1010,7 @@ class MyDataset(yzlite_core.YZLiteDataset):
 
         # Download the synthetic on/off "unknown" dataset and extract into the speech commands dataset: '_on_off_unknown' sub-directory
         additional_unknown_dataset_dir = download_verify_extract(
-            url='https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/synthetic_on_off_unknown_v1.7z',
+            url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/synthetic_on_off_unknown_v1.7z',
             dest_dir=f'{dataset_dir}/_on_off_unknown',
             file_hash='075c9e513c7830dfd531cef0306d100f4a3fb94b',
             show_progress=False,
@@ -1020,7 +1020,7 @@ class MyDataset(yzlite_core.YZLiteDataset):
 
         # Download the BRD2601 background microphone audio and add it to the _background_noise_/brd2601 of the dataset
         download_verify_extract(
-            url='https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z',
+            url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z',
             dest_dir=f'{dataset_background_dir}/brd2601',
             file_hash='3069A85002965A7830C660343C215EDD4FAE39C6',
             show_progress=False,

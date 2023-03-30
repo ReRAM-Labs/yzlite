@@ -29,7 +29,7 @@ One of the following:
     augmentation parameters to use with the ParallelAudioDataGenerator.
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities
+    https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities
     """
     # Import all required packages here instead of at top
     # to help improve the CLI's responsiveness

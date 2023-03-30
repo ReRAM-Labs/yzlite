@@ -31,7 +31,7 @@ When set, the YZLITE will only write to the OS's temporary directory.
 
 ## YZLITE_SETUP_PY_DEPS
 
-This is used by [setup.py](https://github.com/chenxingqiang/yzlite/blob/master/setup.py), the script used to install the YZLITE Python package.
+This is used by [setup.py](https://github.com/ReRAM-Labs/yzlite/blob/master/setup.py), the script used to install the YZLITE Python package.
 This may be used to override the YZLITE Python package dependencies.
 
 This should contain a list of [install requirements](https://packaging.python.org/en/latest/discussions/install-requires-vs-requirements/) delimited by a pipe `|`, e.g.:

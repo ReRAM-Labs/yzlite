@@ -153,7 +153,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -208,7 +208,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -622,8 +622,8 @@
             
   <section id="keyword-spotting-with-transfer-learning">
 <h1 id="yzlite-tutorials-keyword-spotting-with-transfer-learning--page-root">Keyword Spotting with Transfer Learning<a class="headerlink" href="#yzlite-tutorials-keyword-spotting-with-transfer-learning--page-root" title="Permalink to this heading">¶</a></h1>
-<p>This tutorial describes how to use the weights from the pre-trained trained model <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a>,
-as a starting point for training a new model, <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py">keyword_spotting_with_transfer_learning.py</a>, to detect the keywords:</p>
+<p>This tutorial describes how to use the weights from the pre-trained trained model <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a>,
+as a starting point for training a new model, <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py">keyword_spotting_with_transfer_learning.py</a>, to detect the keywords:</p>
 <ul class="simple">
 <li><p><strong>one</strong></p></li>
 <li><p><strong>two</strong></p></li>
@@ -642,7 +642,7 @@ the Keras API to enable transfer learning.</p>
 <section id="quick-links">
 <h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/keyword_spotting_with_transfer_learning.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
+<li><p><a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/keyword_spotting_with_transfer_learning.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/keyword_spotting_with_transfer_learning.ipynb">Run on Colab</a> - Run this tutorial on Google Colab</p></li>
 <li><p><a class="reference internal" href="cloud_training_with_vast_ai.html"><span class="doc std std-doc">Train in the “Cloud”</span></a> - <em>Vastly</em> improve training times by training this model in the “cloud”</p></li>
 <li><p><a class="reference internal" href="../../docs/cpp_development/examples/audio_classifier.html"><span class="doc std std-doc">C++ Example Application</span></a> - View this tutorial’s associated C++ example application</p></li>
@@ -664,7 +664,7 @@ the Keras API to enable transfer learning.</p>
 <li><p><a class="reference internal" href="../../docs/overview.html"><span class="doc std std-doc">YZLITE Overview</span></a> - An overview of the core concepts used by the YZLITE</p></li>
 <li><p><a class="reference internal" href="../../docs/audio/keyword_spotting_overview.html"><span class="doc std std-doc">Keyword Spotting Overview</span></a> - An overview of how keyword spotting works</p></li>
 <li><p><a class="reference internal" href="keyword_spotting_on_off.html"><span class="doc std std-doc">Keyword Spotting Tutorial</span></a> - Detailed tutorial describing how to create a Keyword Spotting model using the YZLITE</p></li>
-<li><p><a class="reference internal" href="model_optimization.html"><span class="doc std std-doc">Model Optimization Tutorial</span></a> - Describes how to develop the <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a> model used by this tutorial</p></li>
+<li><p><a class="reference internal" href="model_optimization.html"><span class="doc std std-doc">Model Optimization Tutorial</span></a> - Describes how to develop the <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a> model used by this tutorial</p></li>
 </ul>
 </section>
 <section id="basic-concept">
@@ -690,7 +690,7 @@ It just needs to learn how to map the abstract, compressed representation of the
 </section>
 <section id="base-model-overview">
 <h2 id="base-model-overview">Base Model Overview<a class="headerlink" href="#base-model-overview" title="Permalink to this heading">¶</a></h2>
-<p>The pre-trained, base model, whose weights are transferred to the new model, may be found on Github: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a>.</p>
+<p>The pre-trained, base model, whose weights are transferred to the new model, may be found on Github: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a>.</p>
 <p>This model is built using <a class="reference external" href="https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html">MobileNetv2</a>, an industry-standard classification model developed by Google.
 MobileNetV2 is a useful model because it is generic enough that it can be applied to most classification tasks but still runs efficiently on embedded devices.</p>
 <p>This model is designed to detect the following keywords:</p>
@@ -734,8 +734,8 @@ MobileNetV2 is a useful model because it is generic enough that it can be applie
 </section>
 <section id="configure-model-specification-with-transfer-learning">
 <h2 id="configure-model-specification-with-transfer-learning">Configure Model Specification with Transfer Learning<a class="headerlink" href="#configure-model-specification-with-transfer-learning" title="Permalink to this heading">¶</a></h2>
-<p>The completed model specification used by this tutorial may be found on Github: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py">keyword_spotting_with_transfer_learning.py</a></p>
-<p>This model specification is very similar to the base model specification, <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a>, with the following key differences:</p>
+<p>The completed model specification used by this tutorial may be found on Github: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_with_transfer_learning.py">keyword_spotting_with_transfer_learning.py</a></p>
+<p>This model specification is very similar to the base model specification, <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py">keyword_spotting_mobilenetv2</a>, with the following key differences:</p>
 <section id="update-description">
 <h3 id="update-description">Update description<a class="headerlink" href="#update-description" title="Permalink to this heading">¶</a></h3>
 <p>Update the model’s description to help keep track of it in the field.</p>

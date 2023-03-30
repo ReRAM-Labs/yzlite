@@ -1,8 +1,8 @@
 """keyword_spotting_alexa
 *******************************
 
-- Source code: `keyword_spotting_alexa.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py>`_
-- Pre-trained model: `keyword_spotting_alexa.yzlite.zip <https://github.com/chenxingqiang/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip>`_
+- Source code: `keyword_spotting_alexa.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py>`_
+- Pre-trained model: `keyword_spotting_alexa.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip>`_
 
 This model is designed to detect the keyword: "Alexa".
 
@@ -12,7 +12,7 @@ It based on the `Temporal Efficient Neural Network (TENet) <https://arxiv.org/pd
 
 
 This model specification script is designed to work with the
-`Keyword Spotting Alexa <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_alexa.html>`_ tutorial.
+`Keyword Spotting Alexa <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_alexa.html>`_ tutorial.
 
 
 Dataset
@@ -20,8 +20,8 @@ Dataset
 
 This combines several different datasets:
 
-- A `synthetically generated <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html>`_ "Alexa" dataset - Different computer-generated audio clips of the keyword "alexa"
-- A `synthetically generated <https://github.com/chenxingqiang/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html>`_ "unknown" class - Different computer-generated audio clips that sound similar to "alexa"; used for the "unknown" class; helps avoid false-positives
+- A `synthetically generated <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html>`_ "Alexa" dataset - Different computer-generated audio clips of the keyword "alexa"
+- A `synthetically generated <https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/synthetic_audio_dataset_generation.html>`_ "unknown" class - Different computer-generated audio clips that sound similar to "alexa"; used for the "unknown" class; helps avoid false-positives
 - A subset of the `MLCommons Multilingual Spoken Words <https://mlcommons.org/en/multilingual-spoken-words>`_ dataset - Used for the "unknown" class; helps to avoid false-positives
 - A subset of the `Mozilla Common Voice <https://commonvoice.mozilla.org/en/datasets>`_  dataset - Used for the "unknown" class; helps to avoid false-positives
 
@@ -532,7 +532,7 @@ my_model.train_callbacks = [
 
 ##########################################################################################
 # Specify AudioFeatureGenerator Settings
-# See https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html
 #
 frontend_settings = AudioFeatureGeneratorSettings()
 
@@ -570,7 +570,7 @@ frontend_settings.quantize_dynamic_scale_range_db = 40.0
 
 # Add the Audio Feature generator settings to the model parameters
 # This way, they are included in the generated .tflite model file
-# See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html
+# See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html
 my_model.model_parameters.update(frontend_settings)
 
 
@@ -972,7 +972,7 @@ class MyDataset(yzlite_core.YZLiteDataset):
 
         # Download the BRD2601 background microphone audio and add it to the _background_noise_/brd2601 of the dataset
         download_verify_extract(
-            url='https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z',
+            url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/brd2601_background_audio.7z',
             dest_dir=f'{dataset_dir}/_background_noise_/brd2601',
             file_hash='3069A85002965A7830C660343C215EDD4FAE39C6',
             show_progress=False,

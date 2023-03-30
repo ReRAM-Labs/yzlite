@@ -124,7 +124,7 @@
 
     "\n",
 
-    "In this example, it's assumed that the [YZLiteModel.model_parameters](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/model.html#yzlite.core.YZLiteModel.model_parameters) settings in\n",
+    "In this example, it's assumed that the [YZLiteModel.model_parameters](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/model.html#yzlite.core.YZLiteModel.model_parameters) settings in\n",
 
     "the [tflite_micro_speech](../../docs/python_api/models/tflite_micro/tflite_micro_speech.md) model specification script have been modified _after_ the model have been\n",
 

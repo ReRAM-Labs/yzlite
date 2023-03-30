@@ -122,7 +122,7 @@ class FingerprintSignatureGeneratorDataset:
                                       'For privacy purposes, no dataset is provided with this model.\n'
                                       'As such, you must generate your own dataset to train this model.\n'
                                       'Refer to the following tutorial for more details:\n'
-                                      'https://github.com/chenxingqiang/yzlite/yzlite/tutorials/fingerprint_authentication.html\n\n'
+                                      'https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/fingerprint_authentication.html\n\n'
                                       )
                 raise
 

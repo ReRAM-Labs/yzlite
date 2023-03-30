@@ -43,7 +43,7 @@ One of the following:
     Use the --build option if the model has not been previously trained.
     \b
     For more details see:
-    https://github.com/chenxingqiang/yzlite/docs/guides/model_summary
+    https://github.com/ReRAM-Labs/yzlite/docs/guides/model_summary
     \b
     ----------
      Examples

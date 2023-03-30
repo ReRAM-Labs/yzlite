@@ -1,4 +1,4 @@
-__NOTE:__ Refer to the [online documentation](https://github.com/chenxingqiang/yzlite) to properly view this file
+__NOTE:__ Refer to the [online documentation](https://github.com/ReRAM-Labs/yzlite) to properly view this file
 
 # fingerprint_reader
 
@@ -6,7 +6,7 @@ View fingerprint images from a fingerprint module connected to a development boa
 
 ## Additional Documentation
 
-- [Fingerprint Authentication Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/fingerprint_authentication.html)
+- [Fingerprint Authentication Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/fingerprint_authentication.html)
 
 ## Usage
 

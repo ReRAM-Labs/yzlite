@@ -153,7 +153,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -208,7 +208,7 @@
        title="YZLITE 0.1.0 documentation">ReRAM YZLite</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/chenxingqiang/yzlite" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/ReRAM-Labs/yzlite" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -711,7 +711,7 @@ With this demo, “Alexa” commands may be issued to the development board’s 
 <section id="quick-links">
 <h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/keyword_spotting_alexa.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
+<li><p><a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/keyword_spotting_alexa.ipynb">GitHub Source</a> - View this tutorial on Github</p></li>
 <li><p><a class="reference internal" href="../../docs/cpp_development/examples/audio_classifier.html"><span class="doc std std-doc">C++ Example Application</span></a> - View this tutorial’s associated C++ example application</p></li>
 <li><p><a class="reference internal" href="../../docs/python_api/models/yizhutech/keyword_spotting_alexa.html"><span class="doc std std-doc">Machine Learning Model</span></a> - View this tutorial’s associated machine learning model</p></li>
 <li><p><a class="reference external" href="https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/get-started-with-alexa-voice-service.html">Alexa Voice Services Docs</a> - Alexa Voice Services (AVS) documentation</p></li>
@@ -766,14 +766,14 @@ Try saying some of the commands:</p>
 <p>The basic system overview is as follows:<br/>
 <img alt="alexa_demo" src="../../_images/alexa_demo.png"/></p>
 <ol class="arabic simple">
-<li><p>A <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/apps/audio_classifier/python/alexa_demo/alexa_demo.py">Python script</a> runs on the local PC and communicates with the development board via UART</p></li>
+<li><p>A <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/apps/audio_classifier/python/alexa_demo/alexa_demo.py">Python script</a> runs on the local PC and communicates with the development board via UART</p></li>
 <li><p>A user says the keyword “Alexa” to the development board’s microphone</p></li>
 <li><p>The <a class="reference internal" href="../../docs/python_api/models/yizhutech/keyword_spotting_alexa.html"><span class="doc std std-doc">machine learning model</span></a> running on the development detects the keyword</p></li>
-<li><p>The development board begins compressing the microphone audio using the <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/opus">Opus codec</a> and streams the audio to the Python script via UART</p></li>
-<li><p>The development board uses a <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/voice_activity_detector">Voice Activity Detection</a> (VAD) library to determine when the user finishes the command</p></li>
+<li><p>The development board begins compressing the microphone audio using the <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/opus">Opus codec</a> and streams the audio to the Python script via UART</p></li>
+<li><p>The development board uses a <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/voice_activity_detector">Voice Activity Detection</a> (VAD) library to determine when the user finishes the command</p></li>
 <li><p>The Python script sends the Opus-encoded audio to the AVS cloud</p></li>
 <li><p>The Python scripts receives the Alexa response from the AVS cloud and forwards to the development board via UART</p></li>
-<li><p>The development board decompresses the <a class="reference external" href="https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/minimp3">MP3-encoded</a> audio and streams to the locally connected <a class="reference external" href="https://www.adafruit.com/product/3885">speaker</a> via <a class="reference external" href="https://docs.yizhu.com/reram-platform/latest/emlib/api/efr32xg24/group-vdac">VDAC</a> peripheral</p></li>
+<li><p>The development board decompresses the <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/minimp3">MP3-encoded</a> audio and streams to the locally connected <a class="reference external" href="https://www.adafruit.com/product/3885">speaker</a> via <a class="reference external" href="https://docs.yizhu.com/reram-platform/latest/emlib/api/efr32xg24/group-vdac">VDAC</a> peripheral</p></li>
 </ol>
 </section>
 <section id="prerequisite-reading">
@@ -926,7 +926,7 @@ We want to choose these settings so that the generated spectrogram has the best 
 
 <span class="c1"># Add the Audio Feature generator settings to the model parameters</span>
 <span class="c1"># This way, they are included in the generated .tflite model file</span>
-<span class="c1"># See https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html</span>
+<span class="c1"># See https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html</span>
 <span class="n">my_model</span><span class="o">.</span><span class="n">model_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">frontend_settings</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -954,7 +954,7 @@ We want to choose these settings so that the generated spectrogram has the best 
 <section id="data-augmentations">
 <h3 id="data-augmentations">Data augmentations<a class="headerlink" href="#data-augmentations" title="Permalink to this heading">¶</a></h3>
 <p>Typically, the larger the dataset the more robust the ML model will be. Another way of increasing the size of the dataset without acquiring more samples is to dynamically augment the audio samples during training.</p>
-<p>The <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a> ML model augmentations are implemented in the <code class="docutils literal notranslate"><span class="pre">audio_pipeline_with_augmentations()</span></code> function. This function does the following:</p>
+<p>The <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a> ML model augmentations are implemented in the <code class="docutils literal notranslate"><span class="pre">audio_pipeline_with_augmentations()</span></code> function. This function does the following:</p>
 <ul class="simple">
 <li><p>Uses the <a class="reference external" href="https://github.com/iver56/audiomentations">audiomentations</a> Python library to apply the various augmentations</p></li>
 <li><p>Pads the samples with 1s of silence, this helps the AudioFeatureGenerator’s noise reduction block to “warm up” when generating the spectrogram</p></li>
@@ -965,7 +965,7 @@ We want to choose these settings so that the generated spectrogram has the best 
 </ul>
 <section id="dump-augmentations">
 <h4 id="dump-augmentations">Dump augmentations<a class="headerlink" href="#dump-augmentations" title="Permalink to this heading">¶</a></h4>
-<p>In the <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a> model specification file, if you uncomment the line (near the middle of the script):</p>
+<p>In the <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a> model specification file, if you uncomment the line (near the middle of the script):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment this to dump the augmented audio samples to the log directory</span>
 <span class="c1"># DO NOT forget to disable this before training the model as it will generate A LOT of data</span>
 <span class="c1">#data_dump_dir = my_model.create_log_dir('dataset_dump')</span>
@@ -996,7 +996,7 @@ The model can either be trained locally or on a remote cloud machine.</p>
 </pre></div>
 </div>
 <p><strong>HINT:</strong> This model can be trained in ~2hrs using <a class="reference internal" href="cloud_training_with_vast_ai.html"><span class="doc std std-doc">vast.ai</span></a>.<br/>
-Be sure to select an instance with at least 48 CPUs (only 1 GPU is needed). Also be sure to update the <code class="docutils literal notranslate"><span class="pre">n_jobs</span></code> in <a class="reference external" href="../../docs/python_api/data_preprocessing/tf_dataset.html#yzlite.core.preprocess.utils.tf_dataset.parallel_process">tf_dataset_utils.parallel_process()</a> in <a class="reference external" href="https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a>, e.g.:</p>
+Be sure to select an instance with at least 48 CPUs (only 1 GPU is needed). Also be sure to update the <code class="docutils literal notranslate"><span class="pre">n_jobs</span></code> in <a class="reference external" href="../../docs/python_api/data_preprocessing/tf_dataset.html#yzlite.core.preprocess.utils.tf_dataset.parallel_process">tf_dataset_utils.parallel_process()</a> in <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_alexa.py">keyword_spotting_alexa.py</a>, e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features_ds</span><span class="p">,</span> <span class="n">pool</span> <span class="o">=</span> <span class="n">tf_dataset_utils</span><span class="o">.</span><span class="n">parallel_process</span><span class="p">(</span>
     <span class="n">features_ds</span><span class="p">,</span>
     <span class="n">audio_pipeline_with_augmentations</span><span class="p">,</span>
@@ -1019,7 +1019,7 @@ Be sure to select an instance with at least 48 CPUs (only 1 GPU is needed). Also
 <h3 id="run-the-trained-model">Run the trained model<a class="headerlink" href="#run-the-trained-model" title="Permalink to this heading">¶</a></h3>
 <p>After the model is trained, a <a class="reference internal" href="../../docs/guides/model_archive.html"><span class="doc std std-doc">model archive</span></a> file will be generated.
 This archive file contains the <code class="docutils literal notranslate"><span class="pre">.tflite</span></code> model file which should be programmed to the embedded device.</p>
-<p>The pre-trained model archive used by this tutorial may be found at: <a class="reference external" href="https://github.com/chenxingqiang/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip">keyword_spottong_alexa.yzlite.zip</a></p>
+<p>The pre-trained model archive used by this tutorial may be found at: <a class="reference external" href="https://github.com/ReRAM-Labs/yzlite/raw/master/yzlite/models/yizhutech/keyword_spotting_alexa.yzlite.zip">keyword_spottong_alexa.yzlite.zip</a></p>
 <p>To verify that the model works, the <a class="reference external" href="../../docs/audio/audio_utilities.html#audio-classification-utility">classify_audio</a> YZLITE command may be used.
 This will program the trained model to the <a class="reference external" href="https://www.yizhu.com/development-tools/wireless/efr32xg24-dev-kit">development board</a> and stream the dev board’s microphone audio into the model. With this, you can issue keywords to the dev board and see the model’s classification results in real-time.</p>
 <section id="classify-audio-command">

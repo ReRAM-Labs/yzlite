@@ -29,8 +29,8 @@ def view_model(
     """View an interactive graph of the given model in a webbrowser
 
     .. seealso::
-       * `Model Visualization Guide <https://github.com/chenxingqiang/yzlite/docs/guides/model_visualizer.html>`_
-       * `Model visualization API examples <https://github.com/chenxingqiang/yzlite/yzlite/examples/view_model.html>`_
+       * `Model Visualization Guide <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_visualizer.html>`_
+       * `Model visualization API examples <https://github.com/ReRAM-Labs/yzlite/yzlite/examples/view_model.html>`_
 
     Args:
         model: Either 

@@ -3,7 +3,7 @@ View fingerprint images from a fingerprint module connected to a development boa
 
 ## Additional Documentation
 
-- [Fingerprint Authentication Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/fingerprint_authentication.html)
+- [Fingerprint Authentication Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/fingerprint_authentication.html)
 
 
 ## Usage

@@ -2,7 +2,7 @@
 project(yzlite_reram_sdk
 VERSION 1.0.0
 DESCRIPTION "Wrapper project for YZTech's ReRAM Engine"
-HOMEPAGE_URL "https://github.com/chenxingqiang/reram_sdk"
+HOMEPAGE_URL "https://github.com/ReRAM-Labs/reram_sdk"
 )
 export(PACKAGE ${PROJECT_NAME})
 

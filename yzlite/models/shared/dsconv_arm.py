@@ -20,7 +20,7 @@ def DepthwiseSeparableConv2D_ARM(
     .. seealso::
        * https://arxiv.org/pdf/1711.07128.pdf
        * https://github.com/ARM-software/ML-KWS-for-MCU
-       * https://github.com/chenxingqiang/platform_ml_models/blob/master/eembc/KWS10_ARM_DSConv/dsconv_arm_eembc.py
+       * https://github.com/ReRAM-Labs/platform_ml_models/blob/master/eembc/KWS10_ARM_DSConv/dsconv_arm_eembc.py
 
     """
 

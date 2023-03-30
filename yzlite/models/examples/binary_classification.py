@@ -3,7 +3,7 @@
 
 Binary classification (ResNetv1-10 with CIFAR10)
 
-Source code: `binary_classification.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/examples/binary_classification.py>`_
+Source code: `binary_classification.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/examples/binary_classification.py>`_
 
 This demonstrates how to classify two images:
 

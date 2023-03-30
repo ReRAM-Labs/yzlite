@@ -3,14 +3,14 @@
 
 Keyword spotting for 10 words
 
-- Source code: `keyword_spotting.py <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/keyword_spotting.py>`_
-- Pre-trained model: `keyword_spotting.yzlite.zip <https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/tinyml/keyword_spotting.yzlite.zip>`_
+- Source code: `keyword_spotting.py <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/keyword_spotting.py>`_
+- Pre-trained model: `keyword_spotting.yzlite.zip <https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/tinyml/keyword_spotting.yzlite.zip>`_
 
 
 This was adapted from:
 
 * https://github.com/mlcommons/tiny/tree/master/benchmark/training/keyword_spotting
-* https://github.com/chenxingqiang/platform_ml_models/tree/master/eembc/KWS10_ARM_DSConv
+* https://github.com/ReRAM-Labs/platform_ml_models/tree/master/eembc/KWS10_ARM_DSConv
 
 
 Dataset
@@ -250,7 +250,7 @@ def download_dataset():
     """
 
     path = download_verify_extract(
-        url='https://github.com/chenxingqiang/yzlite_assets/raw/master/datasets/speech_dataset_spec.7z',
+        url='https://github.com/ReRAM-Labs/yzlite_assets/raw/master/datasets/speech_dataset_spec.7z',
         dest_subdir='datasets/speech_commands/preprocessed/v1',
         file_hash='20E36646073492FDB4FB8285EC49042E70F9E60E',
         show_progress=True,

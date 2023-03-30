@@ -146,7 +146,7 @@
 
     "1. Create a Weights & Biases [account](https://app.wandb.ai/login?signup=true)\n",
 
-    "2. Install the YZLITE, see the [Installation Guide](https://github.com/chenxingqiang/yzlite/docs/installation.html#standard-python-package):  \n",
+    "2. Install the YZLITE, see the [Installation Guide](https://github.com/ReRAM-Labs/yzlite/docs/installation.html#standard-python-package):  \n",
 
     "   ```shell\n",
 
@@ -282,9 +282,9 @@
 
     "Any custom data can also be stored in the cloud using:\n",
 
-    "- [WeightsAndBiasesMixin.wandb_log()](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/weights_and_biases_mixin.html#yzlite.core.WeightsAndBiasesMixin.wandb_log) - post custom logging information\n",
+    "- [WeightsAndBiasesMixin.wandb_log()](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/weights_and_biases_mixin.html#yzlite.core.WeightsAndBiasesMixin.wandb_log) - post custom logging information\n",
 
-    "- [WeightsAndBiasesMixin.wandb_save()](https://github.com/chenxingqiang/yzlite/docs/python_api/yzlite_model/weights_and_biases_mixin.html#yzlite.core.WeightsAndBiasesMixin.wandb_save) - upload a file\n",
+    "- [WeightsAndBiasesMixin.wandb_save()](https://github.com/ReRAM-Labs/yzlite/docs/python_api/yzlite_model/weights_and_biases_mixin.html#yzlite.core.WeightsAndBiasesMixin.wandb_save) - upload a file\n",
 
     "\n",
 

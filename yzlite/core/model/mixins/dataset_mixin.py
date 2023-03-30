@@ -16,7 +16,7 @@ from .base_mixin import BaseMixin
 class DatasetMixin(BaseMixin):
     """Provides generic dataset properties to the base :py:class:`~YZLiteModel`
 
-    Refer to te `Model Specification <https://github.com/chenxingqiang/yzlite/docs/guides/model_specification.html>`_ guide for more details."""
+    Refer to te `Model Specification <https://github.com/ReRAM-Labs/yzlite/docs/guides/model_specification.html>`_ guide for more details."""
 
     @property
     def x(self):

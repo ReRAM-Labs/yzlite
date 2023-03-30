@@ -8,7 +8,7 @@
  are modified after the model is trained.
 
  For more details see:
- https://github.com/chenxingqiang/yzlite/docs/guides/model_quantization
+ https://github.com/ReRAM-Labs/yzlite/docs/guides/model_quantization
 
  ----------
   Examples

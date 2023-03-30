@@ -4,7 +4,7 @@ This describes how to development C++ applications in the YZLITE using Yizhu-Tec
 Using this guide, you can build C++ applications for Yizhu-Tech's embedded platforms.
 
 __NOTES:__
-- All of the YZLITE C++ source code may be found at: [__yzlite repo__/cpp](https://github.com/chenxingqiang/yzlite/tree/master/cpp/)
+- All of the YZLITE C++ source code may be found at: [__yzlite repo__/cpp](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/)
 - Refer to the [example applications](./examples/index.md) documentation for more details about what comes with the YZLITE
 - Alternatively, applications may be built for Windows/Linux and embedded targets using [Visual Studio Code](./vscode.md)
 
@@ -89,7 +89,7 @@ Next, we need to install the YZLITE:
 
 ```shell
 # Clone the YZLITE GIT repository
-git clone https://github.com/chenxingqiang/yzlite.git
+git clone https://github.com/ReRAM-Labs/yzlite.git
 ```
 
 Then navigate to the YZLITE repository directory
@@ -149,7 +149,7 @@ yzlite --help
 ## Install the YZLITE into the ReRAM Engine
 
 The [ReRAM Engine](https://github.com/yizhutech/reram_sdk) is the main software stack used by Yizhu-Tech's embedded targets.
-The YZLITE clones a local copy of the [ReRAM Engine](https://github.com/yizhutech/reram_sdk) to [__yzlite__/cpp/shared/reram_sdk](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/reram_sdk).
+The YZLITE clones a local copy of the [ReRAM Engine](https://github.com/yizhutech/reram_sdk) to [__yzlite__/cpp/shared/reram_sdk](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/reram_sdk).
 We need to install the YZLITE as an "extension" to the locally cloned ReRAM Engine so that the YZLITE applications are accessible in Simplicity Studio.
 
 To do this, issue the following command:
@@ -160,7 +160,7 @@ yzlite build gsdk_yzlite_extension
 
 ## Add the YZLITE ReRAM Engine to Simplicity Studio
 
-After building the GSDK YZLITE extension, add the locally cloned ReRAM Engine at [__yzlite__/cpp/shared/reram_sdk](https://github.com/chenxingqiang/yzlite/tree/master/cpp//shared/reram_sdk) to Simplicity Studio.
+After building the GSDK YZLITE extension, add the locally cloned ReRAM Engine at [__yzlite__/cpp/shared/reram_sdk](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp//shared/reram_sdk) to Simplicity Studio.
 
 From Simplicity Studio,
 1. On top toolbar, click: __Window__

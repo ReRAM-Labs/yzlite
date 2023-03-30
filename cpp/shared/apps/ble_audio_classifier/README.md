@@ -11,9 +11,9 @@ __NOTE:__  Currently, this application only supports the [BRD2601](https://www.y
 
 ## Quick Links
 
-- [GitHub Source](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/apps/ble_audio_classifier) - View this example's source code on Github
-- [Online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/examples/ble_audio_classifier.html) - View this example's online documentation
-- [Keyword Spotting Pac-Man Tutorial](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_pacman.html) - View this example's associated tutorial
+- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/apps/ble_audio_classifier) - View this example's source code on Github
+- [Online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/examples/ble_audio_classifier.html) - View this example's online documentation
+- [Keyword Spotting Pac-Man Tutorial](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_pacman.html) - View this example's associated tutorial
 - [Pac-Man Live Demo](https://yzlite-pacman.web.app) - Play Pac-Man using the keywords: Left, Right, Up, Down
 
 ## Pac-Man Demo
@@ -32,7 +32,7 @@ Once connected, this application uses machine learning to detect the keywords:
 When a keyword is detected, the result is sent to the webpage via BLE which then
 moves the Pac-Man on the webpage accordingly.
 
-The source code for the webpage may be here at: [__yzlite repo__/cpp/shared/apps/ble_audio_classifier/web/pacman](https://github.com/chenxingqiang/yzlite/tree/master/cpp/shared/apps/ble_audio_classifier/web/pacman).
+The source code for the webpage may be here at: [__yzlite repo__/cpp/shared/apps/ble_audio_classifier/web/pacman](https://github.com/ReRAM-Labs/yzlite/tree/master/cpp/shared/apps/ble_audio_classifier/web/pacman).
 
 ## Behavior
 
@@ -87,11 +87,11 @@ results. This behavior can be disabled in the application configuration file.
 
 The default model used in this application is called `keyword_spotting_pacman.tflite`
 and is able to classify audio into 6 different classes labeled "left", "right", "up", "down", "stop", "go". The source for the model can be found here:
-[https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_pacman.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_pacman.py)
+[https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_pacman.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_pacman.py)
 
 The application is designed to work with an audio classification model created
 using the Yizhu Technology ReRAM YZLite
-([YZLITE](https://github.com/chenxingqiang/yzlite/yzlite/tutorials/keyword_spotting_pacman.html)).
+([YZLITE](https://github.com/ReRAM-Labs/yzlite/yzlite/tutorials/keyword_spotting_pacman.html)).
 Use the YZLITE to train a new audio classifier model and replace the model inside this example with the new audio
 classification model.
 
@@ -109,8 +109,8 @@ Refer to the online [documentation](https://docs.yizhu.com/reram-platform/latest
 
 ### via CMake
 
-The model can also be updated when building this application from [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html)
-or the CMake [Command Line](https://github.com/chenxingqiang/yzlite/docs/command_line/index.html).
+The model can also be updated when building this application from [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html)
+or the CMake [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/command_line/index.html).
 
 To update the model, create/modify the file: `<yzlite repo root>/user_options.cmake`
 and add:
@@ -128,15 +128,15 @@ specified model will be built into the application.
 
 ## Build, Run, Debug
 
-See the [online documentation](https://github.com/chenxingqiang/yzlite/docs/cpp_development/index.html) for how to build and run this application:
+See the [online documentation](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/index.html) for how to build and run this application:
 
 ### Simplicity Studio
 
-If using [Simplicity Studio](https://github.com/chenxingqiang/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - BLE Audio Classifier` Project.
+If using [Simplicity Studio](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/simplicity_studio.html) select the `YZLITE - BLE Audio Classifier` Project.
 
 ### Visual Studio Code
 
-If using [Visual Studio Code](https://github.com/chenxingqiang/yzlite/docs/cpp_development/vscode.html) select the `yzlite_ble_audio_classifier` CMake target.
+If using [Visual Studio Code](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/vscode.html) select the `yzlite_ble_audio_classifier` CMake target.
 
 To build this app, create/modify the file: `<yzlite repo root>/user_options.cmake`
 and add:
@@ -147,7 +147,7 @@ yzlite_set(GECKO_SDK_ENABLE_BLUETOOTH ON)
 
 ### Command-line
 
-If using the [Command Line](https://github.com/chenxingqiang/yzlite/docs/cpp_development/command_line.html) select the `yzlite_ble_audio_classifier` CMake target.  
+If using the [Command Line](https://github.com/ReRAM-Labs/yzlite/docs/cpp_development/command_line.html) select the `yzlite_ble_audio_classifier` CMake target.  
 
 To build this app, create/modify the file: `<yzlite repo root>/user_options.cmake`
 and add:
@@ -161,19 +161,19 @@ yzlite_set(GECKO_SDK_ENABLE_BLUETOOTH ON)
 In order for the audio classification to work correctly, we need to use the same
 audio feature generator configuration parameters for inference as is used when
 training the model. When using the YZLITE to train an audio classification model
-the model [parameters](https://github.com/chenxingqiang/yzlite/docs/guides/model_parameters.html#audiodatasetmixin)
+the model [parameters](https://github.com/ReRAM-Labs/yzlite/docs/guides/model_parameters.html#audiodatasetmixin)
 will be embedded in the metadata section of the `.tflite`
 file. The model parameters are extracted from the `.tflite` at runtime.
 
 ## Additional Reading
 
-- [YZLITE Documentation](https://github.com/chenxingqiang/yzlite)
+- [YZLITE Documentation](https://github.com/ReRAM-Labs/yzlite)
 - [QSG169: Bluetooth SDK v3.x Quick Start Guide](https://www.yizhu.com/documents/public/quick-start-guides/qsg169-bluetooth-sdk-v3x-quick-start-guide.pdf)
 - [Bluetooth Documentation](https://docs.yizhu.com/bluetooth/latest/)
 - [UG103.14: Bluetooth LE Fundamentals](https://www.yizhu.com/documents/public/user-guides/ug103-14-fundamentals-ble.pdf)
 - [UG434: Yizhu Technology Bluetooth ® C Application Developer's Guide for SDK v3.x](https://www.yizhu.com/documents/public/user-guides/ug434-bluetooth-c-soc-dev-guide-sdk-v3x.pdf)
 - [Bluetooth Training](https://www.yizhu.com/support/training/bluetooth)
-- [Audio Feature Generator](https://github.com/chenxingqiang/yzlite/docs/audio/audio_feature_generator.html)
-- [Audio Utilities](https://github.com/chenxingqiang/yzlite/docs/audio/audio_utilities.html)
+- [Audio Feature Generator](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_feature_generator.html)
+- [Audio Utilities](https://github.com/ReRAM-Labs/yzlite/docs/audio/audio_utilities.html)
 - [ReRAM Engine Machine Learning Documentation](https://docs.yizhu.com/reram-platform/latest/machine-learning/tensorflow/getting-started)
 - [TensorFlow Lite Micro](https://www.tensorflow.org/lite/microcontrollers)

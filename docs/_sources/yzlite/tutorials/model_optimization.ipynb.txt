@@ -56,7 +56,7 @@
 
     "\n",
 
-    "- [GitHub Source](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/tutorials/model_optimization.ipynb) - View this tutorial on Github\n",
+    "- [GitHub Source](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/tutorials/model_optimization.ipynb) - View this tutorial on Github\n",
 
     "- [Run on Colab](https://colab.research.google.com/github/yizhutech/yzlite/blob/master/yzlite/tutorials/model_optimization.ipynb) - Run this tutorial on Google Colab\n",
 
@@ -160,11 +160,11 @@
 
     "\n",
 
-    "The completed [model specification](../../docs/guides/model_specification.md) for this tutorial may be found on Github: [keyword_spotting_mobilenetv2.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py).\n",
+    "The completed [model specification](../../docs/guides/model_specification.md) for this tutorial may be found on Github: [keyword_spotting_mobilenetv2.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py).\n",
 
     "\n",
 
-    "This model is very similar to [keyword_spotting_on_off.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) with the following changes:  \n",
+    "This model is very similar to [keyword_spotting_on_off.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) with the following changes:  \n",
 
     "- Uses [MobileNetV2](https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html) instead of custom designed model\n",
 
@@ -174,7 +174,7 @@
 
     "\n",
 
-    "This tutorial describes how to start with the [keyword_spotting_on_off.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) model specification and end up with the [keyword_spotting_mobilenetv2.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py)."
+    "This tutorial describes how to start with the [keyword_spotting_on_off.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) model specification and end up with the [keyword_spotting_mobilenetv2.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_mobilenetv2.py)."
 
    ]
 
@@ -192,7 +192,7 @@
 
     "\n",
 
-    "First, copy the file [keyword_spotting_on_off.py](https://github.com/chenxingqiang/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) to your working directory and rename it to `my_keyword_spotting_mobilenetv2.py` (or any name you like, just be sure to update the commands below accordingly).\n",
+    "First, copy the file [keyword_spotting_on_off.py](https://github.com/ReRAM-Labs/yzlite/blob/master/yzlite/models/yizhutech/keyword_spotting_on_off.py) to your working directory and rename it to `my_keyword_spotting_mobilenetv2.py` (or any name you like, just be sure to update the commands below accordingly).\n",
 
     "\n",
 
@@ -290,7 +290,7 @@
 
     "\n",
 
-    "Next, let's update the [AudioFeatureGeneratorSettings](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html#audiofeaturegenerator-settings).\n",
+    "Next, let's update the [AudioFeatureGeneratorSettings](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html#audiofeaturegenerator-settings).\n",
 
     "We want to do this because we are detecting more keywords and need to increase the quality of the generated spectrograms which will help the ML model better distinguish between the different keywords.\n",
 
@@ -390,7 +390,7 @@
 
     "\n",
 
-    "In the model specification file, update the [AudioFeatureGeneratorSettings](https://github.com/chenxingqiang/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html#audiofeaturegenerator-settings) to:"
+    "In the model specification file, update the [AudioFeatureGeneratorSettings](https://github.com/ReRAM-Labs/yzlite/docs/python_api/data_preprocessing/audio_feature_generator.html#audiofeaturegenerator-settings) to:"
 
    ]
 
@@ -464,7 +464,7 @@
 
     "\n",
 
-    "Next, update the model layout to use the [MobileNetV2](https://github.com/chenxingqiang/yzlite/docs/python_api/models/common_models.html#mobilenet-v2) architecture.\n",
+    "Next, update the model layout to use the [MobileNetV2](https://github.com/ReRAM-Labs/yzlite/docs/python_api/models/common_models.html#mobilenet-v2) architecture.\n",
 
     "\n",
 
