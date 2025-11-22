@@ -2,7 +2,8 @@ import copy
 import os
 from typing import Union
 
-from yzlite.core import TFLITE_METADATA_TAG, TfliteModel, TfliteModelParameters
+from yzlite.core.tflite_model_parameters import TFLITE_METADATA_TAG, TfliteModelParameters
+from yzlite.core.tflite_model import TfliteModel
 from yzlite.utils.hasher import generate_hash
 from yzlite.utils.path import fullpath
 from yzlite.utils.string_formatting import iso_time_str
