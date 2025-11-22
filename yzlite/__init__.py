@@ -2,7 +2,7 @@
 import os
 import sys
 
-__version__ = '0.2.5'
+__version__ = '0.2.6'
 
 YZLITE_DIR = os.path.dirname(os.path.abspath(__file__)).replace('\\', '/')
 YZLITE_ROOT_DIR = os.path.dirname(YZLITE_DIR).replace('\\', '/')
