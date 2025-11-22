@@ -90,7 +90,7 @@ Based on latest academic research (2019-2024):
 ```{eval-rst}
 .. raw:: html
 
-   <iframe src="./_static/overview/index.html" height="100%" width="100%" frameborder="0" class="slideshow-iframe" allowfullscreen></iframe>
+   <iframe src="./_static/overview/index.html" width="100%" height="600" frameborder="0" class="slideshow-iframe" allowfullscreen style="min-height: 600px; border: 1px solid #e0e0e0; border-radius: 4px; display: block;"></iframe>
 ```
 
 ## Installation
