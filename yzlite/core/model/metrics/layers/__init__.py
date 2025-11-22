@@ -4,7 +4,7 @@ from typing import Union
 
 from tensorflow.keras.layers import Layer as KerasLayer
 
-from yzlite.core import TfliteLayer
+from yzlite.core.tflite_model import TfliteLayer
 
 from .layer import SUPPORTED_LAYERS, Layer
 
