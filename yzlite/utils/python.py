@@ -308,6 +308,8 @@ def import_module_at_path(path: str, reload=False):
     if path.startswith(f'{yzlite_root_path}/'):
         yzlite_rel_path = os.path.relpath(
             path, yzlite_root_path).replace('\\', '/')
+        # Convert to lowercase first to handle case-insensitive filesystems (macOS)
+        yzlite_rel_path = yzlite_rel_path.lower()
         module_package = None
         module_name = yzlite_rel_path.replace('.py', '').replace('/', '.')
 
