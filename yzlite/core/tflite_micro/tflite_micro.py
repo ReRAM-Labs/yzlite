@@ -446,6 +446,7 @@ class TfliteMicro:
         search_paths.extend(TfliteMicro._accelerator_paths)
         search_paths.extend(as_list(get_user_setting('accelerator_paths')))
         search_paths.append(f'{curdir}/accelerators/mvp')
+        search_paths.append(f'{curdir}/accelerators/reram')
 
         # Check if any "<accelerator name>_yzlite_accelerator.pth" files are found in the Python Libs directory
         python_libs_dir = sysconfig.get_path('purelib')

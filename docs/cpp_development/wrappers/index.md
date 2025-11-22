@@ -1,5 +1,7 @@
 # C++ Python Wrappers
 
+The YZLITE provides several C++ Python wrappers that enable sharing source code between embedded targets and model training/evaluation scripts.
+
 The YZLITE supports [C++ development](../index.md) and comes with several C++ Python wrappers.  
 
 C++ Python wrappers are C++ libraries that have an additional interface which enables them
@@ -15,6 +17,7 @@ The following wrappers are available:
 - [Audio Feature Generator](./audio_feature_generator_wrapper.md) - Allows for sharing spectrogram generation algorithms between model training scripts and embedded targets
 - [Tensorflow-Lite Micro](./tflite_micro_wrapper.md) - Allows for running Tensorflow-Lite Micro interpreter from Python
 - [MVP Kernels](./mvp_wrapper.md) - Allows for running MVP hardware accelerated Tensorflow-Lite Micro kernels from Python
+- [ReRAM Simulator](./reram_wrapper.md) - **NEW!** Allows for simulating neural network inference on ReRAM crossbar arrays with realistic hardware characteristics
 
 ```{eval-rst}
 .. toctree::
@@ -24,4 +27,5 @@ The following wrappers are available:
    ./audio_feature_generator_wrapper
    ./tflite_micro_wrapper
    ./mvp_wrapper
+   ./reram_wrapper
 ```
