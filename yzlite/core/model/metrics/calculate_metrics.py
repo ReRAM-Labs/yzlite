@@ -4,7 +4,7 @@ from typing import Union
 from tensorflow.keras.layers import Layer as KerasLayer
 from tensorflow.keras.models import Model as KerasModel
 
-from yzlite.core import TfliteLayer, TfliteModel
+from yzlite.core.tflite_model import TfliteLayer, TfliteModel
 from yzlite.utils.logger import DummyLogger
 
 from .layers import load_layers, parse_layer
