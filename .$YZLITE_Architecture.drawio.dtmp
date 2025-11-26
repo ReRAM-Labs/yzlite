@@ -1,0 +1,172 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="YZLITE Architecture" id="yzlite-arch">
+    <mxGraphModel dx="941" dy="805" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="YZLITE v0.2.7 Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="400" y="20" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-layer" value="User Interface Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="1000" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cli" value="Command Line&#xa;Interface (CLI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="100" y="90" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="python-api" value="Python API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="260" y="90" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jupyter" value="Jupyter&#xa;Notebooks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="420" y="90" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="python-core" value="Python Core Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;align=right;" parent="1" vertex="1">
+          <mxGeometry x="80" y="170" width="1000" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="model-training" value="Model Training&#xa;(TensorFlow/Keras)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="100" y="190" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="model-eval" value="Model Evaluation&#xa;&amp; Profiling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="260" y="190" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tflite-micro" value="TFLite Micro&#xa;Python Wrapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="420" y="190" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="datasets" value="Datasets&#xa;(TFDS Integration)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="580" y="190" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="audio-utils" value="Audio Feature&#xa;Generator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="740" y="190" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="accelerators-box" value="Hardware Accelerators" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="100" y="260" width="780" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mvp-accel" value="MVP Accelerator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="120" y="270" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-accel" value="ReRAM Simulator&#xa;⭐ NEW v0.2.0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6666;strokeColor=#b85450;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="260" y="270" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cpp-wrapper" value="C++ Wrapper Layer (Pybind11)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;align=right;" parent="1" vertex="1">
+          <mxGeometry x="80" y="350" width="1000" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tflm-wrapper" value="TFLite Micro&#xa;Wrapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;" parent="1" vertex="1">
+          <mxGeometry x="100" y="370" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mvp-wrapper" value="MVP Wrapper&#xa;(201 lines)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;" parent="1" vertex="1">
+          <mxGeometry x="240" y="370" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-wrapper" value="ReRAM Wrapper&#xa;(201 lines)&#xa;⭐ NEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cc99ff;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="380" y="370" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="audio-wrapper" value="Audio Feature&#xa;Wrapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;" parent="1" vertex="1">
+          <mxGeometry x="520" y="370" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-sim" value="ReRAM Simulator&#xa;(301 lines C++)&#xa;⭐ NEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cc99ff;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="380" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cpp-core" value="C++ Core Libraries" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="80" y="500" width="1000" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="tflm-lib" value="TensorFlow Lite&#xa;Micro Library" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="100" y="520" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mvp-kernels" value="MVP Kernels&#xa;(CMSIS-NN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="250" y="520" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-cell" value="ReRAM Cell Model&#xa;⭐ NEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cc99ff;strokeColor=#666666;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="400" y="520" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-crossbar" value="ReRAM Crossbar&#xa;⭐ NEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cc99ff;strokeColor=#666666;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="550" y="520" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-adc" value="ADC Model&#xa;⭐ NEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cc99ff;strokeColor=#666666;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="700" y="520" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="audio-gen" value="Audio Feature&#xa;Generator (C++)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="850" y="520" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-components" value="ReRAM Simulator Components" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9f7ed;strokeColor=#36393d;fontSize=11;align=left;verticalAlign=top" parent="1" vertex="1">
+          <mxGeometry x="400" y="580" width="430" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-comp1" value="Non-ideal Effects" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4e6;strokeColor=#36393d;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="410" y="595" width="95" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-comp2" value="Fault Injection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4e6;strokeColor=#36393d;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="515" y="595" width="95" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-comp3" value="Performance Metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4e6;strokeColor=#36393d;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="620" y="595" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-comp4" value="Statistics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4e6;strokeColor=#36393d;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="730" y="595" width="90" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="hw-layer" value="Hardware / Simulation Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="80" y="670" width="1000" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="embedded-hw" value="Embedded Device&#xa;(ARM Cortex-M)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="100" y="690" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mvp-hw" value="MVP Hardware&#xa;Accelerator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="260" y="690" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="reram-hw" value="ReRAM Hardware&#xa;(Simulated)&#xa;⭐ NEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff99cc;strokeColor=#b85450;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="420" y="690" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sdk" value="ReRAM SDK&#xa;(G0)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="580" y="690" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="external" value="External Resources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="750" y="670" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tfds" value="TensorFlow&#xa;Datasets&#xa;⭐ NEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="770" y="690" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="github" value="GitHub&#xa;(Code)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="880" y="690" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pypi" value="PyPI&#xa;(Package)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="980" y="690" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="cli" target="model-training" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="python-api" target="model-eval" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="jupyter" target="tflite-micro" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1" parent="1" source="tflite-micro" target="reram-wrapper" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn5" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="reram-wrapper" target="reram-sim" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="reram-sim" target="reram-crossbar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn7" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="reram-crossbar" target="reram-hw" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-box" value="Legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;fontStyle=1;align=left;verticalAlign=top" parent="1" vertex="1">
+          <mxGeometry x="900" y="80" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1" value="⭐ NEW in v0.2.0" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="910" y="100" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" value="Python Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="910" y="125" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3" value="C++ Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="990" y="125" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4" value="Hardware" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="910" y="150" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend5" value="External" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=9" parent="1" vertex="1">
+          <mxGeometry x="990" y="150" width="70" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
